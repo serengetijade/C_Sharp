@@ -21,7 +21,7 @@ function imgAnimation() {
     id = setInterval(frame, 10);
 
     function frame() {
-        if (pos == 300) {
+        if (pos == 500) {
             clearInterval(id);
         } else {
             pos++;
