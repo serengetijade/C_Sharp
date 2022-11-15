@@ -130,9 +130,9 @@ namespace Operators
             decimal rate2 = Convert.ToDecimal(Console.ReadLine());
             Console.WriteLine("2-Hours worked per week: ");
             decimal hours2 = Convert.ToDecimal(Console.ReadLine());
-            Console.WriteLine("Annual Salary of Person 1: $" + (rate1*hours1*50));
-            Console.WriteLine("Annual Salary of Person 2: $" + (rate2*hours2*50));
-            Console.WriteLine("Does Person 1 make more than Person 2?: \n" + ((rate1 * hours1 * 50) > (rate2 * hours2 * 50)));
+            Console.WriteLine("Annual Salary of Person 1: $" + (rate1*hours1*52));
+            Console.WriteLine("Annual Salary of Person 2: $" + (rate2*hours2*52));
+            Console.WriteLine("Does Person 1 make more than Person 2?: \n" + ((rate1 * hours1 * 52) > (rate2 * hours2 * 52)));
             Console.Read();
         }
     }
