@@ -52,7 +52,7 @@ namespace VariablesAndDataTypes
     }
 }
 */
-
+/*
 namespace DailyReport
 {
     class Program
@@ -80,10 +80,47 @@ namespace DailyReport
             decimal studyHours = Convert.ToDecimal(study);  //convert user input to decimal data type. 
 
             Console.WriteLine("Thank you for your answers.\nAn Instructor will respont to this shortly.\nHave a great day!");
+            Console.Read();
+        }
+    }
+}
+*/
+namespace Operators
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            int num1 = 5;
+            int num2 = 7;
+            int diff = num1 - num2;
+            Console.WriteLine(diff);
 
+            int product = num1 * num2;
+            Console.WriteLine(product);
 
+            int remainder = num2 % num1;
+            Console.WriteLine(remainder);
 
+            int num3 = 8;
+            float num4 = 5.5f;
+            float total1 = num3 + num4;
+            int total2 = num3 + (Int32)num4;
+            Console.WriteLine(total1 + " & " + total2);
 
+            //String concatenation: 
+            string myName = "Jade";
+            string username = myName + num4;
+            Console.WriteLine(username);
+
+            Console.WriteLine("Please enter a number:");
+            string userNum = Console.ReadLine();
+            float userNumber = Convert.ToSingle(userNum);
+            Console.WriteLine("Times 50: "+ userNumber * 50);
+            Console.WriteLine("Plus 25: " + userNumber + 25);
+            Console.WriteLine("Divided by 12.5: " + userNumber / 12.5);
+            Console.WriteLine("Is greater than 50? " + (userNumber > 50));
+            Console.WriteLine("Remainder from 7: " + (userNumber % 7));     //Use the modulus to find the remainder after userNumber/7
             Console.Read();
         }
     }
