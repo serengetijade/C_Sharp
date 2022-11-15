@@ -1,7 +1,6 @@
 ﻿using System;
 
-/*
-namespace CSharpBasics
+/*namespace CSharpBasics
 {
     class Program
     {
@@ -13,8 +12,7 @@ namespace CSharpBasics
     }
 }*/
 
-/*
-namespace VariablesAndDataTypes
+/*namespace VariablesAndDataTypes
 {
     class Program
     {
@@ -51,8 +49,7 @@ namespace VariablesAndDataTypes
     }
 }*/
 
-/*
-namespace DailyReport
+/*namespace DailyReport
 {
     class Program
     {
@@ -83,8 +80,8 @@ namespace DailyReport
         }
     }
 }*/
-/*
-namespace Operators
+
+/*namespace Operators
 {
     class Program
     {
@@ -173,8 +170,8 @@ namespace Operators
         }
     }
 }*/
-/*
-namespace InsuranceApproval
+
+/*namespace InsuranceApproval
 {
     class InsApproval
     {
@@ -201,6 +198,7 @@ namespace InsuranceApproval
         }
     }
 }*/
+
 /*namespace ifStatements
 {
     class ifStatements
@@ -299,7 +297,7 @@ namespace InsuranceApproval
     }
 }*/
 
-namespace ShippingQuote
+/*namespace ShippingQuote
 {
     class ShippingQuote
     {
@@ -322,10 +320,75 @@ namespace ShippingQuote
                 decimal packHeight = Convert.ToDecimal(Console.ReadLine());                  
                 Console.WriteLine("What is the package length?");
                 decimal packLength = Convert.ToDecimal(Console.ReadLine());
-                //Ternary operator (?) to return quote:
-                string quote = (packWidth + packHeight + packLength) > 50 ? "Package too big to be shipped via Package Express." : "Shipping quote: $" + ((packWidth * packHeight * packLength * packWeight) / 100);
+                //Ternary operator (?) to return if (not) shipable or a shipping quote:
+                string ship = (packWidth + packHeight + packLength) > 50 ? "Package too big to be shipped via Package Express." : "Shipping quote: $" + ((packWidth * packHeight * packLength * packWeight) / 100);
                 Console.WriteLine(quote);
             }                        
+        }
+    }
+}*/
+
+namespace Switch
+{
+    class Switch
+    {
+        static void Main(string[] args)
+        {
+            int day = 4;
+            switch (day)
+            {
+                case 1:
+                    Console.WriteLine("Monday");
+                    break;                 
+                case 2:
+                    Console.WriteLine("Tuesday");
+                    break;                    
+                case 3:
+                    Console.WriteLine("Wednesday");
+                    break;                     
+                case 4:
+                    Console.WriteLine("Thursday");
+                    break;
+                default:
+                    Console.WriteLine("Default is optional and specifies some code to run if there is no case match.");
+                    break;
+            }
+
+            //Switch with While loop:
+            Console.WriteLine("Guess a number...");
+            int number = Convert.ToInt32(Console.ReadLine());
+            bool isGuessed = number == 42;  
+            //Note that if the first guess is 42, the while loop is NOT triggered: 
+            //while (!isGuessed)
+            //{
+            //    switch (number)
+            //    {
+            //        case 42:
+            //            Console.WriteLine("You found the answer to everything!");
+            //            isGuessed = true;
+            //            break;
+            //        default:
+            //            Console.WriteLine("You guessed " + number + ". That is not correct.\nGuess again...");
+            //            number = Convert.ToInt32(Console.ReadLine());
+            //            break;
+            //    }
+            //}
+            //The solution is to use a 'do' with a while loop:
+            do
+            {
+                switch (number)
+                {
+                    case 42:
+                        Console.WriteLine("You found the answer to everything!");
+                        isGuessed = true;
+                        break;
+                    default:
+                        Console.WriteLine("You guessed " + number + ". That is not correct.\nGuess again...");
+                        number = Convert.ToInt32(Console.ReadLine());
+                        break;
+                }
+            }
+            while (!isGuessed);
         }
     }
 }

@@ -1,32 +1,48 @@
 ﻿using System;
 
-namespace ShippingQuote
+namespace Switch
 {
-    class ShippingQuote
+    class Switch
     {
-        static void Main(string[] args)
-        {
-            Console.WriteLine("Welcome to Package Express.\nPlease follow the instructions below.\nWhat is the package weight?");
-            decimal packWeight = Convert.ToDecimal(Console.ReadLine());
-            if (packWeight > 50)
+        static void Main(string[] args) 
+        { 
+            //Switch with While loop:
+            Console.WriteLine("Guess a number...");
+            int number = Convert.ToInt32(Console.ReadLine());
+            bool isGuessed = number == 42;
+
+            //Note that if the first guess is 42(the correct answer), the while loop is NOT triggered: 
+            //while (!isGuessed)
+            //{
+            //    switch (number)
+            //    {
+            //        case 42:
+            //            Console.WriteLine("You found the answer to everything!");
+            //            isGuessed = true;
+            //            break;
+            //        default:
+            //            Console.WriteLine("You guessed " + number + ". That is not correct.\nGuess again...");
+            //            number = Convert.ToInt32(Console.ReadLine());
+            //            break;
+            //    }
+            //}
+
+            //The solution is to use a 'do' with a while loop, called a 'do while' loop:
+            do
             {
-                Console.WriteLine("Package too heavy to be shipped via Package Express. Have a good day.");
-                Console.ReadLine();
-                return;
+                switch (number)
+                {
+                    case 42:
+                        Console.WriteLine("You found the answer to everything!");
+                        isGuessed = true;
+                        break;
+                    default:
+                        Console.WriteLine("You guessed " + number + ". That is not correct.\nGuess again...");
+                        number = Convert.ToInt32(Console.ReadLine());
+                        break;
+                }
             }
-            else
-            {
-                //Console.ReadLine() to get the user's package dimensions:
-                Console.WriteLine("What is the package width?");
-                decimal packWidth = Convert.ToDecimal(Console.ReadLine());
-                Console.WriteLine("What is the package height?");
-                decimal packHeight = Convert.ToDecimal(Console.ReadLine());
-                Console.WriteLine("What is the package length?");
-                decimal packLength = Convert.ToDecimal(Console.ReadLine());
-                //Ternary operator (?) to return quote:
-                string quote = (packWidth + packHeight + packLength) > 50 ? "Package too big to be shipped via Package Express." : "Shipping quote: $" + ((packWidth * packHeight * packLength * packWeight) / 100);
-                Console.WriteLine(quote);
-            }
+            while (!isGuessed);
         }
     }
 }
