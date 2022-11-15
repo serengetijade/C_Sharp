@@ -11,8 +11,7 @@ namespace CSharpBasics
             Console.Read();
         }
     }
-}
-*/
+}*/
 
 /*
 namespace VariablesAndDataTypes
@@ -50,8 +49,8 @@ namespace VariablesAndDataTypes
 
         }
     }
-}
-*/
+}*/
+
 /*
 namespace DailyReport
 {
@@ -83,14 +82,14 @@ namespace DailyReport
             Console.Read();
         }
     }
-}
-*/
+}*/
+/*
 namespace Operators
 {
     class Program
     {
         static void Main(string[] args)
-        {
+        {   
             int num1 = 5;
             int num2 = 7;
             int diff = num1 - num2;
@@ -133,7 +132,72 @@ namespace Operators
             Console.WriteLine("Annual Salary of Person 1: $" + (rate1*hours1*52));
             Console.WriteLine("Annual Salary of Person 2: $" + (rate2*hours2*52));
             Console.WriteLine("Does Person 1 make more than Person 2?: \n" + ((rate1 * hours1 * 52) > (rate2 * hours2 * 52)));
+            
+            int packWidth = 10;
+            int packHeight = 25;
+            //bool tooBig = (packWidth > 25 && packHeight > 25);    //AND operator
+            bool tooBig = (packWidth > 25 || packHeight > 25);      //OR operator
+            Console.WriteLine(tooBig);
+
+            string firstname = "Jesse";
+            string lastname = "Johnson";
+            string ssn = "111-11-1111";
+            //Combine multiple comparison operators with Boolean logic:
+            bool isAuthorized = (firstname == "Jesse" && lastname == "Johnson" && ssn == "111-11-1111");
+            Console.WriteLine(isAuthorized);
+            bool result = (7 > 12 && (3 == 4 || 8 > 5));
+            Console.WriteLine(result);
             Console.Read();
+           
+
+            Console.WriteLine(true && false);    //Result: False
+            Console.WriteLine(true && true);     //Result: True
+            Console.WriteLine(false && false);   //Result: False
+
+            Console.WriteLine(true || true);     //Result: True
+            Console.WriteLine(true || false);    //Result: True
+            Console.WriteLine(false || false);   //Result: False
+
+            Console.WriteLine(true == true);     //Result: True
+            Console.WriteLine(true == false);    //Result: False
+            Console.WriteLine(false == false);   //Result: True
+
+            Console.WriteLine(true != true);     //Result: False
+            Console.WriteLine(true != false);    //Result: True
+            Console.WriteLine(false != false);   //Result: False
+
+            Console.WriteLine(true ^ true);      //Result: False   xor operator: Evaluate to true if one statement is true BUT NOT BOTH
+            Console.WriteLine(true ^ false);     //Result: True    xor operator: Evaluate to true if one statement is true BUT NOT BOTH
+            Console.WriteLine(false ^ false);    //Result: False   xor operator: Evaluate to true if one statement is true BUT NOT BOTH
+            Console.ReadLine();
+        }
+    }
+}*/
+
+namespace InsuranceApproval
+{
+    class InsApproval
+    {
+        static void Main(string[] args)
+        {
+            Console.WriteLine("What is your age?");
+            int age = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("Have you ever had a DUI? Enter y or n");
+            char DUI = Convert.ToChar(Console.ReadLine());
+            bool hasDUI = false;
+            //Use the .Equals method and comparison operators in an if statement:
+            if (Char.Equals(DUI, 'y') || Char.Equals(DUI, 'Y')) 
+            {
+                hasDUI = true;
+            }
+            else
+            {
+                hasDUI = false;
+            }
+            Console.WriteLine("How many speeding tickets do you have");
+            int speeding = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("Qualified? " + (age >= 18 && hasDUI == false && speeding <= 3));    //Use AND to compare boolean results
+            Console.ReadLine();
         }
     }
 }
