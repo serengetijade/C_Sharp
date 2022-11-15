@@ -173,7 +173,7 @@ namespace Operators
         }
     }
 }*/
-
+/*
 namespace InsuranceApproval
 {
     class InsApproval
@@ -197,6 +197,75 @@ namespace InsuranceApproval
             Console.WriteLine("How many speeding tickets do you have");
             int speeding = Convert.ToInt32(Console.ReadLine());
             Console.WriteLine("Qualified? " + (age >= 18 && hasDUI == false && speeding <= 3));    //Use AND to compare boolean results
+            Console.ReadLine();
+        }
+    }
+}*/
+namespace ifStatements
+{
+    class ifStatements
+    {
+        static void Main(string[] args)
+        {
+            if(true)
+            {
+                Console.WriteLine("Hello!");
+            }
+
+            if (1 == 1) //Use an equality comparison operator. 
+            {
+                Console.WriteLine("1 equals 1!");
+            }
+            else
+            {
+                Console.WriteLine("1 does not equal 1");
+            }
+
+            string name = "Adam";
+            if (name == "Jesse")
+            {
+                Console.WriteLine("Your name is Jesse");
+            }
+            else if (name == "Brett")
+            {
+                Console.WriteLine("Your name is Brett, not Jesse");
+            }
+            else
+            {
+                Console.WriteLine("Your name is not Jesse nor Brett");
+            }
+
+            if (1 != 2)
+            {
+                Console.WriteLine("All is right with the universe.");
+            }
+            else
+            {
+                Console.WriteLine("We live in a bizarro world.");
+            }
+
+            int age = 19;
+            if (age <= 17)
+            {
+                Console.WriteLine("You are too young for the movie.");
+            }
+            else
+            {
+                Console.WriteLine("Enjoy the show!");
+            }
+
+            string role = "admin";
+            if (role == "admin" || role == "administration")
+            {
+                Console.WriteLine("You may access the entire softwrae system.");
+            }
+
+            //Ternary (?) operator
+            int num1 = 7;
+            int num2 = 12;
+            string result = num1 > num2 ? "num1 is greater than num2" : "num1 is not greater than num2";  //result if true : result if false
+            Console.WriteLine(result);
+
             Console.ReadLine();
         }
     }
