@@ -121,6 +121,22 @@ namespace Operators
             Console.WriteLine("Divided by 12.5: " + userNumber / 12.5);
             Console.WriteLine("Is greater than 50? " + (userNumber > 50));
             Console.WriteLine("Remainder from 7: " + (userNumber % 7));     //Use the modulus to find the remainder after userNumber/7
+
+            Console.WriteLine("Anonymous Income Comparison Program\nPlease enter Person 1's information.\n1-Hourly Rate: ");
+            string rate1 = Console.ReadLine();
+            Console.WriteLine("1-Hours worked per week: ");
+            string hours1 = Console.ReadLine();                
+            Console.WriteLine("Please enter Person 2's information.\n2-Hourly Rate: ");
+            string rate2 = Console.ReadLine();
+            Console.WriteLine("2-Hours worked per week: ");
+            string hours2 = Console.ReadLine();
+            decimal rate1d = Convert.ToDecimal(rate1);
+            decimal hours1d = Convert.ToDecimal(hours1);             
+            decimal rate2d = Convert.ToDecimal(rate2);
+            decimal hours2d = Convert.ToDecimal(hours2);
+            Console.WriteLine("Annual Salary of Person 1: $" + (rate1d*hours1d*50));
+            Console.WriteLine("Annual Salary of Person 2: $" + (rate2d*hours2d*50));
+            Console.WriteLine("Does Person 1 make more than Person 2?: \n" + ((rate1d * hours1d * 50) > (rate2d * hours2d * 50)));
             Console.Read();
         }
     }
