@@ -206,7 +206,7 @@ namespace ifStatements
     class ifStatements
     {
         static void Main(string[] args)
-        {
+        {   /*
             if(true)
             {
                 Console.WriteLine("Hello!");
@@ -264,6 +264,34 @@ namespace ifStatements
             int num1 = 7;
             int num2 = 12;
             string result = num1 > num2 ? "num1 is greater than num2" : "num1 is not greater than num2";  //result if true : result if false
+            Console.WriteLine(result);
+            
+
+            int currentTemp = 80;
+            int roomTemp = 70;
+            if (currentTemp == roomTemp)
+            {
+                Console.WriteLine("It is exactly room temperture.");
+            }
+            else if(currentTemp > roomTemp)
+            {
+                Console.WriteLine("It is warmer than room temperture.");
+            }
+            else
+            {
+                Console.WriteLine("It is not exactly room temperature.");
+            } 
+            */
+
+            //To write the above with ternary (?) operator:
+            int currentTemp = 80;
+            int roomTemp = 70;
+            string comparisonResult = currentTemp == roomTemp ? "It is room temperature" : "It is not room temperature";
+            Console.WriteLine(comparisonResult);
+
+            Console.WriteLine("What is your favorite number?");
+            int favNum = Convert.ToInt32(Console.ReadLine());
+            string result = favNum == 12 ? "You have an awesome favorite number!" : "That is an interesting choice.";
             Console.WriteLine(result);
 
             Console.ReadLine();

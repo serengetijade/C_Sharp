@@ -12,7 +12,7 @@ namespace InsuranceApproval
             bool DUI = Convert.ToBoolean(Console.ReadLine());
             Console.WriteLine("How many speeding tickets do you have");
             int speeding = Convert.ToInt32(Console.ReadLine());
-            Console.WriteLine("Qualified? " + (age >= 18 && DUI == false && speeding <= 3));    //Use AND to compare boolean results
+            Console.WriteLine("Qualified? " + (age >= 15 && DUI == false && speeding <= 3));    //Use AND to compare boolean results
             Console.ReadLine();
         }
     }
