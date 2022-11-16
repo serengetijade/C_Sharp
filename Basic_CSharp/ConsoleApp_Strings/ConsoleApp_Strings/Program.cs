@@ -48,3 +48,81 @@ namespace ConsoleApp_Strings
         }
     }
 }
+/*namespace Iteration
+{
+    class Iteration
+    {
+        static void Main(string[] args)    //args lets you pass in information as an argument to this function. For ex, from the command line. 
+        {
+            
+            //Required: using System.Collections.Generic; //required for Lists
+            //ARRAY ITERATION
+            int[] testScores = { 98, 99, 85, 70, 82, 34, 91, 90, 94 };
+            for (int i = 0; i < testScores.Length; i++)
+            {
+                if (testScores[i] > 85)
+                {
+                    Console.WriteLine("Passing test score: " + testScores[i]);
+                }
+            }
+
+            string[] names = { "Jesse", "Erik", "Daniel", "Adam" };
+            for (int j = 0; j < names.Length; j++)
+            {
+                //Write every object to the console: 
+                Console.WriteLine(names[j]); 
+                //Perform an if function: 
+                if (names[j] == "Jesse")
+                {
+                    Console.WriteLine(names[j]);
+                }
+            }
+            Console.ReadLine();             
+
+            //LIST ITERATION
+            List<int> testScores = new List<int>();
+            testScores.Add(98);
+            testScores.Add(99);
+            testScores.Add(81);
+            testScores.Add(72);
+            testScores.Add(70);
+
+            foreach (int t in testScores)
+            {
+                if (t > 85)
+                {
+                    Console.WriteLine("Passing test score: " + t);
+                }
+            }
+
+            //Popular naming convention is to use plural for the name of a list, then the singular for the iteration variable. 
+            List<string> names = new List<string>() { "Jesse", "Erik", "Adam", "Daniel" };
+            foreach (string name in names)
+            {
+                //Print all names to the console:
+                Console.WriteLine(name);
+                //If statement: 
+                if (name == "Jesse")
+                {
+                    Console.WriteLine(name);
+                }
+            }
+
+            //Add values from one list that meet a condition to another list: 
+            List<int> testResults = new List<int>() { 98, 99, 12, 74, 23, 94 };
+            List<int> passingResults = new List<int>();
+            //Use a for loop and an if statement to find values that meet set condition:
+            foreach (int result in testResults)
+            {
+                if (result > 85)
+                {
+                    //listName.Add method:
+                    passingResults.Add(result);
+                }
+            }
+            Console.Write("Number of passing results: " + passingResults.Count);
+            Console.ReadLine();
+
+        }
+    }
+}*/
