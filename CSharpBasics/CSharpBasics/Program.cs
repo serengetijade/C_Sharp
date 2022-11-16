@@ -328,7 +328,7 @@
     }
 }*/
 
-namespace Switch
+/*namespace Switch
 {
     class Switch
     {
@@ -391,4 +391,43 @@ namespace Switch
             while (!isGuessed);
         }
     }
-}
+}*/
+
+/*namespace Strings
+{
+    class Strings
+    {
+        static void Main(string[] args)
+        {
+            //The backslash indicates a special character. \n is new line. \t is tab. \\ is one backslash.
+            string quote = "Escape characters, like \"\\\", allow programmers \n\tto use \n\t\tspecial characters";
+            Console.WriteLine(quote);
+            //The @ symbol before a "string" indicates there are no escape characters
+            string filename = @"C:\Users\jad245";
+            Console.WriteLine(filename);
+
+            //String methods:
+            string name = "Jesse";
+            bool trueOrfalse = name.Contains("s");
+            Console.WriteLine(trueOrfalse);
+            trueOrfalse = name.EndsWith("s");
+            Console.WriteLine(trueOrfalse);
+            Console.WriteLine(name.Length);
+            Console.WriteLine(name.ToUpper());
+            Console.WriteLine(name.ToLower());
+
+            var pw = (firstName: "Phillis", lastName: "Wheatley", born: 1753, published: 1773);
+            Console.WriteLine("{0} {1} was an African American poet born in {2}.", pw.firstName, pw.lastName, pw.born);
+            Console.WriteLine("She was first published in {0} at the age of {1}.", pw.published, pw.published - pw.born);
+            Console.WriteLine("She'd be over {0} years old today.", Math.Round(2018d - pw.born));
+            // Output:
+            // Phillis Wheatley was an African American poet born in 1753.
+            // She was first published in 1773 at the age of 20.
+            // She'd be over 300 years old today.
+
+            StringBuilder sb = new StringBuilder();
+            sb.Append("My name is Jessee");
+            Console.WriteLine(sb);
+        }
+    }
+}*/
