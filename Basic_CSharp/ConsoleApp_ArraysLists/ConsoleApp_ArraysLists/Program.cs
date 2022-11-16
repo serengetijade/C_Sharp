@@ -58,7 +58,14 @@ namespace ConsoleApp_ArraysLists
             int[] intArray = { 100, 45, 30, 56, 62, 77, 17, 28, 81, 49, 68 };
             Console.WriteLine("How popular are you?\nChoose a whole number up to 10.");
             indexNumber = Convert.ToInt32(Console.ReadLine());
-            Console.WriteLine("You have " + intArray[indexNumber] + " people who think you're neat.");
+            try
+            {
+                Console.WriteLine("You have " + intArray[indexNumber] + " people who think you're neat.");
+            }
+            catch
+            {
+                Console.WriteLine("You didn't pick a valid number.");
+            }
 
             List<string> stringList = new List<string>();
             stringList.Add("Vermilion");
@@ -74,8 +81,14 @@ namespace ConsoleApp_ArraysLists
             stringList.Add("Cerulean");
             Console.WriteLine("What color is your aura? Enter a whole number up to 10 to find out.");
             indexNumber = Convert.ToInt32(Console.ReadLine());
-            Console.WriteLine("Your aura is " + stringList[indexNumber] + "-colored.");
-
+            if (indexNumber <= 10 && indexNumber >= 0)
+            {
+                Console.WriteLine("Your aura is " + stringList[indexNumber] + "-colored.");
+            }
+            else
+            {
+                Console.WriteLine("You didn't pick a valid number. You have no aura to read.");
+            }
             Console.ReadLine();
         }
     }
