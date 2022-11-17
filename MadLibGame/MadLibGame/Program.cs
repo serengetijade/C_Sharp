@@ -168,26 +168,6 @@ namespace MadLibGame
                 Console.WriteLine("You entered a color unknown to science.");
             }
 
-            //6
-            //Check a list for identical strings:
-            List<string> checkForContains = new List<string>();
-            foreach (string color in creatureColors)
-            {
-                //Use a boolean 'trigger' with the .Contains method to indicate if a value is already in the list:
-                bool duplicate = checkForContains.Contains(color);
-                //After checking the list, add this color to it:
-                checkForContains.Add(color);
-                //The if statement proceeds according to the boolean 'trigger': 
-                if (duplicate == false)
-                {
-                    Console.WriteLine(color + " is a unique value.");
-                }
-                else
-                {
-                    Console.WriteLine(color + " is a duplicate and already appeared on the list");
-                }
-            }
-            Console.ReadLine();
         }
     }
 }
