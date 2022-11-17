@@ -12,14 +12,14 @@ namespace MadLibGame
             Console.WriteLine(@"            .   :  ;   ,          ___       ");
             Console.WriteLine(@"""------.__  \.      ,/    .----'''  ''`--. ");
             Console.WriteLine(@"____.------'-   ,--.  -    ""-------'""""   ");
-            Console.WriteLine(@"\_______ - _ -= ___ / ____\__ = -_ - _______");
+            Console.WriteLine(@"\_______ - _ -= ___ / ____\_______ - _______");
             Console.WriteLine(@"`\.              --           .--'   \' -.  ");
             Console.WriteLine(@". `\._          ""--'         ""'\'' / ''   ");
             Console.WriteLine(@" `    `'--..     --                ''       ");
-            Console.WriteLine(@"     --',.---' -  '                         ");
+            Console.WriteLine(@"     --',.---'    '                         ");
             Console.WriteLine(@"----'""'                               ''   ");
             Console.WriteLine(@"  / ____,,....__                            ");
-            Console.WriteLine("It's a tranquil day at the beach...what could possibly happen?\n");
+            Console.WriteLine("It's a tranquil day at the beach...\n\t...what could possibly happen?\n");
 
             //Create a list of madLibs strings from the user's input:
             List<string> madLibs = new List<string>();
@@ -74,7 +74,6 @@ namespace MadLibGame
             string alive = roulette % 2 == 0 ? "Luckily for you, it turns out it was just a sunburn, not poinson." : "Tragically, you succumb to the poison.\nBut a statue is erected at the beach in honor of your scientific discoveries.";  //result if true : result if false
             Console.WriteLine(alive);
 
-            //3
             //Use <= operator to iterate through a list:
             List<string> creatureLetters = new List<string>() { "A", "B", "D", "G", "I", "K", "N", "O", "W", "V"};
             for (int i = 0; i<=9; i++)
@@ -82,7 +81,6 @@ namespace MadLibGame
                 Console.WriteLine(creatureLetters[i]);
             }
 
-            //4
             //Get user input text to search for in a list:
             Console.WriteLine("Now you must NAME your discovery. Enter a letter from the list above.");
             string creatureLetter = Console.ReadLine();
@@ -94,7 +92,7 @@ namespace MadLibGame
                 if (adj.StartsWith(creatureLetter.ToUpper()))
                 {
                     //Get the index number of the matching result:
-                    Console.WriteLine(creatureAdjs.IndexOf(adj));
+                    //Console.WriteLine(creatureAdjs.IndexOf(adj));
                     Console.WriteLine("The name of your creature is: The " + adj + " " + madLib7);
                     validLetter = true;
                 }
@@ -105,7 +103,6 @@ namespace MadLibGame
                 Console.WriteLine("Your input was not on the list.");
             }
 
-            //5
             List<string> creatureColors = new List<string>() { "pink", "red", "red", "orange", "yellow", "green", "blue", "purple", "brown", "black", "white" };
             Console.WriteLine("Record the color of your discovery. Pick a common color:");
             string creatureColor = Console.ReadLine();
