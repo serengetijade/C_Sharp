@@ -512,13 +512,12 @@ using System.Collections.Generic; //required for Lists
     }
 }*/
 
-namespace Iteration
+/*namespace Iteration
 {
     class Iteration
     {
         static void Main(string[] args)    //args lets you pass in information as an argument to this function. For ex, from the command line. 
         {
-            /*
             //Required: using System.Collections.Generic; //required for Lists
             //ARRAY ITERATION
             int[] testScores = { 98, 99, 85, 70, 82, 34, 91, 90, 94 };
@@ -541,8 +540,6 @@ namespace Iteration
                     Console.WriteLine(names[j]);
                 }
             }
-            Console.ReadLine();
-            */
 
             //LIST ITERATION
             List<int> testScores = new List<int>();
@@ -610,5 +607,5 @@ namespace Iteration
 
         }
     }
-}
+}  */
 

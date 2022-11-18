@@ -165,6 +165,8 @@ namespace MadLibGame
                 Console.WriteLine("You entered a color unknown to science.");
             }
 
+            Console.WriteLine("Your discovery has been one for the history books! Well played.");
+            Console.ReadLine();
         }
     }
 }
