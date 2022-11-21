@@ -35,11 +35,9 @@ namespace TwentyOneGame
                     Cards.Add(card);
                 }
             }
-            
-
         }
-        
-        //Define the properties for this class:  
+        //Define the properties for this class: 
+        //Properties Syntax: public dataType propertyName { method; method; }   
         public List<Card> Cards { get; set; }  //The Cards property (which is a list):
     }
 }

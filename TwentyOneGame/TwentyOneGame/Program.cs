@@ -39,8 +39,9 @@ namespace TwentyOneGame
             Console.ReadLine();
         }
 
-        //Use random method and removeAt method to randomize the order of objects in the list: 
+        //Define a function to use random method and removeAt method to randomize the order of objects in the list: 
         //Syntax: accessModifier returnType dataType functionName(dataType parameter)
+        //returnType is static so that this method is called withouth instantiating an object.
         public static Deck Shuffle(Deck deck)
         {
             //Create a temporary list to store shuffled objects:

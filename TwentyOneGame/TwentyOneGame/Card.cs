@@ -16,6 +16,7 @@ namespace TwentyOneGame
             Suit = "Spades";
             Face = "Two";
         } */
+        //Define the properties for this class: 
         //Properties Syntax: public dataType propertyName { method; method; }    
         public string Suit { get; set; }
         public string Face { get; set; }
