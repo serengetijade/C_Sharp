@@ -32,6 +32,17 @@ namespace ConsoleApp_Methods
                 Console.WriteLine("Method2 result: " + class1method2);
                 Console.WriteLine("Method3 result: " + class1method3);
 
+                //Call an overloaded Class/method (defined in Class2.cs):
+                Class2 class2Instance = new Class2();
+
+                int class2methodOverload = class2Instance.MethodOverload(readNumber);
+                Console.WriteLine("Overloaded method result 1: " + class2methodOverload);
+
+                class2methodOverload= class2Instance.MethodOverload(readNumber, 3.1415m);
+                Console.WriteLine("Overloaded method result 2: {0}", class2methodOverload);
+
+                class2methodOverload = class2Instance.MethodOverload(readNumber, "2");
+                Console.WriteLine($"Overloaded method result 3: {class2methodOverload}"); 
             }
             catch (FormatException ex)
             {
@@ -39,6 +50,7 @@ namespace ConsoleApp_Methods
                 Console.WriteLine("Please enter a whole number:");
                 int readNumber = Convert.ToInt32(Console.ReadLine());
             }
+            Console.ReadLine();
         }
     }
 }
