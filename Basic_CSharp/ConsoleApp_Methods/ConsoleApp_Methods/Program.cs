@@ -11,13 +11,13 @@ namespace ConsoleApp_Methods
         static void Main(string[] args)
         {
             Console.WriteLine("Please enter a whole number:");
+            int readNumber = Convert.ToInt32(Console.ReadLine());
             try
             {
-                int readNumber = Convert.ToInt32(Console.ReadLine());
                 //Call a Class/method (defined in Class1.cs):
                 //instantiate a class object...
                 Class1 class1Instance = new Class1();
-                //call a class method...this method uses static to apply a method without having to instantiate an object of that class:  
+                //call a (static) class method...this method uses static to apply a method without having to instantiate an object of that class:  
                 if (Class1.Method1(readNumber) == 0)
                 {
                     Console.WriteLine("Method1 result: "+ Class1.Method1(readNumber) + " is an even number.");
@@ -42,13 +42,24 @@ namespace ConsoleApp_Methods
                 Console.WriteLine("Overloaded method result 2: {0}", class2methodOverload);
 
                 class2methodOverload = class2Instance.MethodOverload(readNumber, "2");
-                Console.WriteLine($"Overloaded method result 3: {class2methodOverload}"); 
+                Console.WriteLine($"Overloaded method result 3: {class2methodOverload}");
             }
             catch (FormatException ex)
             {
                 Console.WriteLine("You did not enter a whole number.");
                 Console.WriteLine("Please enter a whole number:");
-                int readNumber = Convert.ToInt32(Console.ReadLine());
+                readNumber = Convert.ToInt32(Console.ReadLine());
+            }
+            try
+            {
+                //Call a (static) method that has a parameter with a default parameter: 
+                Console.WriteLine("Enter a second number, if you so choose- this is not strictly necessary.");
+                int defaultParam = Convert.ToInt32(Console.ReadLine());
+                Console.WriteLine("Method with a default parameter result: " + Class3.MethodDefaultParam(readNumber, defaultParam));
+            }
+            catch
+            {
+                Console.WriteLine("Method with a default parameter result: " + Class3.MethodDefaultParam(readNumber));
             }
             Console.ReadLine();
         }
