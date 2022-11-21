@@ -47,7 +47,6 @@ namespace ConsoleApp_Methods
             catch (FormatException ex)
             {
                 Console.WriteLine("You did not enter a whole number.");
-                Console.WriteLine("Please enter a whole number:");
                 readNumber = Convert.ToInt32(Console.ReadLine());
             }
             try
@@ -61,6 +60,12 @@ namespace ConsoleApp_Methods
             {
                 Console.WriteLine("Method with a default parameter result: " + Class3.MethodDefaultParam(readNumber));
             }
+
+            //Call a (void) method:
+            int int1 = 10;
+            int int2 = 11;
+            Class4 class4Instance = new Class4();
+            class4Instance.MethodVoid(param1: int1, param2: int2);
             Console.ReadLine();
         }
     }
