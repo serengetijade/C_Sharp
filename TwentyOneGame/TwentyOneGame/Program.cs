@@ -16,17 +16,22 @@ namespace TwentyOneGame
             //Card cardOne = new Card();
             //cardOne.Face = "Queen";
             //cardOne.Suit = "Spades";
+            ////Object Initialization: a faster way to initiate an object and assingn values to its properties
+            //Card cardOne = new Card() {Face = "King", Suit = "Spades"};              
             ////Console.WriteLine(cardOne.Face + " of " + cardOne.Suit);
+
+
+            //Instantiate a TwentyOneGame object:
+            TwentyOneGame game = new TwentyOneGame();
 
             ////Instatiate a Deck object and add a Card object to it: 
             //Deck deck = new Deck();
             //deck.Cards = new List<Card>();
             //deck.Cards.Add(cardOne);
-
             //Instantiate a class object, 'deck' of class 'Deck' from Deck.cs. This has a property named 'Cards', which is a list of 52 cards - defined in Deck.cs
             Deck deck = new Deck();
-            deck.Shuffle(3);     //Apply the Shuffle() method to the 'deck' instance of class Deck (as defined in Deck.cs).
             
+            deck.Shuffle(3);     //Apply the Shuffle() method to the 'deck' instance of class Deck (as defined in Deck.cs).
             ////Or to use the Shuffle() method (as defined below), reassign the value of deck/apply the Shuffle() method to it: 
             //int timesShuffled = 0;
             //deck = Shuffle(deck: deck , out timesShuffled, times: 3);   //Call the third Shuffle method using NAMED parameters
