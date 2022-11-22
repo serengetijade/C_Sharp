@@ -72,13 +72,21 @@ namespace ConsoleApp_Methods
             class5Instance.MethodVoid2(param1: readNumber);
 
             //Call (overloaded) methods from Class5.cs:
-            int result5 = class5Instance.MethodOutput(readNumber);
+            int output ;
+            int result5 = class5Instance.MethodOutput(readNumber, out output);
             Console.WriteLine("You CAN write to console the results of a method that returns a value, like this one: Class5 MethodOutput Result= " + result5);
+            Console.WriteLine("Output: " + output);
             decimal class5methodOverload = class5Instance.MethodOutput(readNumber, .25m);
             Console.WriteLine("Overloading a method is possible if the methods are 'different'. This method returns: " + class5methodOverload);
 
-            //Call a (static) class from Class5.cs: 
+            //Call a (static) method from Class5.cs: 
             Console.WriteLine(Class5.MethodStatic(readNumber));
+
+            //Call a static class from Class6.cs:
+            Class6.StaticMethod();
+            Class6.String1 = "Hello, world";
+            Console.WriteLine(Class6.String1);
+
 
             Console.ReadLine();
         }

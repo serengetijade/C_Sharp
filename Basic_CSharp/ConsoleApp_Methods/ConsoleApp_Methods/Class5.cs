@@ -14,8 +14,12 @@ namespace ConsoleApp_Methods
             Console.WriteLine("You CANNOT write this method to console. Instead, you must include the WriteLine in the method definition...\nMethod with a void parameter result: " + result);
         }
 
-        public int MethodOutput(int param1)
+
+        public int MethodOutput(int param1, out int output)
+        //When you use an output parameter, any value assigned elsewhere, like in Program.cs, gets discarded. So programmers must assign a value INSIDE the method. 
         {
+            output = 100;
+            output++;
             int result = param1 - 1;
             return result;
         }
