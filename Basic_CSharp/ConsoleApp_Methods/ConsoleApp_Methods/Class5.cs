@@ -6,8 +6,7 @@ namespace ConsoleApp_Methods
 {
     class Class5
     {
-        //Define a method(s): 
-        //Syntax: accessModifier optional:returnType dataType functionName(dataType parameter)
+        //Define a method: Syntax: accessModifier optional:returnType dataType functionName(dataType parameter){}
         public void MethodVoid2(int param1)
         {
             double result = param1 / 2;

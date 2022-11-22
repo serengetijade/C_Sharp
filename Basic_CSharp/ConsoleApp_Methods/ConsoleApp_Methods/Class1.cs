@@ -6,8 +6,7 @@ namespace ConsoleApp_Methods
 {
     class Class1
     {
-        //Define a method(s): 
-        //Syntax: accessModifier optional:returnType dataType functionName(dataType parameter)
+        //Define a Method: Syntax: accessModifier optional:returnType dataType functionName(dataType parameter){}
         public static int Method1(int readNumber)
         {
             int even = readNumber % 2;

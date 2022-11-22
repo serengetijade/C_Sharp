@@ -2,18 +2,20 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace ConsoleApp_Methods
+namespace ConsoleApp_MethodsAndObjects
 {
-    static class Class6
-    //A static class CANNOT be instantiated. 
+    public class Person
     {
         //Define a Property: Syntax: accessModifier dataType propertyName { method; method; }   
-        public static string String1 { get; set; }
+        public string FirstName { get; set; }
+        public string LastName { get; set; }
 
         //Define a Method: Syntax: accessModifier optional:returnType dataType functionName(dataType parameter){}
-        public static void StaticMethod()
+        public void SayName()
         {
-            Console.WriteLine("This is a static method");
+            string FullName = FirstName + " " + LastName;
+            Console.WriteLine($"Name: {FullName}");
         }
+
     }
 }

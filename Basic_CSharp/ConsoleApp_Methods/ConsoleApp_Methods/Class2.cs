@@ -7,8 +7,7 @@ namespace ConsoleApp_Methods
     class Class2
     {
         //Method Overloading: multiple methods with the same name, but different contents/parameters/substance
-        //Define a method(s): 
-        //Syntax: accessModifier optional:returnType dataType functionName(dataType parameter)
+        //Define a Method: Syntax: accessModifier optional:returnType dataType functionName(dataType parameter) {}
         public int MethodOverload(int readNumber)
         {
             int result = readNumber - 100;

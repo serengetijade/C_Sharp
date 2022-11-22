@@ -35,7 +35,7 @@ namespace TwentyOneGame
                 }
             }
         }
-        //Define the properties for this class. Syntax: accessModifier dataType propertyName { method; method; }   
+        //Define a Property: Syntax: accessModifier dataType propertyName { method; method; }   
         public List<Card> Cards { get; set; }  //The Cards property (which is a list):
 
         //Define a method with a parameter that has a default value:
