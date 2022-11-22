@@ -16,7 +16,7 @@ namespace TwentyOneGame
             //Card cardOne = new Card();
             //cardOne.Face = "Queen";
             //cardOne.Suit = "Spades";
-            ////Object Initialization: a faster way to initiate an object and assingn values to its properties. Syntax: className instanceName = new className() {property1 = value1, property2 = value2};
+            ////Object Initialization: a faster way to initiate an object and assign values to its properties. Syntax: className instanceName = new className() {property1 = value1, property2 = value2};
             //Card cardOne = new Card() {Face = "King", Suit = "Spades"};              
             ////Console.WriteLine(cardOne.Face + " of " + cardOne.Suit);
 

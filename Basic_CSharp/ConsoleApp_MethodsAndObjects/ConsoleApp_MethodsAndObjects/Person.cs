@@ -6,11 +6,11 @@ namespace ConsoleApp_MethodsAndObjects
 {
     public class Person
     {
-        //Define a Property: Syntax: accessModifier dataType propertyName { method; method; }   
+        //Define a Property- Syntax: accessModifier dataType propertyName { method; method; }   
         public string FirstName { get; set; }
         public string LastName { get; set; }
 
-        //Define a Method: Syntax: accessModifier optional:returnType dataType functionName(dataType parameter){}
+        //Define a Method- Syntax: accessModifier optional:returnType dataType functionName(dataType parameter){}
         public void SayName()
         {
             string FullName = FirstName + " " + LastName;

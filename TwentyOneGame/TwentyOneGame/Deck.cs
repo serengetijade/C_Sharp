@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic; //Required to use lists
 using System.Text;
+using System.Linq;
+using System.Threading.Tasks;
 
 namespace TwentyOneGame
 {
@@ -27,7 +29,7 @@ namespace TwentyOneGame
             {
                  foreach (string suit in Suits)
                 {
-                    //Class Object Syntax: className instanceName = new className();
+                    //Instantiate a Class Object Syntax: className instanceName = new className();
                     Card card = new Card();
                     card.Suit = suit;
                     card.Face = face;
@@ -35,7 +37,7 @@ namespace TwentyOneGame
                 }
             }
         }
-        //Define a Property: Syntax: accessModifier dataType propertyName { method; method; }   
+        //Define a Property Syntax: accessModifier dataType propertyName { method; method; }
         public List<Card> Cards { get; set; }  //The Cards property (which is a list):
 
         //Define a method with a parameter that has a default value:

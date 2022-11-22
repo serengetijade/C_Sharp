@@ -6,8 +6,7 @@ using System.Threading.Tasks;
 
 namespace TwentyOneGame
 {
-    //Define a class and it's properties: 
-    //public means that this class is accessible to other parts of the program. 
+    //'public' means that this class is accessible to other parts of the program. 
     public class Card
     {
         /*//Define a constructor (the default values when an instance of this class is created):
@@ -16,8 +15,7 @@ namespace TwentyOneGame
             Suit = "Spades";
             Face = "Two";
         } */
-        //Define the properties for this class: 
-        //Properties Syntax: public dataType propertyName { method; method; }    
+        //Define a Property- Syntax: accessModifier dataType propertyName { method; method; }
         public string Suit { get; set; }
         public string Face { get; set; }
     }
