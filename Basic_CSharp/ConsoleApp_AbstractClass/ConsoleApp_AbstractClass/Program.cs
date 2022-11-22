@@ -10,6 +10,11 @@ namespace ConsoleApp_AbstractClass
             Employee instance1 = new Employee() { firstName = "Sample", lastName = "Student"};
             //Call a (Employee) Class Medhod: 
             instance1.SayName();
+
+            //Polymorphism: Instantiate an of a new 'derived class' object, then call a Method:
+            IQuittable polyObject = new Employee();
+            polyObject.Quit();
+
             Console.ReadLine();
         }
     }
