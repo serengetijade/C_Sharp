@@ -61,11 +61,25 @@ namespace ConsoleApp_Methods
                 Console.WriteLine("Method with a default parameter result: " + Class3.MethodDefaultParam(readNumber));
             }
 
-            //Call a (void) method:
+            //Call a (void) method from Class4.cs:
             int int1 = 10;
             int int2 = 11;
             Class4 class4Instance = new Class4();
             class4Instance.MethodVoid(param1: int1, param2: int2);
+
+            //Call a (void) method from Class5.cs:
+            Class5 class5Instance = new Class5();
+            class5Instance.MethodVoid2(param1: readNumber);
+
+            //Call (overloaded) methods from Class5.cs:
+            int result5 = class5Instance.MethodOutput(readNumber);
+            Console.WriteLine("You CAN write to console the results of a method that returns a value, like this one: Class5 MethodOutput Result= " + result5);
+            decimal class5methodOverload = class5Instance.MethodOutput(readNumber, .25m);
+            Console.WriteLine("Overloading a method is possible if the methods are 'different'. This method returns: " + class5methodOverload);
+
+            //Call a (static) class from Class5.cs: 
+            Console.WriteLine(Class5.MethodStatic(readNumber));
+
             Console.ReadLine();
         }
     }

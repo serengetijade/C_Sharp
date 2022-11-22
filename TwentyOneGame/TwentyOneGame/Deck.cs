@@ -20,8 +20,7 @@ namespace TwentyOneGame
 
             //Define lists to become property values: 
             List<string> Suits = new List<string>() {"Clubs", "Hearts", "Diamonds", "Spades" };
-            List<string> Faces = new List<string>() 
-                {"Two", "Three", "Four", "Five", "Six", "Seven", "Eight", "Nine", "Ten", "Jack", "Queen", "King", "Ace" };
+            List<string> Faces = new List<string>() {"Two", "Three", "Four", "Five", "Six", "Seven", "Eight", "Nine", "Ten", "Jack", "Queen", "King", "Ace" };
             
             //Use nested foreach loop to create/add objects to 'Cards' list: 
             foreach (string face in Faces)
@@ -39,5 +38,25 @@ namespace TwentyOneGame
         //Define the properties for this class: 
         //Properties Syntax: public dataType propertyName { method; method; }   
         public List<Card> Cards { get; set; }  //The Cards property (which is a list):
+
+        //Define a method with a parameter that has a default value:
+        public void Shuffle(int times = 1)
+        {
+            for (int i = 0; i < times; i++)
+            {
+                //Create a temporary list to store shuffled objects:
+                List<Card> TempList = new List<Card>();
+                Random random = new Random();
+
+                while (Cards.Count > 0)
+                {
+                    int randomIndex = random.Next(0, Cards.Count);
+                    TempList.Add(Cards[randomIndex]);
+                    Cards.RemoveAt(randomIndex);
+                }
+                //this.Cards = TempList;    //this. refers to this method, the class this method inside of
+                Cards = TempList;
+            }   
+        }
     }
 }

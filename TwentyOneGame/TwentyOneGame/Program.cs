@@ -25,11 +25,11 @@ namespace TwentyOneGame
 
             //Instantiate a class object, 'deck' of class 'Deck' from Deck.cs. This has a property named 'Cards', which is a list of 52 cards - defined in Deck.cs
             Deck deck = new Deck();
-
-            int timesShuffled = 0;
-
-            //Reassign the value of deck/apply the shuffle method to it: 
-            deck = Shuffle(deck: deck , out timesShuffled, times: 3);   //Call the third Shuffle method using NAMED parameters
+            deck.Shuffle(3);     //Apply the Shuffle() method to the 'deck' instance of class Deck (as defined in Deck.cs).
+            
+            ////Or to use the Shuffle() method (as defined below), reassign the value of deck/apply the Shuffle() method to it: 
+            //int timesShuffled = 0;
+            //deck = Shuffle(deck: deck , out timesShuffled, times: 3);   //Call the third Shuffle method using NAMED parameters
 
             //Syntax: foreach (className instanceName1 in instanceName2.classConstructor)
             //Syntax breakdown: Card = class defined in Card.cs; card = an instance of class Card as defined in Deck.cs; deck = an instance of class Deck defined above; Cards = list of Card objects as defined in Deck.cs;
@@ -39,12 +39,11 @@ namespace TwentyOneGame
             }
 
             Console.WriteLine(deck.Cards.Count);
-            Console.WriteLine("Times shuffled: {0}", timesShuffled);
             Console.ReadLine();
         }
 
-        ////METHOD 1
-        ////Define a function to use random method and removeAt method to randomize the order of objects in the list: 
+        ////NOTES: METHOD 1
+        ////Define a function to use random method and removeAt method to randomize the order of objects in the (Deck) list: 
         ////Syntax: accessModifier returnType dataType functionName(dataType parameter)
         ////returnType is static so that this method can be called withouth instantiating an object.
         //public static Deck Shuffle(Deck deck)
@@ -76,29 +75,28 @@ namespace TwentyOneGame
         //    return deck;
         //}
 
-        //METHOD 3
-        //Instead of using method overloading, assign a parameter with a default value
-        //Assign an out variable BEFORE optional parameters
-        public static Deck Shuffle(Deck deck, out int timesShuffled, int times = 1)
-        {
-            timesShuffled = 0;
-            for (int i = 0; i < times; i++)
-            {
-                timesShuffled++;
-                //Create a temporary list to store shuffled objects:
-                List<Card> TempList = new List<Card>();
-                //Random method:
-                Random random = new Random();
+        ////METHOD 3
+        ////Assign a parameter with a default value
+        ////Assign an out variable BEFORE optional parameters
+        //public static Deck Shuffle(Deck deck, out int timesShuffled, int times = 1)
+        //{
+        //    timesShuffled = 0;
+        //    for (int i = 0; i < times; i++)
+        //    {
+        //        timesShuffled++;
+        //        //Create a temporary list to store shuffled objects:
+        //        List<Card> TempList = new List<Card>();         
+        //        Random random = new Random();    //Use the Random method
 
-                while (deck.Cards.Count > 0)
-                {
-                    int randomIndex = random.Next(0, deck.Cards.Count);
-                    TempList.Add(deck.Cards[randomIndex]);
-                    deck.Cards.RemoveAt(randomIndex);
-                }
-                deck.Cards = TempList;
-            }
-            return deck;
-        }
+        //        while (deck.Cards.Count > 0)
+        //        {
+        //            int randomIndex = random.Next(0, deck.Cards.Count);
+        //            TempList.Add(deck.Cards[randomIndex]);
+        //            deck.Cards.RemoveAt(randomIndex);
+        //        }
+        //        deck.Cards = TempList;
+        //    }
+        //    return deck;
     }
 }
+
