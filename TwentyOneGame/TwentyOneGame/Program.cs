@@ -10,29 +10,19 @@ namespace TwentyOneGame
     {
         static void Main(string[] args)
         {
-            //NOTES: 
-            ////Syntax: className instanceName = new className();
-            ////Syntax to define a property value: instanceName.propertyName = value;
-            //Card cardOne = new Card();
-            //cardOne.Face = "Queen";
-            //cardOne.Suit = "Spades";
-            ////Object Initialization: a faster way to initiate an object and assign values to its properties. Syntax: className instanceName = new className() {property1 = value1, property2 = value2};
-            //Card cardOne = new Card() {Face = "King", Suit = "Spades"};              
-            ////Console.WriteLine(cardOne.Face + " of " + cardOne.Suit);
-
-
             //Instantiate a TwentyOneGame object:
             TwentyOneGame game = new TwentyOneGame();
+            game.Players = new List<string>() { "Jesse", "Bob", "Bill", "Thomas" };
+            game.ListPlayers();
 
-            ////Instatiate a Deck object and add a Card object to it: 
-            //Deck deck = new Deck();
-            //deck.Cards = new List<Card>();
-            //deck.Cards.Add(cardOne);
+            Console.ReadLine();
+
+
             //Instantiate a class object, 'deck' of class 'Deck' from Deck.cs. This has a property named 'Cards', which is a list of 52 cards - defined in Deck.cs
             Deck deck = new Deck();
             
             deck.Shuffle(3);     //Apply the Shuffle() method to the 'deck' instance of class Deck (as defined in Deck.cs).
-            ////Or to use the Shuffle() method (as defined below), reassign the value of deck/apply the Shuffle() method to it: 
+            ////Instead of deck.Shuffle(#), use the Shuffle() method (as defined below), assign the value of deck/apply the Shuffle() method to it: 
             //int timesShuffled = 0;
             //deck = Shuffle(deck: deck , out timesShuffled, times: 3);   //Call the third Shuffle method using NAMED parameters
 
@@ -45,6 +35,20 @@ namespace TwentyOneGame
 
             Console.WriteLine(deck.Cards.Count);
             Console.ReadLine();
+        
+            //NOTES: 
+            ////Syntax: className instanceName = new className();
+            ////Syntax to define a property value: instanceName.propertyName = value;
+            //Card cardOne = new Card();
+            //cardOne.Face = "Queen";
+            //cardOne.Suit = "Spades";
+            ////Object Initialization: a faster way to initiate an object and assign values to its properties. Syntax: className instanceName = new className() {property1 = value1, property2 = value2};
+            //Card cardOne = new Card() {Face = "King", Suit = "Spades"};              
+            ////Console.WriteLine(cardOne.Face + " of " + cardOne.Suit);
+            ////Instatiate a Deck object and add a Card object to it: 
+            //Deck deck = new Deck();
+            //deck.Cards = new List<Card>();
+            //deck.Cards.Add(cardOne);
         }
 
         ////NOTES: METHOD 1
