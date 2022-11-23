@@ -2,12 +2,14 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace ConsoleApp_MethodsAndObjects
+namespace ConsoleApp_Inheritance
 {
-    public class Employee:Person
+    public class Employee<T>:Person
     //Inherit from Class 'Person'
     {
-        //Define a Property: Syntax: accessModifier dataType propertyName { method; method; }
+        //Add a Property (this class will have the inherited properties AND any defined here): Syntax: accessModifier dataType propertyName { method; method; }
         public int ID { get; set; }
+        public List<T> Things { get; set; }
+
     }
 }

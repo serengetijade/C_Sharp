@@ -10,17 +10,8 @@ namespace TwentyOneGame
     {
         static void Main(string[] args)
         {
-            //Instantiate a (polymorphic) object and assign values to its parameters: 
-            Game game = new TwentyOneGame();   
-            game.Players = new List<Player>();  //Instantiate a 'Players' list (from Game.cs) so that it can be used later. It is made up of 'Player' objects from Player.cs. 
-            Player player = new Player();       //Instantiate a 'Player object (from Player.cs) and name it 'player'
-            player.Name = "Jesse";              //Assign a property value (Name from Player.cs)of the 'player' instance
-            game += player;                     //Shorthand for: game = game + player;   
-            game -= player;                     //Shorthand for: game = game - player;
-
             //Instantiate a class object, 'deck' of class 'Deck' from Deck.cs. This has a property named 'Cards', which is a list of 52 cards - defined in Deck.cs
             Deck deck = new Deck();
-            
             deck.Shuffle(3);                    //Apply the Shuffle() method to the 'deck' instance of class Deck (as defined in Deck.cs).
           
             //Syntax: foreach (className instanceName1 in instanceName2.classConstructor)
@@ -31,6 +22,8 @@ namespace TwentyOneGame
 
             Console.WriteLine(deck.Cards.Count);
             Console.ReadLine();
+
+
 
             //NOTES: 
             ////Syntax: className instanceName = new className();
@@ -51,7 +44,19 @@ namespace TwentyOneGame
             ////Define the property value for the instance 'game':
             //game.Players = new List<string>() { "Jesse", "Bob", "Bill", "Thomas" };
             ////Call a Class Method for this instance object:
-            //game.ListPlayers();
+            //game.ListPlayers(); 
+
+            ////Instantiate a (polymorphic) object and assign values to its parameters: 
+            //Game game = new TwentyOneGame();   
+            //game.Players = new List<Player>();  //Instantiate a 'Players' list (from Game.cs) so that it can be used later. It is made up of 'Player' objects from Player.cs. 
+            //Player player = new Player();       //Instantiate a 'Player object (from Player.cs) and name it 'player'
+            //player.Name = "Jesse";              //Assign a property value (Name from Player.cs)of the 'player' instance
+            //game += player;                     //Shorthand for: game = game + player;   
+            //game -= player;                     //Shorthand for: game = game - player;
+
+            ////Instantiate an object and assign its property value(s) using an enum Type (defined in Card.cs):
+            //Card card = new Card();
+            //card.Suit = Suit.Clubs;
         }
 
         ////NOTES: METHOD 1
