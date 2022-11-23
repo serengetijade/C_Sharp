@@ -10,32 +10,28 @@ namespace TwentyOneGame
     {
         static void Main(string[] args)
         {
-            //Instantiate a TwentyOneGame object:
-            TwentyOneGame game = new TwentyOneGame();
-            game.Players = new List<string>() { "Jesse", "Bob", "Bill", "Thomas" };
-            game.ListPlayers();
-
-            Console.ReadLine();
-
+            //Instantiate a (polymorphic) object and assign values to its parameters: 
+            Game game = new TwentyOneGame();   
+            game.Players = new List<Player>();  //Instantiate a 'Players' list (from Game.cs) so that it can be used later. It is made up of 'Player' objects from Player.cs. 
+            Player player = new Player();       //Instantiate a 'Player object (from Player.cs) and name it 'player'
+            player.Name = "Jesse";              //Assign a property value (Name from Player.cs)of the 'player' instance
+            game += player;                     //Shorthand for: game = game + player;   
+            game -= player;                     //Shorthand for: game = game - player;
 
             //Instantiate a class object, 'deck' of class 'Deck' from Deck.cs. This has a property named 'Cards', which is a list of 52 cards - defined in Deck.cs
             Deck deck = new Deck();
             
-            deck.Shuffle(3);     //Apply the Shuffle() method to the 'deck' instance of class Deck (as defined in Deck.cs).
-            ////Instead of deck.Shuffle(#), use the Shuffle() method (as defined below), assign the value of deck/apply the Shuffle() method to it: 
-            //int timesShuffled = 0;
-            //deck = Shuffle(deck: deck , out timesShuffled, times: 3);   //Call the third Shuffle method using NAMED parameters
-
+            deck.Shuffle(3);                    //Apply the Shuffle() method to the 'deck' instance of class Deck (as defined in Deck.cs).
+          
             //Syntax: foreach (className instanceName1 in instanceName2.classConstructor)
-            //Syntax breakdown: Card = class defined in Card.cs; card = an instance of class Card as defined in Deck.cs; deck = an instance of class Deck defined above; Cards = list of Card objects as defined in Deck.cs;
-            foreach (Card card in deck.Cards)
+            foreach (Card card in deck.Cards)   //Card = class defined in Card.cs; card = an instance of class Card as defined in Deck.cs; deck = an instance of class Deck defined above; Cards = list of Card objects as defined in Deck.cs;
             {
                 Console.WriteLine(card.Face + " of " + card.Suit);
             }
 
             Console.WriteLine(deck.Cards.Count);
             Console.ReadLine();
-        
+
             //NOTES: 
             ////Syntax: className instanceName = new className();
             ////Syntax to define a property value: instanceName.propertyName = value;
@@ -49,6 +45,13 @@ namespace TwentyOneGame
             //Deck deck = new Deck();
             //deck.Cards = new List<Card>();
             //deck.Cards.Add(cardOne);
+
+            ////Instantiate a TwentyOneGame object:
+            //TwentyOneGame game = new TwentyOneGame();
+            ////Define the property value for the instance 'game':
+            //game.Players = new List<string>() { "Jesse", "Bob", "Bill", "Thomas" };
+            ////Call a Class Method for this instance object:
+            //game.ListPlayers();
         }
 
         ////NOTES: METHOD 1
@@ -106,6 +109,11 @@ namespace TwentyOneGame
         //        deck.Cards = TempList;
         //    }
         //    return deck;
+
+        ////Instead of deck.Shuffle(#) as used above, use the Shuffle() method (See NOTES: Method 1, 2, and 3 above), assign the value of deck/apply the Shuffle() method to it: 
+        //int timesShuffled = 0;
+        //deck = Shuffle(deck: deck , out timesShuffled, times: 3);   //Call the third Shuffle method using NAMED parameters
+
     }
 }
 

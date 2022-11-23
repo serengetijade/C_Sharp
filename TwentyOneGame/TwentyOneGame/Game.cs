@@ -11,14 +11,14 @@ namespace TwentyOneGame
     //Naming convention is to keep it generic. This class will have only those properties specific to all games, so it can be reused easily.
     {
         //Define a Property Syntax: accessModifier dataType propertyName { method; method; }   
-        public List<string> Players { get; set; }
+        public List<Player> Players { get; set; }
         public string Name { get; set; }
         public string Dealer { get; set; }
 
         //Define a Method Syntax: accessModifier optional:returnType dataType functionName(dataType parameter){}
         public virtual void ListPlayers()
         {
-            foreach(string player in Players)
+            foreach(Player player in Players)
             {
                 Console.WriteLine(player);
             }
