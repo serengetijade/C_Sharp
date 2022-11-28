@@ -6,7 +6,8 @@ using System.Threading.Tasks;
 
 namespace TwentyOneGame
 {
-    public class Card      
+    //Define a struct Type
+    public struct Card      
     {
         //Define a Property- Syntax: accessModifier Type propertyName { method; method; }  //Usethe enum Type defined below
         public Suit Suit { get; set; }    

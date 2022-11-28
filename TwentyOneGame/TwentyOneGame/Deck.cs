@@ -14,9 +14,9 @@ namespace TwentyOneGame
             //Define a Class Constructor: Instantiate a list object. 'Cards' is an empty list of 'Card' objects, which include any property of the class as defined in Card.cs
             Cards = new List<Card>();
 
-            for (int i = 0; i < 13; i++)
+            for (int i = 0; i < 4; i++)
             {
-                for (int j = 0; j < 4; j++)
+                for (int j = 0; j < 13; j++)
                 {
                     Card card = new Card();
                     card.Face = (Face)j;      //Use explicit casting to change the Type from an int to Face, ie the name of the enumerator

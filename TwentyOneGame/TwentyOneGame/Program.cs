@@ -10,10 +10,12 @@ namespace TwentyOneGame
     {
         static void Main(string[] args)
         {
+            
             //Instantiate a class object, 'deck' of class 'Deck' from Deck.cs. This has a property named 'Cards', which is a list of 52 cards - defined in Deck.cs
             Deck deck = new Deck();
+
             deck.Shuffle(3);                    //Apply the Shuffle() method to the 'deck' instance of class Deck (as defined in Deck.cs).
-          
+
             //Syntax: foreach (className instanceName1 in instanceName2.classConstructor)
             foreach (Card card in deck.Cards)   //Card = class defined in Card.cs; card = an instance of class Card as defined in Deck.cs; deck = an instance of class Deck defined above; Cards = list of Card objects as defined in Deck.cs;
             {
