@@ -8,15 +8,6 @@ namespace TwentyOneGame
 {
     public class Player
     {
-        //Define a constructor (the default values when an instance of this class is created). This constructor requires two property values:
-        public Player(string name, int beginningBalance)
-        {
-            //Assign the values for the properties of this class: the 'operands' of which are defined in Program.cs when a new Player object is created.
-            Hand = new List<Card>();
-            Balance = beginningBalance;
-            Name = name;
-        }
-
         //Define a Property Syntax: accessModifier dataType propertyName { method; method; }
         public List<Card> Hand { get; set;}
         public int Balance { get; set; }

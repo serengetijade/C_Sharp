@@ -10,38 +10,20 @@ namespace TwentyOneGame
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Welcome to the Grand Hotel and Casino. Let's start by telling me your name. ");
-            string playerName = Console.ReadLine();
-            Console.WriteLine("And how much money did you bring today?");
-            int bank = Convert.ToInt32(Console.ReadLine());
-            Console.WriteLine("Hello, {0}. Would you like to join a game of 21?", playerName);
-            string answer = Console.ReadLine().ToLower();
-            if (answer == "yes" || answer == "yeah" || answer == "y" || answer == "ya")
+            //Instantiate a class object, 'deck' of class 'Deck' from Deck.cs. This has a property named 'Cards', which is a list of 52 cards - defined in Deck.cs
+            Deck deck = new Deck();
+
+            deck.Shuffle(3);                    //Apply the Shuffle() method to the 'deck' instance of class Deck (as defined in Deck.cs).
+
+            //Syntax: foreach (className instanceName1 in instanceName2.classConstructor)
+            foreach (Card card in deck.Cards)   //Card = class defined in Card.cs; card = an instance of class Card as defined in Deck.cs; deck = an instance of class Deck defined above; Cards = list of Card objects as defined in Deck.cs;
             {
-                Player player = new Player(playerName, bank);       //Instantiate the constructor (defined in Player.cs) and pass in propery values.
-                Game game = new TwentyOneGame();                    //Instantiate a Game instance using polymorphism (define in GameTwentyOne.cs) to expose the overloaded operators.
-                game += player;                                     //Use the overloaded operator to add player to this game instance.
-                player.isActivelyPlaying = true;                    //Set the 'player' instance property value of 'isActivelyPlaying'(defined in Player.cs) to true.
-                while (player.isActivelyPlaying && player.Balance > 0)
-                {
-                    game.Play();
-                }
+                Console.WriteLine(card.Face + " of " + card.Suit);
             }
 
-                
-            ////Instantiate a class object, 'deck' of class 'Deck' from Deck.cs. This has a property named 'Cards', which is a list of 52 cards - defined in Deck.cs
-            //Deck deck = new Deck();
+            Console.WriteLine(deck.Cards.Count);
+            Console.ReadLine();
 
-            //deck.Shuffle(3);                    //Apply the Shuffle() method to the 'deck' instance of class Deck (as defined in Deck.cs).
-
-            ////Syntax: foreach (className instanceName1 in instanceName2.classConstructor)
-            //foreach (Card card in deck.Cards)   //Card = class defined in Card.cs; card = an instance of class Card as defined in Deck.cs; deck = an instance of class Deck defined above; Cards = list of Card objects as defined in Deck.cs;
-            //{
-            //    Console.WriteLine(card.Face + " of " + card.Suit);
-            //}
-
-            //Console.WriteLine(deck.Cards.Count);
-            //Console.ReadLine();
 
             //NOTES: 
             ////Syntax: className instanceName = new className();

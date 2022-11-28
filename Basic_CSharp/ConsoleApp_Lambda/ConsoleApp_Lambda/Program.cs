@@ -38,14 +38,20 @@ namespace ConsoleApp_Lambda
 
             //FOREACH LOOP TO COUNT A SPECIFIC value
             int counter = 0;
+            List<Employees> loopList1 = new List<Employees>();
             foreach (Employees emp in EmployeesList)
             {
                 if (emp.FirstName == "Joe")
                 {
                     counter++;
+                    loopList1.Add(emp);
                 }
             }
             Console.WriteLine(counter);
+            foreach (Employees obj in loopList1)
+            {
+                Console.WriteLine(obj.FirstName + " ID: " + obj.ID);
+            }
 
             //LAMBDA FUNCTIONs TO MAKE A LIST OF CRITERIA MATCHING A SPECIFIC VALUE
             List<Employees> lambdaList1 = EmployeesList.Where(x => x.FirstName == "Joe").ToList();
