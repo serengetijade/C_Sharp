@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace TwentyOneGame
+namespace TwentyOne
 {
     class Program
     {
@@ -26,9 +26,13 @@ namespace TwentyOneGame
                 {
                     game.Play();
                 }
+                game -= player;
+                Console.WriteLine("Thank you for playing!");
             }
+            Console.WriteLine("Bye for now.");
+            Console.Read();
 
-                
+            //NOTES:     
             ////Instantiate a class object, 'deck' of class 'Deck' from Deck.cs. This has a property named 'Cards', which is a list of 52 cards - defined in Deck.cs
             //Deck deck = new Deck();
 
@@ -43,7 +47,6 @@ namespace TwentyOneGame
             //Console.WriteLine(deck.Cards.Count);
             //Console.ReadLine();
 
-            //NOTES: 
             ////Syntax: className instanceName = new className();
             ////Syntax to define a property value: instanceName.propertyName = value;
             //Card cardOne = new Card();
@@ -136,7 +139,5 @@ namespace TwentyOneGame
         ////Instead of deck.Shuffle(#) as used above, use the Shuffle() method (See NOTES: Method 1, 2, and 3 above), assign the value of deck/apply the Shuffle() method to it: 
         //int timesShuffled = 0;
         //deck = Shuffle(deck: deck , out timesShuffled, times: 3);   //Call the third Shuffle method using NAMED parameters
-
     }
 }
-

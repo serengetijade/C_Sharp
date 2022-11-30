@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace TwentyOneGame
+namespace TwentyOne
 {
     //Define a struct Type
     public struct Card      
@@ -13,13 +13,14 @@ namespace TwentyOneGame
         public Suit Suit { get; set; }    
         public Face Face { get; set; }
 
-        ////NOTES: 
+        //Use override to create a custom ToString() method to return "Face" of "Suit":
+        public override string ToString()
+        {
+            return string.Format("{0} of {1}", Face, Suit);
+        }
+
         ////Define a constructor (the default values when an instance of this class is created):
-        //public Card() 
-        //{
-        //    Suit = "Spades";
-        //    Face = "Two";
-        //} 
+        //public Card() { Suit = "Spades"; Face = "Two";} 
     }
 
     //Define an enum - a set of Types
