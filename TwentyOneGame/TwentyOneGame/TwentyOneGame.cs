@@ -60,7 +60,8 @@ namespace TwentyOne
                         {
                             Console.WriteLine("Blackjack! {0} wins {1}!", player.Name, Bets[player]);
                             player.Balance += Convert.ToInt32(Bets[player] * 1.5 + Bets[player]);     //If a player gets blackjack, they get this added to their player.Balance
-                            //Bets.Remove(player);    //Remove him from the list of players to ensure he doesn't get paid out again if the dealer busts.
+                            Console.WriteLine($"Your balance is: {player.Balance}");
+                            //Bets.Remove(player);    //Remove player instance from the list of players to ensure he doesn't get paid out again if the dealer busts.
                             return;                 //End the round if the player gets blackjack.
                         }
                     }
@@ -79,6 +80,7 @@ namespace TwentyOne
                             {
                                 Dealer.Balance += obj.Value;
                             }
+                            Console.WriteLine($"Your balance is: {player.Balance}");
                             //After the dealer gets blackjack, ask the player if they want to keep playing: 
                             Console.WriteLine("Play again?");
                             string answer = Console.ReadLine().ToLower();
@@ -166,6 +168,7 @@ namespace TwentyOne
                 //After the dealer busts, ask the player if they want to keep playing: 
                 foreach (Player player in Players)
                 {
+                    Console.WriteLine($"Your balance is: {player.Balance}");
                     Console.WriteLine("Play again?");
                     string answer = Console.ReadLine().ToLower();
                     if (answer == "yes" || answer == "yeah" || answer == "y" || answer == "ya")
@@ -202,6 +205,7 @@ namespace TwentyOne
                     Console.WriteLine("The Dealer wins {0}.", Bets[player]);       //Recall: Bets[player] is the key to acces the value of the Bets dictionary, which is the amount the player bet above.
                     Dealer.Balance += Bets[player];        //Add the bet value to the dealer's .Balance.
                 }
+                Console.WriteLine($"Your balance is: {player.Balance}");
 
                 //Ask the player if they want to keep playing: 
                 Console.WriteLine("Play again?");

@@ -9,7 +9,8 @@ namespace TwentyOne
     public class Deck
     {
         //Define a Property Syntax: accessModifier dataType propertyName { method; method; }
-        public List<Card> Cards { get; set; }  //The Cards property (which is a list):
+        private List<Card> _cards = new List<Card>();
+        public List<Card> Cards { get { return _cards; } set { _cards = value; } }  
 
         //Define a class Method:
         public Deck()
