@@ -23,7 +23,8 @@ namespace TwentyOne
             //Write each card delt to a txt file:
             using (StreamWriter file = new StreamWriter(@"C:\Users\jad24\Documents\Coding Projects\C_Sharp\TwentyOneGame\TwentyOneGame\log.txt", true))
             {
-                file.WriteLine(card);
+                file.WriteLine(DateTime.Now);       //Use DateTime with .Now method to create a "timestamp".
+                file.WriteLine(card);                
             }
             Deck.Cards.RemoveAt(0);  //Use RemoveAt() method to remove an object from a list at a given index location, in this case it is the zero index (the first) object that was 'dealt out'.
         }
