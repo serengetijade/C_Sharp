@@ -2,7 +2,8 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace TwentyOne
+//Create another Namespace:
+namespace TwentyOne.Interfaces       
 {
     interface IWalkAway
     {
