@@ -1,9 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using TwentyOne.Interfaces;  //Access another namespace
+using ClassLibrary_Casino.Interfaces;  //Access another namespace
 
-namespace TwentyOne
+namespace ClassLibrary_Casino.TwentyOne
 {
     //Inherit from Game Class: 
     public class TwentyOneGame : Game, IWalkAway

@@ -6,7 +6,7 @@ using System.Text;
 //This class contains all the 'rules' for the TwentyOne Game: methods that can be called elsewhere.
 //Because these methods/objects/properties are only going to be used inside of this class, they are all have the 'private' access modifier.
 
-namespace TwentyOne
+namespace ClassLibrary_Casino.TwentyOne
 {
     public class TwentyOneRules
     {

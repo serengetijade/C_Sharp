@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Text;
 
 //Create another Namespace:
-namespace TwentyOne.Interfaces       
+namespace ClassLibrary_Casino.Interfaces
 {
     interface IWalkAway
     {

@@ -1,4 +1,7 @@
 ﻿using System;
+using ClassLibrary_Casino;
+using ClassLibrary_Casino.TwentyOne;
+using System.IO;
 
 namespace TwentyOne
 {
@@ -15,6 +18,13 @@ namespace TwentyOne
             if (answer == "yes" || answer == "yeah" || answer == "y" || answer == "ya")
             {
                 Player player = new Player(playerName, bank);       //Instantiate the constructor (defined in Player.cs) and pass in propery values.
+                player.Id = Guid.NewGuid();                         //Define a property value for this instance's 'Id' property (defined in Player.cs).
+                //Log the player's Guid to a .txt file:
+                using (StreamWriter file = new StreamWriter(@"C:\Users\jad24\Documents\Coding Projects\C_Sharp\TwentyOneGame\TwentyOneGame\log.txt", true))
+                {
+                    file.WriteLine(player.Id);
+                }
+                
                 Game game = new TwentyOneGame();                    //Instantiate a Game instance using polymorphism (define in GameTwentyOne.cs) to expose the overloaded operators.
                 game += player;                                     //Use the overloaded operator to add player to this game instance.
                 player.isActivelyPlaying = true;                    //Set the 'player' instance property value of 'isActivelyPlaying'(defined in Player.cs) to true.

@@ -4,10 +4,15 @@ using System.Text;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace TwentyOne
+namespace ClassLibrary_Casino
 {
     public class Player
     {
+        //Define a constructor call chain (the default values when an instance of this class is created, but using another constructor, defined below). This constructor requires one property values: name, and the second (beginning balance) is defined by a default value of 100.
+        public Player(string name) : this(name, 100)
+        {
+        }
+
         //Define a constructor (the default values when an instance of this class is created). This constructor requires two property values:
         public Player(string name, int beginningBalance)    //name and beginning balance get passed in from Program.cs when called there.
         {
@@ -24,6 +29,7 @@ namespace TwentyOne
         public string Name { get; set; }
         public bool isActivelyPlaying { get; set; }
         public bool Stay { get; set; }
+        public Guid Id { get; set; }    //Create a unique Guid for each Player
 
         //Define a Method Syntax: accessModifier optional:returnType Type functionName(dataType parameter){}
         public bool Bet(int amount)

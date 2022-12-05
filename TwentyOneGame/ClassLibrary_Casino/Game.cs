@@ -4,7 +4,7 @@ using System.Text;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace TwentyOne
+namespace ClassLibrary_Casino
 {
     public abstract class Game
     //Game is a base (abstract) class.
