@@ -29,10 +29,21 @@ namespace ClassLibrary_Casino.TwentyOne
             Dealer.Deck.Shuffle();                  //Apply the .Shuffle method to the Deck property.
 
             //Collect bet information from the player and add it to Bets dictionary:
-            Console.WriteLine("Place your bet!");
             foreach (Player player in Players)
             {
-                int bet = Convert.ToInt32(Console.ReadLine());
+                //Exception handling: with boolean, TryParse, and a while loop
+                bool validAnswer = false;
+                int bet = 0;
+                while (!validAnswer)
+                {
+                    Console.WriteLine("Place your bet!");
+                    validAnswer = int.TryParse(Console.ReadLine(), out bet);
+                    if (!validAnswer) Console.WriteLine("Please enter whole numbers only.");
+                }
+                if (bet < 0)
+                {
+                    throw new FraudException();
+                }
                 bool successfullyBet = player.Bet(bet);     //Pass the amount the player enters into the Bet method (defined in Player.cs)
                 if (!successfullyBet)
                 {

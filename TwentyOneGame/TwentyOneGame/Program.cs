@@ -9,10 +9,19 @@ namespace TwentyOne
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Welcome to the Grand Hotel and Casino. Let's start by telling me your name. ");
+            Console.WriteLine("Welcome to the Grand Hotel and Casino. \nLet's start by telling me your name. ");
             string playerName = Console.ReadLine();
-            Console.WriteLine("And how much money did you bring today?");
-            int bank = Convert.ToInt32(Console.ReadLine());
+
+            //Exception handling: with boolean, TryParse, and a while loop
+            bool validAnswer = false;
+            int bank = 0;
+            while (!validAnswer)
+            {
+                Console.WriteLine("And how much money did you bring today?");
+                validAnswer = int.TryParse(Console.ReadLine(), out bank);    //TryParse is a method that has required out parameters (input*, out variableName);  *input may be a Console.ReadLine(), or another variable
+                if (!validAnswer) Console.WriteLine("Please enter whole numbers only.");
+            }
+
             Console.WriteLine("Hello, {0}. Would you like to join a game of 21?", playerName);
             string answer = Console.ReadLine().ToLower();
             if (answer == "yes" || answer == "yeah" || answer == "y" || answer == "ya")
@@ -30,7 +39,22 @@ namespace TwentyOne
                 player.isActivelyPlaying = true;                    //Set the 'player' instance property value of 'isActivelyPlaying'(defined in Player.cs) to true.
                 while (player.isActivelyPlaying && player.Balance > 0)
                 {
-                    game.Play();
+                    try
+                    {
+                        game.Play(); 
+                    }
+                    catch (FraudException) //Best practice is to be as specific as possible with exceptions. And to start with the most specific, before the generic "Exception".
+                    {
+                        Console.WriteLine("Fraud alert! Security will be notified.");
+                        Console.ReadLine();
+                        return; 
+                    }
+                    catch (Exception)
+                    {
+                        Console.WriteLine("An error occured. Please contact your system administrator.");
+                        Console.ReadLine();
+                        return; //when you type return in a void method, it ends the method.
+                    }
                 }
                 game -= player;
                 Console.WriteLine("Thank you for playing!");

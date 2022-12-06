@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Collections.Generic; //required for Lists
-
+using ConsoleApp_ExceptionHandling;
 
 namespace ExceptionHandling
 {
@@ -46,11 +46,11 @@ namespace ExceptionHandling
             List<int> numbers = new List<int>() { 1, 2, 33, 4, 5, 66, 7, 8, 99, 10 };
             try
             {
-                Console.WriteLine("Pleas enter a number");
-                decimal divisor = Convert.ToDecimal(Console.ReadLine());
+                Console.WriteLine("Please enter a number");
+                decimal number = Convert.ToDecimal(Console.ReadLine());
                 for (int i = 0; i < numbers.Count; i ++)
                 {
-                    Console.WriteLine(i / divisor);
+                    Console.WriteLine(numbers[i] / number);
                     //If 0 is entered: System.DivideByZeroException: 'Attempted to divide by zero.'
                     //If a string is entered: System.FormatException: 'Input string was not in a correct format.' 
                 }
@@ -70,9 +70,44 @@ namespace ExceptionHandling
             finally
             {
                 Console.WriteLine("Math is fun.");
-                Console.ReadLine();
             }
 
+            //Exception handling with Booleans and TryParse and while loop:
+            bool validAnswer = false;
+            int age = 0;
+            try
+            {
+                while (!validAnswer)
+                {
+                    Console.WriteLine("What is your age?");
+                    validAnswer = int.TryParse(Console.ReadLine(), out age);    //TryParse is a method that has required out parameters (input*, out variableName);  *input may be a Console.ReadLine(), or another variable
+                    if (!validAnswer) Console.WriteLine("Please enter whole numbers only (no decimals).");
+                    else validAnswer= true;
+                }
+                if (age < 0)
+                {
+                    throw new NumberException();
+                }
+                else
+                {
+                    //DateTime Syntax: DateTime variableName = new DateTime(year, mo, day, hour, min, second);
+                    DateTime dt = DateTime.Now;
+                    int currentYear = dt.Year;
+                    Console.WriteLine("You were (probably) born in: " + (currentYear - age));
+                }
+            }
+            catch (NumberException) //Best practice is to be as specific as possible with exceptions. And to start with the most specific, before the generic "Exception".
+            {
+                Console.WriteLine("You did not enter a valid age.\nGoodbye");
+                Console.ReadLine();
+                return;
+            }
+            catch (Exception)
+            {
+                Console.WriteLine("An error occured. Please contact your system administrator.\nGoodbye");
+                Console.ReadLine();
+                return;  //when you type return in a void method, it ends the method.
+            }
         }
     }
 }
