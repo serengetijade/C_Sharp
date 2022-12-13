@@ -1,19 +1,16 @@
 ﻿@model IEnumerable<Car_Insurance.Models.Insuree>
 
-<div class="row no-gutters" m-3>
+<div class="row no-gutters">
     <div class="card col-sm-12 col-md-10 col-lg-6 mx-auto shadow">
         <div class="card-header text-center">
-            <h5 class="m-0">Insurees</h5>
+            <h5 class="m-0">Insurance Quotes</h5>
         </div>
         <div class="card-body">
             @foreach (var insuree in Model)
             {
                 <div class="row mb">
-                    <div class="col-2">
-                        @insuree.FirstName
-                    </div>
                     <div class="col">
-                        @insuree.LastName
+                        @insuree.FirstName @insuree.LastName
                     </div>
                     <div class="col">
                         @insuree.EmailAddress
@@ -21,11 +18,10 @@
                     <div class="col">
                         @insuree.Quote
                     </div>
-                    <div class="col">
-                        <button type="submit" class="btn btn-danger btn-block">Delete</button>
-                    </div>
+                    <hr />
                 </div>
             }
+           
         </div>
     </div>
 </div>
