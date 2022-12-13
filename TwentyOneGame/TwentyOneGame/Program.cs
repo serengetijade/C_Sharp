@@ -1,7 +1,10 @@
 ﻿using System;
-using ClassLibrary_Casino;
-using ClassLibrary_Casino.TwentyOne;
+using ClassLibrary_Casino;          //Custom Library
+using ClassLibrary_Casino.TwentyOne;//Custom Library subclass
 using System.IO;
+using System.Data.SqlClient;        //SQL
+using System.Data;                  //SQL
+using System.Collections.Generic;   //Lists
 
 namespace TwentyOne
 {
@@ -11,6 +14,21 @@ namespace TwentyOne
         {
             Console.WriteLine("Welcome to the Grand Hotel and Casino. \nLet's start by telling me your name. ");
             string playerName = Console.ReadLine();
+            if (playerName.ToLower() == "admin")  //Show a list of exceptions to admin:
+            {
+                //Create a list of the entities pulled from the DB, and call the ReadExceptions method:
+                List<ExceptionEntity> Exceptions = ReadExceptions();   //defined below)
+                foreach (var exception in Exceptions)
+                {
+                    Console.Write(exception.ID + " | ");
+                    Console.Write(exception.ExceptionType + " | ");
+                    Console.Write(exception.ExceptionMessage + " | ");
+                    Console.Write(exception.TimeStamp + " | ");
+                    Console.WriteLine();
+                }
+                Console.Read();
+                return;
+            }
 
             //Exception handling: with boolean, TryParse, and a while loop
             bool validAnswer = false;
@@ -43,15 +61,17 @@ namespace TwentyOne
                     {
                         game.Play(); 
                     }
-                    catch (FraudException) //Best practice is to be as specific as possible with exceptions. And to start with the most specific, before the generic "Exception".
+                    catch (FraudException ex) //Best practice is to be as specific as possible with exceptions. And to start with the most specific, before the generic "Exception".
                     {
-                        Console.WriteLine("Fraud alert! Security will be notified.");
+                        Console.WriteLine(ex.Message);     //When this exception occurs, write the message associate with that instance (defined in TwentyOneGame.cs).
+                        UpdateDBWithException(ex);
                         Console.ReadLine();
                         return; 
                     }
-                    catch (Exception)
+                    catch (Exception ex)
                     {
                         Console.WriteLine("An error occured. Please contact your system administrator.");
+                        UpdateDBWithException(ex);
                         Console.ReadLine();
                         return; //when you type return in a void method, it ends the method.
                     }
@@ -108,6 +128,61 @@ namespace TwentyOne
             ////Instantiate an object and assign its property value(s) using an enum Type (defined in Card.cs):
             //Card card = new Card();
             //card.Suit = Suit.Clubs;
+        }
+
+        private static void UpdateDBWithException(Exception ex)  
+        //private makes this only accessible to objects of this class. static means programmer does not have to instantiate an object to use this class. void means that this method doesn't return anything. 
+        {
+            string connectionString = @"Data Source = (localdb)\MSSQLLocalDB; Initial Catalog = TwentyOneGame; Integrated Security = True; Connect Timeout = 30; Encrypt = False; TrustServerCertificate = False; ApplicationIntent = ReadWrite; MultiSubnetFailover = False";
+
+            string queryString = @"INSERT INTO Exceptions (ExceptionType, ExceptionMessage, TimeStamp) VALUES
+                                    (@ExceptionType, @ExceptionMessage, @TimeStamp)";        //Use @whatever as parameterized queries. @whatever is a placeholder, then ADO.NET will create parameters that map in to those placeholders.. 
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                //SQL Command Syntax: SqlCommand variable = new SqlCommand(queryString, connection);
+                SqlCommand command = new SqlCommand(queryString, connection);
+                //Data Type Syntax: variable.Parameters.Add("@ParameterName", SqlDbType.Type*) *the SQL type, NOT the C# type
+                command.Parameters.Add("@ExceptionType", SqlDbType.VarChar);
+                command.Parameters.Add("@ExceptionMessage", SqlDbType.VarChar);
+                command.Parameters.Add("@TimeStamp", SqlDbType.DateTime);
+                //Add Parameter values Syntax: variable.Parameters["@ParameterName"].Value = 
+                command.Parameters["@ExceptionType"].Value = ex.GetType().ToString();
+                command.Parameters["@ExceptionMessage"].Value = ex.Message;
+                command.Parameters["@TimeStamp"].Value = DateTime.Now;
+
+                //Open connection, execute command, and close connection:
+                connection.Open();
+                command.ExecuteNonQuery();       //Because it is an insert statement, it is non-query
+                connection.Close();
+            }
+        }
+
+        private static List<ExceptionEntity> ReadExceptions()
+        {
+            string connectionString = @"Data Source = (localdb)\MSSQLLocalDB; Initial Catalog = TwentyOneGame; Integrated Security = True; Connect Timeout = 30; Encrypt = False; TrustServerCertificate = False; ApplicationIntent = ReadWrite; MultiSubnetFailover = False";
+
+            string queryString = @"Select Id, ExceptionType, Exceptionmessage, TimeStamp FROM Exceptions";
+
+            List<ExceptionEntity> Exceptions = new List<ExceptionEntity>();
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                SqlCommand command = new SqlCommand(queryString, connection);  //create new SQL command object. This is NOT a parameterized query.
+
+                //Open connection, execute command, and close connection:
+                connection.Open();
+                SqlDataReader reader = command.ExecuteReader();  //Instantiate a SQLDataRead object and assign it (by applying to this instance) the built in method ExecuteReader()
+                while (reader.Read())  //Loop through each record. For each record, do the following:  
+                {
+                    ExceptionEntity exception = new ExceptionEntity();  //Create a new object (defined in ExceptionEntity.cs)
+                    exception.ID = Convert.ToInt32(reader["ID"]);  //Map what is read from the DB to this instance's parameters (defined in ExceptionEntity.cs)
+                    exception.ExceptionType = reader["ExceptionType"].ToString();
+                    exception.ExceptionMessage = reader["ExceptionMessage"].ToString();
+                    exception.TimeStamp = Convert.ToDateTime(reader["TimeStamp"]);
+                    Exceptions.Add(exception);  //Add this instance (and all its parameter details) to the Exceptions lists created above. 
+                }
+                connection.Close();
+            }
+            return Exceptions;
         }
 
         ////NOTES: METHOD 1

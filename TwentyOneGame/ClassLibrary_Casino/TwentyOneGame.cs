@@ -42,7 +42,7 @@ namespace ClassLibrary_Casino.TwentyOne
                 }
                 if (bet < 0)
                 {
-                    throw new FraudException();
+                    throw new FraudException("Fraud Alert! Security will be called!");      //throw this exception and pass in a message. 
                 }
                 bool successfullyBet = player.Bet(bet);     //Pass the amount the player enters into the Bet method (defined in Player.cs)
                 if (!successfullyBet)
