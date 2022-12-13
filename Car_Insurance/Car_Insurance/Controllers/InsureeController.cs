@@ -132,16 +132,17 @@ namespace Car_Insurance.Controllers
             using (db_InsuranceEntities db = new db_InsuranceEntities())
             {
                 decimal rateQuote = 50;
+                //decimal age = new DateTime(DateTime.Now.Subtract(insuree.DateOfBirth).Ticks).Year-1;
                 //TimeSpan age = (TimeSpan)(insuree.DateOfBirth - DateTime.Now);
-                decimal age = new DateTime(DateTime.Now.Subtract(insuree.DateOfBirth).Ticks).Year;
+                var age = DateTime.Now.Year - insuree.DateOfBirth.Year;
                 if (age <= 18) rateQuote += 100;
-                if (age <= 25) rateQuote += 50;
-                else if (age >= 26) rateQuote += 25;
+                else if (age >= 19 && age <= 25) rateQuote += 50;
+                else rateQuote += 25;
                 if (insuree.CarYear < 2000) rateQuote += 25;
                 else if (insuree.CarYear > 2015) rateQuote += 25;
                 if (insuree.CarMake == "Porsche") rateQuote += 25;
                 if (insuree.CarMake == "Porsche" && insuree.CarModel == "911 Carrera") rateQuote += 25;
-                rateQuote += insuree.SpeedingTickets * 10;
+                if (insuree.SpeedingTickets > 0) rateQuote += insuree.SpeedingTickets * 10;
                 if (insuree.DUI) rateQuote = rateQuote * 1.25m;
                 if (insuree.CoverageType) rateQuote = rateQuote * 1.50m;
                 insuree.Quote = rateQuote;
