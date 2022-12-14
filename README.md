@@ -30,7 +30,7 @@ a fun console application that takes in user input and creates a short madlib st
 a console application to recreate the popular game of Twenty One, aka Black Jack. 
 
 #### [Database First Web App](https://github.com/serengetijade/C_Sharp/tree/main/Car_Insurance/Car_Insurance)
-a Web Application to calculate Car Insurance Rates. It was created using a database first approach- defining the database and usign Entity Framework. 
+a Web Application to calculate Car Insurance Rates. It was created using a database first approach with Entity Framework. 
 It uses HTML form inputs with if and boolean statements to calculate the rate.
 - CRUD functionality. Rates update when changes to the records are made. 
 - An Admin page displays DB records.
