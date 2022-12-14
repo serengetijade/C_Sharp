@@ -21,7 +21,7 @@ the barebones skeleton of an Model View Controller design framework to demonstra
 #### [MadLib Game](https://github.com/serengetijade/C_Sharp/blob/main/MadLibGame/MadLibGame/Program.cs)
 a fun console application that takes in user input and creates a short madlib story. It shows basic C# functionality including assigning data types, switch statements, foreach loops, boolean values, and more. It's fun, you should try it.
 
-![MadLib Game Preview]()
+![MadLib Game Preview](https://github.com/serengetijade/C_Sharp/blob/main/ReadMe/MadLibGame.jpg)
 
 #### [WebApp Tutorial](https://github.com/serengetijade/C_Sharp/tree/main/WebAppTutorial)
 a 15 minute mini project to demonstrate how C# scaffolding can make spinning up a basic web page super quick and easy. It has a few basic HTML elements, uses a shared Layout page with navigation bar, and implements CSS and JavaScript. 
