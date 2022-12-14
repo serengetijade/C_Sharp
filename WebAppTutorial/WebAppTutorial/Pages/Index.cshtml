@@ -1,13 +1,19 @@
 ﻿@page
 @model IndexModel
 @{
-    ViewData["Title"] = "Jade's Basic Page";
+    ViewData["Title"] = "Basic HTML Page";
 }
 
 <div class="text-center">
     <h1 class="display-4" id="hello_world" onmouseover="newColor()" onmouseout="oldColor()">Hello, World</h1>
     <iframe width="560" height="315" src="https://www.youtube.com/embed/XkgyOZxIw0k" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
     <br />
-    <button type="button" onclick="imgAnimation()">???</button>
+    <button type="button" onclick="imgAnimation()">What does this do?</button>
     <img src="~/img/dragonfly.png" id="dragonfly" style="z-index: -1">
+    <hr />
+    <p>Individual pages are coded with HTML and stored in the Pages file. 
+        <br />Index.cshtml is the "home" page that is loaded by default. 
+        <br />The nav bar is coded in Pages/Shared/_Layout.cshtml.
+        <br />The wwwroot folder holds css, javascript, and image files. 
+    </p>
 </div>
