@@ -3,8 +3,10 @@ This repository is for C# and .NET projects
 
 ## PROJECTS:
 - [MVC Signup Form](https://github.com/serengetijade/C_Sharp/tree/main/MVC_SignupForm/MVC_SignupForm)
-- [MVC Project](https://github.com/serengetijade/C_Sharp/tree/main/MVC_Project/MVC_Project)
+- [MVC Basic Project](https://github.com/serengetijade/C_Sharp/tree/main/MVC_Project/MVC_Project)
 - [MadLib Game](https://github.com/serengetijade/C_Sharp/blob/main/MadLibGame/MadLibGame/Program.cs)
+- [Database First Web App](https://github.com/serengetijade/C_Sharp/tree/main/Car_Insurance/Car_Insurance)
+- [Code First Web App](https://github.com/serengetijade/C_Sharp/tree/main/CodeFirst_ConsoleApp/548Challenge)
 - [WebApp Tutorial](https://github.com/serengetijade/C_Sharp/tree/main/WebAppTutorial)
 
 #### [MVC Signup Form](https://github.com/serengetijade/C_Sharp/tree/main/MVC_SignupForm/MVC_SignupForm)
@@ -15,13 +17,22 @@ a signup form Web Application made using the entity framework and the Model View
 - View Models are used to keep sensitive information out of views.
 - Applied lambda expressions and built-in .Where method to pass only relevent database records to the view.
 
-#### [MVC Project](https://github.com/serengetijade/C_Sharp/tree/main/MVC_Project/MVC_Project)
-the barebones skeleton of an Model View Controller design framework to demonstrate how to create model objects, add views, and use Razor tags with C# code.
+#### [MVC Basic Project](https://github.com/serengetijade/C_Sharp/tree/main/MVC_Project/MVC_Project)
+the basic structure of an Model View Controller design framework to demonstrate how to create model objects, add views, and use Razor tags with C# code.
 
 #### [MadLib Game](https://github.com/serengetijade/C_Sharp/blob/main/MadLibGame/MadLibGame/Program.cs)
 a fun console application that takes in user input and creates a short madlib story. It shows basic C# functionality including assigning data types, switch statements, foreach loops, boolean values, and more. It's fun, you should try it.
 
 ![MadLib Game Preview](https://github.com/serengetijade/C_Sharp/blob/main/ReadMe/MadLibGame.jpg)
+
+#### [Database First Web App](https://github.com/serengetijade/C_Sharp/tree/main/Car_Insurance/Car_Insurance)
+a Web Application to calculate Car Insurance Rates. It was created using a database first approach- defining the database and usign Entity Framework. 
+It uses HTML form inputs with if and boolean statements to calculate the rate.
+- CRUD functionality. Rates update when changes to the records are made. 
+- An Admin page displays DB records.
+
+#### [Code First Web App](https://github.com/serengetijade/C_Sharp/tree/main/CodeFirst_ConsoleApp/548Challenge)
+A very basic spinup of a web application to demonstrate using coded models to build a database with Entity Framework.
 
 #### [WebApp Tutorial](https://github.com/serengetijade/C_Sharp/tree/main/WebAppTutorial)
 a 15 minute mini project to demonstrate how C# scaffolding can make spinning up a basic web page super quick and easy. It has a few basic HTML elements, uses a shared Layout page with navigation bar, and implements CSS and JavaScript. 
