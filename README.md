@@ -2,10 +2,22 @@
 This repository is for C# and .NET projects
 
 ## PROJECTS:
+- [MVC Signup Form Project](https://github.com/serengetijade/C_Sharp/tree/main/MVC_NewsletterWebApp/MVC_NewsletterWebApp)
+- [MVC Project](https://github.com/serengetijade/C_Sharp/tree/main/MVC_Project/MVC_Project)
 - [WebApp Tutorial](https://github.com/serengetijade/C_Sharp/tree/main/WebAppTutorial)
 
+#### [MVC Signup Form Project](https://github.com/serengetijade/C_Sharp/tree/main/MVC_NewsletterWebApp/MVC_NewsletterWebApp)
+a basic Model View Controller Web application, but with added CRUD functionality. It uses HTML forms to create and modify records.
+- An Admin page displays DB records.
+- An HTML form applies a method to "unsubscribe" records from the admin page. 
+- View Models are used to keep sensitive information out of views.
+- Applied lambda expressions and built-in .Where method to pass only relevent database records to the view.
+
+#### [MVC Project](https://github.com/serengetijade/C_Sharp/tree/main/MVC_Project/MVC_Project)
+the barebones skeleton of an Model View Controller design framework to demonstrate how to create model objects, add views, and use Razor tags with C# code.
+
 #### [WebApp Tutorial](https://github.com/serengetijade/C_Sharp/tree/main/WebAppTutorial)
-an example of a 15 minute project to demonstrate how C# scaffolding can make spinning up a basic web page super quick and easy. It has a few basic HTML elements, uses a shared Layout page with navigation bar, and implements CSS and JavaScript. 
+a 15 minute mini project to demonstrate how C# scaffolding can make spinning up a basic web page super quick and easy. It has a few basic HTML elements, uses a shared Layout page with navigation bar, and implements CSS and JavaScript. 
 
 ![WebApp Tutorial Preview](https://github.com/serengetijade/C_Sharp/blob/main/ReadMe/WebAppTutorial.jpg)
 
