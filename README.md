@@ -4,6 +4,7 @@ This repository is for C# and .NET projects
 ## PROJECTS:
 - [MVC Signup Form](https://github.com/serengetijade/C_Sharp/tree/main/MVC_SignupForm/MVC_SignupForm)
 - [MVC Basic Project](https://github.com/serengetijade/C_Sharp/tree/main/MVC_Project/MVC_Project)
+- [Twenty One Game](https://github.com/serengetijade/C_Sharp/tree/main/TwentyOneGame)
 - [MadLib Game](https://github.com/serengetijade/C_Sharp/blob/main/MadLibGame/MadLibGame/Program.cs)
 - [Database First Web App](https://github.com/serengetijade/C_Sharp/tree/main/Car_Insurance/Car_Insurance)
 - [Code First Web App](https://github.com/serengetijade/C_Sharp/tree/main/CodeFirst_ConsoleApp/548Challenge)
@@ -24,6 +25,9 @@ the basic structure of an Model View Controller design framework to demonstrate 
 a fun console application that takes in user input and creates a short madlib story. It shows basic C# functionality including assigning data types, switch statements, foreach loops, boolean values, and more. It's fun, you should try it.
 
 ![MadLib Game Preview](https://github.com/serengetijade/C_Sharp/blob/main/ReadMe/MadLibGame.jpg)
+
+#### [Twenty One Game](https://github.com/serengetijade/C_Sharp/tree/main/TwentyOneGame)
+a console application to recreate the popular game of Twenty One, aka Black Jack. 
 
 #### [Database First Web App](https://github.com/serengetijade/C_Sharp/tree/main/Car_Insurance/Car_Insurance)
 a Web Application to calculate Car Insurance Rates. It was created using a database first approach- defining the database and usign Entity Framework. 
@@ -54,7 +58,7 @@ In addition to the projects, there is a small code library for referencing basic
 - [Methods](https://github.com/serengetijade/C_Sharp/tree/main/Basic_CSharp/ConsoleApp_Methods/ConsoleApp_Methods) The basics of C# methods. 
 - [Methods and Objects](https://github.com/serengetijade/C_Sharp/tree/main/Basic_CSharp/ConsoleApp_MethodsAndObjects/ConsoleApp_MethodsAndObjects) How to declare objects and their properties, instantiate objects, use var variables, and define methods.
 - [Overloaded Operators](https://github.com/serengetijade/C_Sharp/tree/main/Basic_CSharp/ConsoleApp_OverloadOperators/ConsoleApp_OverloadOperators) A coding approach to provide custom implementation of an operation in case one or both of the operands are of that type. 
-- [Strings](https://github.com/serengetijade/C_Sharp/blob/main/Basic_CSharp/ConsoleApp_Strings/ConsoleApp_Strings/Program.cs)
+- [Strings](https://github.com/serengetijade/C_Sharp/blob/main/Basic_CSharp/ConsoleApp_Strings/ConsoleApp_Strings/Program.cs) The basics of using this common data type.
 - [Structs](https://github.com/serengetijade/C_Sharp/tree/main/Basic_CSharp/ConsoleApp_Structs/ConsoleApp_Structs) A structure is a value Type used to make a single variable that holds related data of various data types. 
 - [Switch](https://github.com/serengetijade/C_Sharp/blob/main/Basic_CSharp/ConsoleApp_Switch/ConsoleApp_Switch/Program.cs) The basics of branching statemetns with the switch keyword. 
 
