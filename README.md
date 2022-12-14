@@ -29,12 +29,17 @@ a fun console application that takes in user input and creates a short madlib st
 #### [Twenty One Game](https://github.com/serengetijade/C_Sharp/tree/main/TwentyOneGame)
 a console application to recreate the popular game of Twenty One, aka Black Jack. This project creates a library that is meant to be leveraged to other card games. The coding is generic to allow for future customization and reuse.
 - Calculated hand values using lambda functions.
+- Created multiple classes.
+- Implement class constructors.
+- Used overloaded operators to add players.
+- Made dll files. 
 
 #### [Database First Web App](https://github.com/serengetijade/C_Sharp/tree/main/Car_Insurance/Car_Insurance)
 a Web Application to calculate Car Insurance Rates. It was created using a database first approach with Entity Framework. 
 It uses HTML form inputs with if and boolean statements to calculate the rate.
 - CRUD functionality. Rates update when changes to the records are made. 
 - An Admin page displays DB records.
+- Used MVC design framework.
 
 #### [Code First Web App](https://github.com/serengetijade/C_Sharp/tree/main/CodeFirst_ConsoleApp/548Challenge)
 A very basic spinup of a web application to demonstrate using coded models to build a database with Entity Framework.
