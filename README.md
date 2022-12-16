@@ -58,6 +58,7 @@ In addition to the projects, there is a small code library for referencing basic
 - [Chained Constructors](https://github.com/serengetijade/C_Sharp/tree/main/Basic_CSharp/ConsoleApp_ChainedConstructors/ConsoleApp_ChainedConstructors) A chained constructor allows programmers to define “default” values for class instances accounting for which property values are passed in when the constructor is called. 
 - [DateTime](https://github.com/serengetijade/C_Sharp/blob/main/Basic_CSharp/ConsoleApp_DateTime/ConsoleApp_DateTime/Program.cs) Code examples using type DateTime.
 - [Enums](https://github.com/serengetijade/C_Sharp/blob/main/Basic_CSharp/ConsoleApp_Enums/ConsoleApp_Enums/Program.cs) An enum is a data type that consists of a set of named values, called elements/members/enumerals/or enumerators. 
+- [Events and Delegates] (https://github.com/serengetijade/C_Sharp/tree/main/Basic_CSharp/ConsoleApp_EventsAndDelegates)
 - [Exception Handling](https://github.com/serengetijade/C_Sharp/tree/main/Basic_CSharp/ConsoleApp_ExceptionHandling/ConsoleApp_ExceptionHandling) Try catch blocks and exception codes.
 - [FileIO](https://github.com/serengetijade/C_Sharp/blob/main/Basic_CSharp/ConsoleApp_FileIO_LogToTxtFile/ConsoleApp_FileIO_LogToTxtFile/Program.cs) The FileIO library and how to log to text files. 
 - [Lambda](https://github.com/serengetijade/C_Sharp/tree/main/Basic_CSharp/ConsoleApp_Lambda/ConsoleApp_Lambda) Using lambda expressions, you can write local functions that can be passed as arguments or returned as the value of function calls.
