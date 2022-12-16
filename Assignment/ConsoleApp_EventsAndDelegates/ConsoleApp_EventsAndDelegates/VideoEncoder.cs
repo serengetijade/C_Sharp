@@ -19,7 +19,7 @@ namespace ConsoleApp_EventsAndDelegates
         // 3- Raise the event, using a method
 
         //A DELEGATE is a required reference to a method or an event handler.
-        //EventHandler Shorthand Syntax: public event EventHandler<VideoEventArgs> VideoEncoded;
+        //Delegate Shorthand Syntax: public event EventHandler<VideoEventArgs> VideoEncoded;
         //Define a delegate Syntax: accessModifier delegate returnType name(object source, EventArgs args);
         public delegate void VideoEncodedEventHandler(object source, VideoEventArgs args);
 
