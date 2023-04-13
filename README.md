@@ -15,7 +15,7 @@ This repository is for C# and .NET projects
 An in depth C# project using MVC and Entity Framework to create a website for a theatre company. The focus was to create a database to handle comments on the blog seciton of the site, as well as to upload images to the blog photos section.
 
 #### [MVC Signup Form](https://github.com/serengetijade/C_Sharp/tree/main/MVC_SignupForm/MVC_SignupForm)
-a signup form Web Application made using the entity framework and the Model View Controller design pattern. It uses HTML forms to create and modify records.
+A signup form Web Application made using the entity framework and the Model View Controller design pattern. It uses HTML forms to create and modify records.
 - CRUD functionality. 
 - An Admin page displays DB records.
 - An HTML form applies a method to "unsubscribe" records from the admin page. 
@@ -23,15 +23,15 @@ a signup form Web Application made using the entity framework and the Model View
 - Applied lambda expressions and built-in .Where method to pass only relevent database records to the view.
 
 #### [MVC Basic Project](https://github.com/serengetijade/C_Sharp/tree/main/MVC_Project/MVC_Project)
-the basic structure of an Model View Controller design framework to demonstrate how to create model objects, add views, and use Razor tags with C# code.
+The basic structure of an Model View Controller design framework to demonstrate how to create model objects, add views, and use Razor tags with C# code.
 
 #### [MadLib Game](https://github.com/serengetijade/C_Sharp/blob/main/MadLibGame/MadLibGame/Program.cs)
-a fun console application that takes in user input and creates a short madlib story. It shows basic C# functionality including assigning data types, switch statements, foreach loops, boolean values, and more. It's fun, you should try it.
+A fun console application that takes in user input and creates a short madlib story. It shows basic C# functionality including assigning data types, switch statements, foreach loops, boolean values, and more. It's fun, you should try it.
 
 ![MadLib Game Preview](https://github.com/serengetijade/C_Sharp/blob/main/ReadMe/MadLibGame.jpg)
 
 #### [Twenty One Game](https://github.com/serengetijade/C_Sharp/tree/main/TwentyOneGame)
-a console application to recreate the popular game of Twenty One, aka Black Jack. This project creates a library that is meant to be leveraged to other card games. The coding is generic to allow for future customization and reuse.
+A console application to recreate the popular game of Twenty One, aka Black Jack. This project creates a library that is meant to be leveraged to other card games. The coding is generic to allow for future customization and reuse.
 - Calculated hand values using lambda functions.
 - Created multiple classes.
 - Implement class constructors.
@@ -39,9 +39,11 @@ a console application to recreate the popular game of Twenty One, aka Black Jack
 - Made dll files. 
 
 #### [Database First Web App](https://github.com/serengetijade/C_Sharp/tree/main/DatabaseFirst_Car_Insurance/Car_Insurance)
-a Web Application to calculate Car Insurance Rates. It was created using a database first approach with Entity Framework. 
+A Web Application to calculate Car Insurance Rates. It was created using a database first approach with Entity Framework. 
 It uses HTML form inputs with if and boolean statements to calculate the rate.
-- CRUD functionality. Rates update when changes to the records are made. 
+- CRUD functionality. 
+- Pass form data to the application to calculate rates and create records. 
+- Update results when changes are made to the records. 
 - An Admin page displays DB records.
 - Used MVC design framework.
 
@@ -49,7 +51,7 @@ It uses HTML form inputs with if and boolean statements to calculate the rate.
 A very basic spinup of a console application to demonstrate using coded models to build a database with Entity Framework.
 
 #### [WebApp Tutorial](https://github.com/serengetijade/C_Sharp/tree/main/WebAppTutorial)
-a 15 minute mini project to demonstrate how C# scaffolding can make spinning up a basic web page super quick and easy. It has a few basic HTML elements, uses a shared Layout page with navigation bar, and implements CSS and JavaScript. 
+A 15 minute mini project to demonstrate how C# scaffolding can make spinning up a basic web page super quick and easy. It has a few basic HTML elements, uses a shared Layout page with navigation bar, and implements CSS and JavaScript. 
 
 ![WebApp Tutorial Preview](https://github.com/serengetijade/C_Sharp/blob/main/ReadMe/WebAppTutorial.jpg)
 
