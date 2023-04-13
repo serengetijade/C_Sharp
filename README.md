@@ -2,6 +2,7 @@
 This repository is for C# and .NET projects
 
 ## PROJECTS:
+- [ASP.NET Entity Framework Project](https://github.com/serengetijade/Project_ASP.NET_EF_Website)
 - [MVC Signup Form](https://github.com/serengetijade/C_Sharp/tree/main/MVC_SignupForm/MVC_SignupForm)
 - [MVC Basic Project](https://github.com/serengetijade/C_Sharp/tree/main/MVC_Project/MVC_Project)
 - [Twenty One Game](https://github.com/serengetijade/C_Sharp/tree/main/TwentyOneGame)
@@ -9,6 +10,9 @@ This repository is for C# and .NET projects
 - [Database First Web App](https://github.com/serengetijade/C_Sharp/tree/main/DatabaseFirst_Car_Insurance/Car_Insurance)
 - [Code First Web App](https://github.com/serengetijade/C_Sharp/tree/main/CodeFirst_ConsoleApp/548Challenge)
 - [WebApp Tutorial](https://github.com/serengetijade/C_Sharp/tree/main/WebAppTutorial)
+
+#### [ASP.NET Entity Framework Project](https://github.com/serengetijade/Project_ASP.NET_EF_Website)
+An in depth C# project using MVC and Entity Framework to create a website for a theatre company. The focus was to create a database to handle comments on the blog seciton of the site, as well as to upload images to the blog photos section.
 
 #### [MVC Signup Form](https://github.com/serengetijade/C_Sharp/tree/main/MVC_SignupForm/MVC_SignupForm)
 a signup form Web Application made using the entity framework and the Model View Controller design pattern. It uses HTML forms to create and modify records.
@@ -42,7 +46,7 @@ It uses HTML form inputs with if and boolean statements to calculate the rate.
 - Used MVC design framework.
 
 #### [Code First Web App](https://github.com/serengetijade/C_Sharp/tree/main/CodeFirst_ConsoleApp/548Challenge)
-A very basic spinup of a web application to demonstrate using coded models to build a database with Entity Framework.
+A very basic spinup of a console application to demonstrate using coded models to build a database with Entity Framework.
 
 #### [WebApp Tutorial](https://github.com/serengetijade/C_Sharp/tree/main/WebAppTutorial)
 a 15 minute mini project to demonstrate how C# scaffolding can make spinning up a basic web page super quick and easy. It has a few basic HTML elements, uses a shared Layout page with navigation bar, and implements CSS and JavaScript. 
