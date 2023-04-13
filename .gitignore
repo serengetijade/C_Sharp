@@ -3,6 +3,8 @@
 ##
 ## Get latest from https://github.com/github/gitignore/blob/master/VisualStudio.gitignore
 
+\Project_ASP.Net_EF
+
 # User-specific files
 *.rsuser
 *.suo
@@ -361,3 +363,5 @@ MigrationBackup/
 
 # Fody - auto-generated XML schema
 FodyWeavers.xsd
+Project_ASP.NET_EF/
+Project_ASP.NET_EF_Website/
