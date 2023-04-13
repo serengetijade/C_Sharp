@@ -23,7 +23,7 @@ A signup form Web Application made using the entity framework and the Model View
 - Applied lambda expressions and built-in .Where method to pass only relevent database records to the view.
 
 #### [MVC Basic Project](https://github.com/serengetijade/C_Sharp/tree/main/MVC_Project/MVC_Project)
-The basic structure of an Model View Controller design framework to demonstrate how to create model objects, add views, and use Razor tags with C# code.
+This is a very basic expample of a web application to demonstrate the structure of a Model View Controller (MVC) design framework. The simple code shows how to create model objects, use a class constructor to create instances of objects, connect multiple views, use a layout file, and implement Razor tags with C# code.
 
 #### [MadLib Game](https://github.com/serengetijade/C_Sharp/blob/main/MadLibGame/MadLibGame/Program.cs)
 A fun console application that takes in user input and creates a short madlib story. It shows basic C# functionality including assigning data types, switch statements, foreach loops, boolean values, and more. It's fun, you should try it.
