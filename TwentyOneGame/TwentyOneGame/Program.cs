@@ -47,7 +47,7 @@ namespace TwentyOne
                 Player player = new Player(playerName, bank);       //Instantiate the constructor (defined in Player.cs) and pass in propery values.
                 player.Id = Guid.NewGuid();                         //Define a property value for this instance's 'Id' property (defined in Player.cs).
                 //Log the player's Guid to a .txt file:
-                using (StreamWriter file = new StreamWriter(@"C:\Users\jad24\Documents\Coding Projects\C_Sharp\TwentyOneGame\TwentyOneGame\log.txt", true))
+                using (StreamWriter file = new StreamWriter(@"C:\Users\jad24\Documents\CodingProjects\C_Sharp\TwentyOneGame\TwentyOneGame\log.txt", true))
                 {
                     file.WriteLine(player.Id);
                 }
