@@ -21,7 +21,7 @@ namespace ClassLibrary_Casino
             string card = string.Format(Deck.Cards.First().ToString() + "\n");    //Apply the overridden ToString method (defined in Card.cs).
             Console.WriteLine(card);
             //Write each card delt to a txt file:
-            using (StreamWriter file = new StreamWriter(@"C:\Users\jad24\Documents\Coding Projects\C_Sharp\TwentyOneGame\TwentyOneGame\log.txt", true))
+            using (StreamWriter file = new StreamWriter(@"C:\Users\jad24\Documents\CodingProjects\C_Sharp\TwentyOneGame\TwentyOneGame\log.txt", true))
             {
                 file.WriteLine(DateTime.Now);       //Use DateTime with .Now method to create a "timestamp".
                 file.WriteLine(card);                
