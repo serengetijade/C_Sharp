@@ -41,6 +41,22 @@ namespace ConsoleApp_ArraysLists
             Console.WriteLine(intList[0]);
             */
 
+            //Given an array of integers, total the odd numbers only
+            int[] numberArray4 = new int[] { 1, 2, 3, 4, 5, 6, 7, 23, 532, 74, 63, 2, 56, 7, 323, 557, 9764 };
+            int totalArray4 = 0;
+            int oddCount = 0; 
+            foreach (int i in numberArray4)
+            {
+                if (i % 2 == 1)
+                {
+                    totalArray4+=i;
+                    oddCount++;
+                }
+            }
+            Console.WriteLine($"Sum of odd numbers in array is: {totalArray4}");
+            Console.WriteLine($"There are {oddCount} odd integers in the array");
+            
+            
             //Read an array using user input to determin the index number:
             string[] stringArray = { "dragon", "cat", "dog", "cow", "tiger", "turtle", "pig", "wolf", "toad", "dolphin", "hedgehog" };
             Console.WriteLine("What is your spirit animal?\nChoose a whole number up to 10.");
