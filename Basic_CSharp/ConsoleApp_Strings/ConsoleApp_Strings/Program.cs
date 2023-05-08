@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Text;
 
 namespace ConsoleApp_Strings
@@ -45,6 +46,47 @@ namespace ConsoleApp_Strings
             sb.Append("Paragraph #2. ");
             sb.Append("Paragraph #3. ");
             Console.WriteLine(sb);
+
+            //Reverse a string - Array.Reverse
+            string reverseMe1 = "Reverse this string!";
+            char[] characterArray1 = reverseMe1.ToCharArray();
+            Array.Reverse(characterArray1);
+            string reverseString1 = new string(characterArray1);
+            Console.WriteLine($"The string is: {reverseMe1}");
+            Console.WriteLine($"Backwards it reads: {reverseString1}");
+
+            //Reverse a string - WHILE loop
+            string reverseMe2 = "Reverse another string!";
+            string reverseString2 = ""; 
+            int length = reverseMe2.Length - 1;
+            while (length > 0)
+            {
+                reverseString2 = reverseString2 + reverseMe2[length];
+                length--;
+            }
+            Console.WriteLine(reverseMe2);
+            Console.WriteLine($"Backwards it reads: {reverseString2}");
+
+            //Reverse a string - FOR loop
+            string reverseMe3 = "Reverse a third string!";
+            char[] stringArray = reverseMe3.ToCharArray();
+            string reverseString3 = String.Empty;
+            for (int i = stringArray.Length -1; i >= 0; i--)
+            {
+                reverseString3 += stringArray[i];
+            }
+            Console.WriteLine(reverseMe3);
+            Console.WriteLine($"Backwards it reads: {reverseString3}");
+
+            //Remove repeated/duplicate letters from a string:
+            string string4 = "This is the string that needs all duplicates removed";
+            var string4HS = new HashSet<char>(string4);
+            StringBuilder withoutRepeats = new StringBuilder();
+            foreach (char c in string4HS)
+            {
+                withoutRepeats.Append(c);
+            }
+            Console.WriteLine($"This is the string that needs all duplicates removed: {withoutRepeats.ToString()}");
         }
     }
 }
