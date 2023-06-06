@@ -1,4 +1,8 @@
-﻿namespace ConditionalStatements
+﻿using ConsoleApp_Conditional_If;
+using System.IO.Pipes;
+using System.Security.Cryptography.X509Certificates;
+
+namespace ConditionalStatements
 {
     class ifStatements
     {
@@ -92,6 +96,17 @@
             Console.WriteLine(result2);
 
             Console.ReadLine();
+
+            //Null-Coalescing Operator ??: returns the value of its left-hand operand if it isn't null ; otherwise, it evaluates the right-hand operand  
+            //Syntax: variableName = left operand ?? right operand
+            var NullCoalescingObject1 = new NullCoalescingObject { Name = null };
+            NullCoalescingObject1.Name = NullCoalescingObject1.Name ?? "Username";     
+            
+            var NullCoalescingObject2 = new NullCoalescingObject { Name = "Not null" };
+            NullCoalescingObject2.Name = NullCoalescingObject2.Name ?? "Username";
+
+            Console.WriteLine(NullCoalescingObject1.Name); 
+            Console.WriteLine(NullCoalescingObject2.Name);
         }
     }
 }
