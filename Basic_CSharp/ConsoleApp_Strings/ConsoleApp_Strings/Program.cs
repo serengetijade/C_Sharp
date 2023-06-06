@@ -13,7 +13,7 @@ namespace ConsoleApp_Strings
             Console.WriteLine(quote);
             //The @ symbol before a "string" indicates there are no escape characters
             string filename = @"C:\Users\jad245";
-            Console.WriteLine(filename);
+            Console.WriteLine($"The file path is: {filename}");
 
             //Concatenate strings:
             string string1 = "\nProgramming haiku. ";
@@ -23,14 +23,16 @@ namespace ConsoleApp_Strings
 
             //String methods:
             string name = "Jesse";
-            bool trueOrfalse = name.Contains("s");
+            bool trueOrfalse = name.Contains("s");      //result: True
             Console.WriteLine(trueOrfalse);
             Console.WriteLine(name.EndsWith("s"));
             Console.WriteLine(name.Length);
             Console.WriteLine(name.ToUpper());
             Console.WriteLine(name.ToLower());
+            Console.WriteLine(name.Substring(2));       //result: "sse" (the string from index position 2 to the end)       
+            Console.WriteLine(name.Substring(1, 3));    //result: "ess" (the string from index position 1, that is 3 characters long) 
 
-            //From Microsoft's .NET(C#) docs, format strings: 
+            //Format strings: 
             var pw = (firstName: "Phillis", lastName: "Wheatley", born: 1753, published: 1773);
             Console.WriteLine("\n{0} {1} was an African American poet born in {2}.", pw.firstName, pw.lastName, pw.born);
             Console.WriteLine("She was first published in {0} at the age of {1}.", pw.published, pw.published - pw.born);
@@ -43,9 +45,15 @@ namespace ConsoleApp_Strings
             //String Builder: a class for changing strings.
             StringBuilder sb = new StringBuilder();
             sb.Append("\nParagraph #1. ");
-            sb.Append("Paragraph #2. ");
+            sb.AppendLine("Paragraph #2. ");
             sb.Append("Paragraph #3. ");
+            string finishedSB = sb.ToString();
             Console.WriteLine(sb);
+            Console.WriteLine(finishedSB);
+            //Replace all characters of a string with another character - stringbuilder Replace
+            StringBuilder sb2 = new StringBuilder("This is the string to change about.");
+            sb2.Replace(" ", "_");      //Replace all spaces with an underscore.
+            Console.WriteLine(sb2 + "It has ");
 
             //Reverse a string - Array.Reverse
             string reverseMe1 = "Reverse this string!";
