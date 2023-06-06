@@ -25,42 +25,45 @@ using System.Collections.Generic; //required for Lists
     }
 }*/
 
-/*namespace VariablesAndDataTypes
-{
-    class Program
-    {
-        static void Main(string[] args)
-        {
-            //Ctrl + k + c = comments out all selected lines. Ctrl + k + u = uncomments selected lines. 
-            //Console.WriteLine("What is your name?");
-            //string yourName = Console.ReadLine();
-            //Console.WriteLine("Your name is: " + yourName);
-            //Console.Read();
+//namespace VariablesAndDataTypes
+//{ 
+//    class Program
+//    {
+//        static void Main(string[] args)
+//        {
+//            //Ctrl + k + c = comments out all selected lines. Ctrl + k + u = uncomments selected lines. 
+//            Console.WriteLine("What is your name?");
+//            string yourName = Console.ReadLine();
+//            Console.WriteLine("Your name is: " + yourName);              
 
-            //Data types:
-            //bool isStudying = true;
-            //byte hourseWorked = 42;
-            //sbyte currentTemperature = -23;
-            //char questionMark = '\u2103';
-            //double heightINcm = 69.234;
-            //decimal moneyInBank = 100.5m;
-            //float secondsLeft = 2.62f;
-            //short tempMars = -341;
+//            //Data types:
+//            bool isStudying = true;
+//            byte hourseWorked = 42;
+//            sbyte currentTemperature = -23;
+//            char questionMark = '\u2103';
+//            double heightINcm = 69.234;
+//            decimal moneyInBank = 100.5m; //require the suffix 'm'
+//            float secondsLeft = 2.62f;    //require the suffix 'f'
+//            short tempMars = -341;
 
-            //Console.WriteLine("What is your favorite number?");
-            //string favoriteNumber = Console.ReadLine();
-            //int favNumber = Convert.ToInt32(favoriteNumber);
-            //int total = favNumber + 5;
-            //Console.WriteLine("Your favorite number, plus 5, is: " + total);
+//            Console.WriteLine($"What is your favorite number, {yourName}?");
+//            string favoriteNumber = Console.ReadLine();
+//            int favNumber = Convert.ToInt32(favoriteNumber);
+//            int total = favNumber + 5;
+//            Console.WriteLine("Your favorite number, plus 5, is: " + total);
+//            int prefixOperator = ++favNumber;
+//            int postfixOperator = favNumber++;
+//            Console.WriteLine($"The next number is {prefixOperator}/{postfixOperator}.");
 
-            //int currentAge = 30;
-            //string yearsOld = currentAge.ToString();
-            //bool isRaining = true;
-            //string rainingStatus = Convert.ToString(isRaining);
+//            int currentAge = 30;
+//            string yearsOld = currentAge.ToString();
+//            bool isRaining = true;
+//            string rainingStatus = Convert.ToString(isRaining);
 
-        }
-    }
-}*/
+//            Console.Read();
+//        }
+//    }
+//}
 
 /*namespace DailyReportApp
 {
@@ -94,12 +97,12 @@ using System.Collections.Generic; //required for Lists
     }
 }*/
 
-/*namespace Operators
+namespace Operators
 {
     class Program
     {
         static void Main(string[] args)
-        {   
+        {
             int num1 = 5;
             int num2 = 7;
             int diff = num1 - num2;
@@ -125,7 +128,7 @@ using System.Collections.Generic; //required for Lists
             Console.WriteLine("Please enter a number:");
             string userNum = Console.ReadLine();
             float userNumber = Convert.ToSingle(userNum);
-            Console.WriteLine("Times 50: "+ userNumber * 50);
+            Console.WriteLine("Times 50: " + userNumber * 50);   
             Console.WriteLine("Plus 25: " + userNumber + 25);
             Console.WriteLine("Divided by 12.5: " + userNumber / 12.5);
             Console.WriteLine("Is greater than 50? " + (userNumber > 50));
@@ -134,15 +137,15 @@ using System.Collections.Generic; //required for Lists
             Console.WriteLine("Anonymous Income Comparison Program\nPlease enter Person 1's information.\n1-Hourly Rate: ");
             decimal rate1 = Convert.ToDecimal(Console.ReadLine());
             Console.WriteLine("1-Hours worked per week: ");
-            decimal hours1 = Convert.ToDecimal(Console.ReadLine());                
+            decimal hours1 = Convert.ToDecimal(Console.ReadLine());
             Console.WriteLine("Please enter Person 2's information.\n2-Hourly Rate: ");
             decimal rate2 = Convert.ToDecimal(Console.ReadLine());
             Console.WriteLine("2-Hours worked per week: ");
             decimal hours2 = Convert.ToDecimal(Console.ReadLine());
-            Console.WriteLine("Annual Salary of Person 1: $" + (rate1*hours1*52));
-            Console.WriteLine("Annual Salary of Person 2: $" + (rate2*hours2*52));
+            Console.WriteLine("Annual Salary of Person 1: $" + (rate1 * hours1 * 52));
+            Console.WriteLine("Annual Salary of Person 2: $" + (rate2 * hours2 * 52));
             Console.WriteLine("Does Person 1 make more than Person 2?: \n" + ((rate1 * hours1 * 52) > (rate2 * hours2 * 52)));
-            
+
             int packWidth = 10;
             int packHeight = 25;
             //bool tooBig = (packWidth > 25 && packHeight > 25);    //AND operator
@@ -158,7 +161,7 @@ using System.Collections.Generic; //required for Lists
             bool result = (7 > 12 && (3 == 4 || 8 > 5));
             Console.WriteLine(result);
             Console.Read();
-           
+
 
             Console.WriteLine(true && false);    //Result: False
             Console.WriteLine(true && true);     //Result: True
@@ -182,7 +185,7 @@ using System.Collections.Generic; //required for Lists
             Console.ReadLine();
         }
     }
-}*/
+}
 
 /*namespace Switch
 {
@@ -462,13 +465,14 @@ using System.Collections.Generic; //required for Lists
         }
     }
 }  */
+/*
 namespace ExceptionHandling
 {
     class ExceptionHandling
     {
         static void Main(string[] args)
         {
-            /*TRY CATCH FINALLY NOTES:
+            //TRY CATCH FINALLY NOTES:
             try
             {
                 Console.WriteLine("Picke a number.");
