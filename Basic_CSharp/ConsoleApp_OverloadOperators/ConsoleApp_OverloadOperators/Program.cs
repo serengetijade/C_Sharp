@@ -16,6 +16,12 @@ namespace ConsoleApp_OverloadOperators
             Console.WriteLine(C1instance1.ID != C1instance2.ID);
 
             Console.ReadLine();
+
+            //Object Initialization: 
+            Box box1 = new Box(2, 2, 2);
+            Box box2 = new Box(2,2,2);
+            Box box3 = box1 + box2; 
+            Console.WriteLine("Overloaded '+' operator with programmer defined 'Box' objects: " + "\nLength: " + box3.GetLength() + "\nWidth: " + box3.GetWidth() + "\nHeight: " + box3.GetHeight());
         }
     }
 }
