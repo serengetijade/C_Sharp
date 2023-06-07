@@ -13,7 +13,8 @@ namespace ConditionalStatements
                 Console.WriteLine("Hello!");
             }
 
-            if (1 == 1) //Use an equality comparison operator. 
+            //Equality comparison operator: 
+            if (1 == 1) 
             {
                 Console.WriteLine("1 equals 1!");
             }
@@ -22,12 +23,14 @@ namespace ConditionalStatements
                 Console.WriteLine("1 does not equal 1");
             }
 
-            string name = "Adam";
+            Console.WriteLine("Please enter the name 'Jesse' or 'Brett' or another name.");
+            string name = Console.ReadLine();
             if (name == "Jesse")
             {
                 Console.WriteLine("Your name is Jesse");
             }
-            else if (name == "Brett")
+            //Note: It is possible to have infinite else if statements. 
+            else if (name == "Brett")           
             {
                 Console.WriteLine("Your name is Brett, not Jesse");
             }
@@ -61,13 +64,12 @@ namespace ConditionalStatements
                 Console.WriteLine("You may access the entire software system.");
             }
 
-            //Ternary (?) operator
+            //Ternary (?) operators vs if statements: 
             int num1 = 7;
             int num2 = 12;
             string result = num1 > num2 ? "num1 is greater than num2" : "num1 is not greater than num2";  //result if true : result if false
-            Console.WriteLine(result);
-            
-
+            Console.WriteLine(result);                  
+            //If statement: 
             int currentTemp = 80;
             int roomTemp = 70;
             if (currentTemp == roomTemp)
@@ -81,21 +83,18 @@ namespace ConditionalStatements
             else
             {
                 Console.WriteLine("It is not exactly room temperature.");
-            } 
-            
-
+            }                           
             //To write the above with ternary (?) operator:
             //int currentTemp = 80;
             //int roomTemp = 70;
             string comparisonResult = currentTemp == roomTemp ? "It is room temperature" : "It is not room temperature";
             Console.WriteLine(comparisonResult);
 
+            //Ternary Operator Example: 
             Console.WriteLine("What is your favorite number?");
             int favNum = Convert.ToInt32(Console.ReadLine());
-            string result2 = favNum == 12 ? "You have an awesome favorite number!" : "That is an interesting choice.";
+            string result2 = favNum == 11 ? "You have an awesome favorite number!" : "That is an interesting choice.";
             Console.WriteLine(result2);
-
-            Console.ReadLine();
 
             //Null-Coalescing Operator ??: returns the value of its left-hand operand if it isn't null ; otherwise, it evaluates the right-hand operand  
             //Syntax: variableName = left operand ?? right operand
@@ -107,6 +106,8 @@ namespace ConditionalStatements
 
             Console.WriteLine(NullCoalescingObject1.Name); 
             Console.WriteLine(NullCoalescingObject2.Name);
+
+            Console.ReadLine();
         }
     }
 }
