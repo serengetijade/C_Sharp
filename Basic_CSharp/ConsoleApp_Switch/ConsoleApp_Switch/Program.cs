@@ -43,6 +43,29 @@ namespace Switch
                 }
             }
             while (!isGuessed);
+
+            //Once the do while loop is completed, the rest of the code runs. 
+            Console.WriteLine("This is the rest of the code: \nEnter a number between 1 and 3.");
+            
+            //Basic Switch Statement:
+            int input1 = Convert.ToInt32(Console.ReadLine());
+            switch (input1)
+            {
+                case 1:
+                    Console.WriteLine("You entered the number {0}.", input1);
+                    break;  
+                case 2:
+                    Console.WriteLine("You entered the number {0}.", input1);
+                    break;  
+                case 3:
+                    Console.WriteLine("You entered the number {0}.", input1);
+                    break;  
+                default:
+                    Console.WriteLine("That is not a number within the specified range.");
+                    break;
+            }
+
+            Console.ReadLine();
         }
     }
 }
