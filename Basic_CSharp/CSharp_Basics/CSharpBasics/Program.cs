@@ -483,7 +483,7 @@ namespace Iteration
             //Foreach loop
             foreach(char c in ".Hello.World.")
             {
-                ConsoleWriteLine(c);
+                Console.WriteLine(c);
             }
 
             //Loop with continue keyword

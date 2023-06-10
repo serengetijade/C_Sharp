@@ -68,6 +68,7 @@ In addition to the projects, there is a small code library for referencing basic
 - [Exception Handling](https://github.com/serengetijade/C_Sharp/tree/main/Basic_CSharp/ConsoleApp_ExceptionHandling/ConsoleApp_ExceptionHandling) Try catch blocks and exception codes.
 - [FileIO](https://github.com/serengetijade/C_Sharp/blob/main/Basic_CSharp/ConsoleApp_FileIO_LogToTxtFile/ConsoleApp_FileIO_LogToTxtFile/Program.cs) The FileIO library and how to log to text files. 
 - [Lambda](https://github.com/serengetijade/C_Sharp/tree/main/Basic_CSharp/ConsoleApp_Lambda/ConsoleApp_Lambda) Using lambda expressions, you can write local functions that can be passed as arguments or returned as the value of function calls.
+- [Key and Console Modifiers](https://github.com/serengetijade/C_Sharp/tree/main/Basic_CSharp/ConsoleApp_Key_Console_Modifiers) Log to the console when key modifiers are pressed. 
 - [Methods](https://github.com/serengetijade/C_Sharp/tree/main/Basic_CSharp/ConsoleApp_Methods/ConsoleApp_Methods) The basics of C# methods. 
 - [Methods and Objects](https://github.com/serengetijade/C_Sharp/tree/main/Basic_CSharp/ConsoleApp_MethodsAndObjects/ConsoleApp_MethodsAndObjects) How to declare objects and their properties, instantiate objects, use var variables, and define methods.
 - [Overloaded Operators](https://github.com/serengetijade/C_Sharp/tree/main/Basic_CSharp/ConsoleApp_OverloadOperators/ConsoleApp_OverloadOperators) A coding approach to provide custom implementation of an operation in case one or both of the operands are of that type. 
