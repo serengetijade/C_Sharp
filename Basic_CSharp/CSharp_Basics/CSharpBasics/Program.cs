@@ -9,7 +9,7 @@ using System.Collections.Generic; //required for Lists
 - Switch Statements
 - Strings
 - Arrays and Lists
-- Iteration
+- Loop Iteration
 - Exception Handling
 */
 
@@ -97,95 +97,95 @@ using System.Collections.Generic; //required for Lists
     }
 }*/
 
-namespace Operators
-{
-    class Program
-    {
-        static void Main(string[] args)
-        {
-            int num1 = 5;
-            int num2 = 7;
-            int diff = num1 - num2;
-            Console.WriteLine(diff);
+//namespace Operators
+//{
+//    class Program
+//    {
+//        static void Main(string[] args)
+//        {
+//            int num1 = 5;
+//            int num2 = 7;
+//            int diff = num1 - num2;
+//            Console.WriteLine(diff);
 
-            int product = num1 * num2;
-            Console.WriteLine(product);
+//            int product = num1 * num2;
+//            Console.WriteLine(product);
 
-            int remainder = num2 % num1;
-            Console.WriteLine(remainder);
+//            int remainder = num2 % num1;
+//            Console.WriteLine(remainder);
 
-            int num3 = 8;
-            float num4 = 5.5f;
-            float total1 = num3 + num4;
-            int total2 = num3 + (Int32)num4;
-            Console.WriteLine(total1 + " & " + total2);
+//            int num3 = 8;
+//            float num4 = 5.5f;
+//            float total1 = num3 + num4;
+//            int total2 = num3 + (Int32)num4;
+//            Console.WriteLine(total1 + " & " + total2);
 
-            //String concatenation: 
-            string myName = "Jade";
-            string username = myName + num4;
-            Console.WriteLine(username);
+//            //String concatenation: 
+//            string myName = "Jade";
+//            string username = myName + num4;
+//            Console.WriteLine(username);
 
-            Console.WriteLine("Please enter a number:");
-            string userNum = Console.ReadLine();
-            float userNumber = Convert.ToSingle(userNum);
-            Console.WriteLine("Times 50: " + userNumber * 50);   
-            Console.WriteLine("Plus 25: " + userNumber + 25);
-            Console.WriteLine("Divided by 12.5: " + userNumber / 12.5);
-            Console.WriteLine("Is greater than 50? " + (userNumber > 50));
-            Console.WriteLine("Remainder from 7: " + (userNumber % 7));     //Use the modulus to find the remainder after userNumber/7
+//            Console.WriteLine("Please enter a number:");
+//            string userNum = Console.ReadLine();
+//            float userNumber = Convert.ToSingle(userNum);
+//            Console.WriteLine("Times 50: " + userNumber * 50);   
+//            Console.WriteLine("Plus 25: " + userNumber + 25);
+//            Console.WriteLine("Divided by 12.5: " + userNumber / 12.5);
+//            Console.WriteLine("Is greater than 50? " + (userNumber > 50));
+//            Console.WriteLine("Remainder from 7: " + (userNumber % 7));     //Use the modulus to find the remainder after userNumber/7
 
-            Console.WriteLine("Anonymous Income Comparison Program\nPlease enter Person 1's information.\n1-Hourly Rate: ");
-            decimal rate1 = Convert.ToDecimal(Console.ReadLine());
-            Console.WriteLine("1-Hours worked per week: ");
-            decimal hours1 = Convert.ToDecimal(Console.ReadLine());
-            Console.WriteLine("Please enter Person 2's information.\n2-Hourly Rate: ");
-            decimal rate2 = Convert.ToDecimal(Console.ReadLine());
-            Console.WriteLine("2-Hours worked per week: ");
-            decimal hours2 = Convert.ToDecimal(Console.ReadLine());
-            Console.WriteLine("Annual Salary of Person 1: $" + (rate1 * hours1 * 52));
-            Console.WriteLine("Annual Salary of Person 2: $" + (rate2 * hours2 * 52));
-            Console.WriteLine("Does Person 1 make more than Person 2?: \n" + ((rate1 * hours1 * 52) > (rate2 * hours2 * 52)));
+//            Console.WriteLine("Anonymous Income Comparison Program\nPlease enter Person 1's information.\n1-Hourly Rate: ");
+//            decimal rate1 = Convert.ToDecimal(Console.ReadLine());
+//            Console.WriteLine("1-Hours worked per week: ");
+//            decimal hours1 = Convert.ToDecimal(Console.ReadLine());
+//            Console.WriteLine("Please enter Person 2's information.\n2-Hourly Rate: ");
+//            decimal rate2 = Convert.ToDecimal(Console.ReadLine());
+//            Console.WriteLine("2-Hours worked per week: ");
+//            decimal hours2 = Convert.ToDecimal(Console.ReadLine());
+//            Console.WriteLine("Annual Salary of Person 1: $" + (rate1 * hours1 * 52));
+//            Console.WriteLine("Annual Salary of Person 2: $" + (rate2 * hours2 * 52));
+//            Console.WriteLine("Does Person 1 make more than Person 2?: \n" + ((rate1 * hours1 * 52) > (rate2 * hours2 * 52)));
 
-            int packWidth = 10;
-            int packHeight = 25;
-            //bool tooBig = (packWidth > 25 && packHeight > 25);    //AND operator
-            bool tooBig = (packWidth > 25 || packHeight > 25);      //OR operator
-            Console.WriteLine(tooBig);
+//            int packWidth = 10;
+//            int packHeight = 25;
+//            //bool tooBig = (packWidth > 25 && packHeight > 25);    //AND operator
+//            bool tooBig = (packWidth > 25 || packHeight > 25);      //OR operator
+//            Console.WriteLine(tooBig);
 
-            string firstname = "Jesse";
-            string lastname = "Johnson";
-            string ssn = "111-11-1111";
-            //Combine multiple comparison operators with Boolean logic:
-            bool isAuthorized = (firstname == "Jesse" && lastname == "Johnson" && ssn == "111-11-1111");
-            Console.WriteLine(isAuthorized);
-            bool result = (7 > 12 && (3 == 4 || 8 > 5));
-            Console.WriteLine(result);
-            Console.Read();
+//            string firstname = "Jesse";
+//            string lastname = "Johnson";
+//            string ssn = "111-11-1111";
+//            //Combine multiple comparison operators with Boolean logic:
+//            bool isAuthorized = (firstname == "Jesse" && lastname == "Johnson" && ssn == "111-11-1111");
+//            Console.WriteLine(isAuthorized);
+//            bool result = (7 > 12 && (3 == 4 || 8 > 5));
+//            Console.WriteLine(result);
+//            Console.Read();
 
 
-            Console.WriteLine(true && false);    //Result: False
-            Console.WriteLine(true && true);     //Result: True
-            Console.WriteLine(false && false);   //Result: False
+//            Console.WriteLine(true && false);    //Result: False
+//            Console.WriteLine(true && true);     //Result: True
+//            Console.WriteLine(false && false);   //Result: False
 
-            Console.WriteLine(true || true);     //Result: True
-            Console.WriteLine(true || false);    //Result: True
-            Console.WriteLine(false || false);   //Result: False
+//            Console.WriteLine(true || true);     //Result: True
+//            Console.WriteLine(true || false);    //Result: True
+//            Console.WriteLine(false || false);   //Result: False
 
-            Console.WriteLine(true == true);     //Result: True
-            Console.WriteLine(true == false);    //Result: False
-            Console.WriteLine(false == false);   //Result: True
+//            Console.WriteLine(true == true);     //Result: True
+//            Console.WriteLine(true == false);    //Result: False
+//            Console.WriteLine(false == false);   //Result: True
 
-            Console.WriteLine(true != true);     //Result: False
-            Console.WriteLine(true != false);    //Result: True
-            Console.WriteLine(false != false);   //Result: False
+//            Console.WriteLine(true != true);     //Result: False
+//            Console.WriteLine(true != false);    //Result: True
+//            Console.WriteLine(false != false);   //Result: False
 
-            Console.WriteLine(true ^ true);      //Result: False   xor operator: Evaluate to true if one statement is true BUT NOT BOTH
-            Console.WriteLine(true ^ false);     //Result: True    xor operator: Evaluate to true if one statement is true BUT NOT BOTH
-            Console.WriteLine(false ^ false);    //Result: False   xor operator: Evaluate to true if one statement is true BUT NOT BOTH
-            Console.ReadLine();
-        }
-    }
-}
+//            Console.WriteLine(true ^ true);      //Result: False   xor operator: Evaluate to true if one statement is true BUT NOT BOTH
+//            Console.WriteLine(true ^ false);     //Result: True    xor operator: Evaluate to true if one statement is true BUT NOT BOTH
+//            Console.WriteLine(false ^ false);    //Result: False   xor operator: Evaluate to true if one statement is true BUT NOT BOTH
+//            Console.ReadLine();
+//        }
+//    }
+//}
 
 /*namespace Switch
 {
@@ -369,7 +369,7 @@ namespace Operators
     }
 }*/
 
-/*namespace Iteration
+namespace Iteration
 {
     class Iteration
     {
@@ -390,7 +390,7 @@ namespace Operators
             for (int j = 0; j < names.Length; j++)
             {
                 //Write every object to the console: 
-                Console.WriteLine(names[j]); 
+                Console.WriteLine(names[j]);
                 //Perform an if function: 
                 if (names[j] == "Jesse")
                 {
@@ -399,14 +399,14 @@ namespace Operators
             }
 
             //LIST ITERATION
-            List<int> testScores = new List<int>();
-            testScores.Add(98);
-            testScores.Add(99);
-            testScores.Add(81);
-            testScores.Add(72);
-            testScores.Add(70);
+            List<int> testScores1 = new List<int>();
+            testScores1.Add(98);
+            testScores1.Add(99);
+            testScores1.Add(81);
+            testScores1.Add(72);
+            testScores1.Add(70);
 
-            foreach(int t in testScores)
+            foreach (int t in testScores1)
             {
                 if (t > 85)
                 {
@@ -415,8 +415,8 @@ namespace Operators
             }
 
             //Popular naming convention is to use plural for the name of a list, then the singular for the iteration variable. 
-            List<string> names = new List<string>() { "Jesse", "Erik", "Adam", "Daniel" };
-            foreach (string name in names)
+            List<string> names2 = new List<string>() { "Jesse", "Erik", "Adam", "Daniel" };
+            foreach (string name in names2)
             {
                 //Print all names to the console:
                 Console.WriteLine(name);
@@ -428,8 +428,8 @@ namespace Operators
             }
 
             //Add values from one list that meet a condition to another list: 
-            List<int> testResults = new List<int>() { 98,99,12,74,23,94};
-            List<int> passingResults = new List<int>(); 
+            List<int> testResults = new List<int>() { 98, 99, 12, 74, 23, 94 };
+            List<int> passingResults = new List<int>();
             //Use a for loop and an if statement to find values that meet set condition:
             foreach (int result in testResults)
             {
@@ -460,11 +460,37 @@ namespace Operators
                     Console.WriteLine(color + " is a duplicate and already appeared on the list");
                 }
             }
-            Console.ReadLine();
 
+            //Print each letter in a string backwards:
+            string reverseMe = "abcd";
+            for (int i = reverseMe.Length -1; i>=0; i--)
+            {
+                Console.WriteLine(reverseMe[i]);
+            }
+
+            //For loop with UNSPECIFIED statements: 
+            int iterator = 0;
+            for (; ; )
+            {
+                if (iterator <= 4)
+                {
+                    Console.WriteLine(iterator);
+                    iterator++; 
+                }
+                break;
+            }
+
+            //Foreach loop
+            foreach(char c in ".Hello.World.")
+            {
+                Console.WriteLine(c);
+            }
+
+            Console.ReadLine();
         }
     }
-}  */
+}
+
 /*
 namespace ExceptionHandling
 {
