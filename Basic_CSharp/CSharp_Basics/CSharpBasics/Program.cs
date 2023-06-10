@@ -483,8 +483,19 @@ namespace Iteration
             //Foreach loop
             foreach(char c in ".Hello.World.")
             {
-                Console.WriteLine(c);
+                ConsoleWriteLine(c);
             }
+
+            //Loop with continue keyword
+            for(int i = 0; i < 4; i++)
+            {
+                if (i == 2)
+                {
+                    continue;
+                }
+                Console.WriteLine(i);
+            }
+            //The result is: 0, 1, 3
 
             Console.ReadLine();
         }
