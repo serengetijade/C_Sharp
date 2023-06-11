@@ -67,6 +67,7 @@ In addition to the projects, there is a small code library for referencing basic
 - [Events and Delegates](https://github.com/serengetijade/C_Sharp/tree/main/Basic_CSharp/ConsoleApp_EventsAndDelegates) An event is an action that occurs as the result of user action. Here is an example of event and event handler syntax, popular naming convention with events, and custom EventArgs classes.
 - [Exception Handling](https://github.com/serengetijade/C_Sharp/tree/main/Basic_CSharp/ConsoleApp_ExceptionHandling/ConsoleApp_ExceptionHandling) Try catch blocks and exception codes.
 - [FileIO](https://github.com/serengetijade/C_Sharp/blob/main/Basic_CSharp/ConsoleApp_FileIO_LogToTxtFile/ConsoleApp_FileIO_LogToTxtFile/Program.cs) The FileIO library and how to log to text files. 
+- [Input Validation]() Check that user input is type int. 
 - [Lambda](https://github.com/serengetijade/C_Sharp/tree/main/Basic_CSharp/ConsoleApp_Lambda/ConsoleApp_Lambda) Using lambda expressions, you can write local functions that can be passed as arguments or returned as the value of function calls.
 - [Key and Console Modifiers](https://github.com/serengetijade/C_Sharp/tree/main/Basic_CSharp/ConsoleApp_Key_Console_Modifiers) Log to the console when key modifiers are pressed. 
 - [Methods](https://github.com/serengetijade/C_Sharp/tree/main/Basic_CSharp/ConsoleApp_Methods/ConsoleApp_Methods) The basics of C# methods. 
