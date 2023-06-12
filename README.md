@@ -7,6 +7,7 @@ This repository is for C# and .NET projects
 - [MVC Basic Project](https://github.com/serengetijade/C_Sharp/tree/main/MVC_Project/MVC_Project)
 - [Twenty One Game](https://github.com/serengetijade/C_Sharp/tree/main/TwentyOneGame)
 - [MadLib Game](https://github.com/serengetijade/C_Sharp/blob/main/MadLibGame/MadLibGame/Program.cs)
+- [Tic Tac Toe Game](https://github.com/serengetijade/C_Sharp/blob/main/TicTacToe/TicTacToe/Program.cs)
 - [Database First Web App](https://github.com/serengetijade/C_Sharp/tree/main/DatabaseFirst_Car_Insurance/Car_Insurance)
 - [Code First Web App](https://github.com/serengetijade/C_Sharp/tree/main/CodeFirst_ConsoleApp/548Challenge)
 - [WebApp Tutorial](https://github.com/serengetijade/C_Sharp/tree/main/WebAppTutorial)
@@ -29,6 +30,9 @@ This is a very basic expample of a web application to demonstrate the structure 
 A fun console application that takes in user input and creates a short madlib story. It shows basic C# functionality including assigning data types, switch statements, foreach loops, boolean values, and more. It's fun, you should try it.
 
 ![MadLib Game Preview](https://github.com/serengetijade/C_Sharp/blob/main/ReadMe/MadLibGame.jpg)
+
+#### [Tic Tac Toe Game](https://github.com/serengetijade/C_Sharp/blob/main/TicTacToe/TicTacToe/Program.cs)
+A simple console app for two players to enjoy a game of Tic Tac Toe. Implements do-while loops, nested functions, and takes user input to change variable values.  
 
 #### [Twenty One Game](https://github.com/serengetijade/C_Sharp/tree/main/TwentyOneGame)
 A console application to recreate the popular game of Twenty One, aka Black Jack. This project creates a library that is meant to be leveraged to other card games. The coding is generic to allow for future customization and reuse.
