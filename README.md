@@ -76,6 +76,8 @@ In addition to the projects, there is a small code library for referencing basic
 - [Lambda](https://github.com/serengetijade/C_Sharp/tree/main/Basic_CSharp/ConsoleApp_Lambda/ConsoleApp_Lambda) Using lambda expressions, you can write local functions that can be passed as arguments or returned as the value of function calls.
 - [Key and Console Modifiers](https://github.com/serengetijade/C_Sharp/tree/main/Basic_CSharp/ConsoleApp_Key_Console_Modifiers) Log to the console when key modifiers are pressed. 
 - [Methods](https://github.com/serengetijade/C_Sharp/tree/main/Basic_CSharp/ConsoleApp_Methods/ConsoleApp_Methods) The basics of C# methods. 
+- [Method Extensions](https://github.com/serengetijade/C_Sharp/tree/main/Basic_CSharp/ConsoleApp_Methods_Extensions/ConsoleApp_Methods_Extensions) An example extension method that adds to an exisiting class. 
+- [Asynchronous Methods](https://github.com/serengetijade/C_Sharp/tree/main/Basic_CSharp/ConsoleApp_Methods_Async/ConsoleApp_Methods_Async) Asynchronous method example - it runs synchronously until suspended. 
 - [Methods and Objects](https://github.com/serengetijade/C_Sharp/tree/main/Basic_CSharp/ConsoleApp_MethodsAndObjects/ConsoleApp_MethodsAndObjects) How to declare objects and their properties, instantiate objects, use var variables, and define methods.
 - [Overloaded Operators](https://github.com/serengetijade/C_Sharp/tree/main/Basic_CSharp/ConsoleApp_OverloadOperators/ConsoleApp_OverloadOperators) A coding approach to provide custom implementation of an operation in case one or both of the operands are of that type. 
 - [Strings](https://github.com/serengetijade/C_Sharp/blob/main/Basic_CSharp/ConsoleApp_Strings/ConsoleApp_Strings/Program.cs) The basics of using this common data type.
