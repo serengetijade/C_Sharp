@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.CompilerServices;
+using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -87,6 +89,24 @@ namespace ConsoleApp_Methods
             Class6.String1 = "Hello, world";
             Console.WriteLine(Class6.String1);
 
+            //Params keyword for unknown parameter inputs:
+            static void ParamsMethod(params string[] varName)
+            {
+                foreach(string s in varName) Console.WriteLine(s);
+            }
+
+            ParamsMethod();
+            ParamsMethod("Params call 2");
+            ParamsMethod("String 1: Params call 3 ", "String 2", "String 3");
+
+
+            //Optional parameters: 
+            static void OptionalParamMethod(string message = "Hello World!")
+            {
+                Console.WriteLine(message);
+            }
+            OptionalParamMethod();
+            OptionalParamMethod("This is the optional parameter that gets passed in.");
 
             Console.ReadLine();
         }
