@@ -4,6 +4,7 @@
 ## Get latest from https://github.com/github/gitignore/blob/master/VisualStudio.gitignore
 
 \Project_ASP.Net_EF
+\Project_SWAPI
 
 # User-specific files
 *.rsuser
