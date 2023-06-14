@@ -6,8 +6,8 @@ namespace Project_SWAPI.Models
     {
         public int Id { get; set; }
         public string name { get; set; }
-		public int height { get; set; }
-		public int mass { get; set; }
+		public string height { get; set; }
+		public string mass { get; set; }
 		public string hair_color { get; set; }
 		public string skin_color { get; set; }
 		public string eye_color { get; set; }
@@ -15,7 +15,7 @@ namespace Project_SWAPI.Models
 		public string gender { get; set; }
 		public string homeworld { get; set; }
 		public string[] films { get; set; }
-		publci string[] species { get; set; }
+		public string[] species { get; set; }
 		public string[] vehicles { get; set; }
 		public string[] starships { get; set; }
 		public string created { get; set; }
