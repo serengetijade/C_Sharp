@@ -1,7 +1,12 @@
+using Project_SWAPI.Models;
+using Microsoft.EntityFrameworkCore;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
+// Add db connection (defined in appsettings.json)
+builder.Services.AddDbContext<SWAPIContext>(options => options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection"))); 
 
 var app = builder.Build();
 
