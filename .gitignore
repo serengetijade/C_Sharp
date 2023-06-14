@@ -4,7 +4,10 @@
 ## Get latest from https://github.com/github/gitignore/blob/master/VisualStudio.gitignore
 
 \Project_ASP.Net_EF
-Project_SWAPI/
+\Project_SWAPI
+
+Project_SWAPI/Project_SWAPI/views/wwwroot/lib/
+
 
 # User-specific files
 *.rsuser
@@ -366,3 +369,4 @@ MigrationBackup/
 FodyWeavers.xsd
 Project_ASP.NET_EF/
 Project_ASP.NET_EF_Website/
+/Project_SWAPI/Project_SWAPI/wwwroot/lib
