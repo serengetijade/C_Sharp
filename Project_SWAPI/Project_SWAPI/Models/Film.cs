@@ -13,10 +13,10 @@ namespace Project_SWAPI.Models
         public string director { get; set; }
         public string producer { get; set; }
         public string release_date { get; set; }
-        public string[] species { get; set; }
-        public string[] starships { get; set; }
-        public string[] vehicles { get; set; }
-        public string[] characters { get; set;}
-        public string[] planets { get; set; }
+        public string species { get; set; }    //comma separated array
+        public string starships { get; set; }  //comma separated array
+        public string vehicles { get; set; }   //comma separated array
+        public string characters { get; set; } //comma separated array
+        public string planets { get; set; }    //comma separated array
     }
 }

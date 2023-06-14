@@ -15,8 +15,8 @@ namespace Project_SWAPI.Models
         public string skin_colors { get; set; }
         public string language { get; set; }
         public string homeworld { get; set; }
-        public string[] people { get; set; }
-        public string[] films { get; set; }
+        public string people { get; set; }   //comma separated array
+        public string films { get; set; }    //comma separated array
         public string created { get; set; }
         public string edited { get; set; }
         public string url { get; set; }

@@ -12,8 +12,8 @@
         public string climate { get; set; }
         public string terrain { get; set; }
         public int surface_water { get; set; }
-        public string[] residents { get; set; }
-        public string[] films { get; set; }
+        public string residents { get; set; }  //comma separated array
+        public string films { get; set; }      //comma separated array
         public string url { get; set; }
         public string created { get; set; }
         public string edited { get; set; }

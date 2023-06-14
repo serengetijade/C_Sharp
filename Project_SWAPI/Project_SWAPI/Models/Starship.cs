@@ -16,8 +16,8 @@
         public string hyperdrive_rating { get; set; }
         public string MGLT { get; set; }
         public string starship_class { get; set; }
-        public string[] pilots { get; set; }
-        public string[] films { get; set; }
+        public string pilots { get; set; }    //comma separated array
+        public string films { get; set; }     //comma separated array
         public string created { get; set; }
         public string edited { get; set; }
         public string url { get; set; }

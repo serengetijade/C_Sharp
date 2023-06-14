@@ -14,11 +14,11 @@ namespace Project_SWAPI.Models
 		public string birth_year { get; set; }
 		public string gender { get; set; }
 		public string homeworld { get; set; }
-		public string[] films { get; set; }
-		public string[] species { get; set; }
-		public string[] vehicles { get; set; }
-		public string[] starships { get; set; }
-		public string created { get; set; }
+		public string films { get; set; }		//comma separated array
+        public string species { get; set; }     //comma separated array
+        public string vehicles { get; set; }    //comma separated array
+        public string starships { get; set; }   //comma separated array
+        public string created { get; set; }
 		public string edited { get; set; }
 		public string url { get; set; }
     }
