@@ -1,0 +1,31 @@
+/*CSS color variables*/
+:root {
+    --main-light: #D7DFE7;
+    --main-dark: #9BA0A8;
+    --secondary-light: #645E65;
+    --secondary-dark: #393438;
+    --main-yellow: #ffe81f;
+    --bg-dark: #120B18;
+}
+
+html {
+    font-size: 14px;
+    min-height: 100%;
+}
+
+body {
+    font-family: 'Livvic', 'Roboto';
+    background-color: var(--bg-dark);
+    color: var(--main-light)
+}
+
+h1 {
+    color: var(--main-yellow);
+    font-family: 'Star Wars', 'Roboto', sans-serif;
+}
+
+@media (min-width: 768px) {
+    html {
+        font-size: 16px;
+    }
+}
