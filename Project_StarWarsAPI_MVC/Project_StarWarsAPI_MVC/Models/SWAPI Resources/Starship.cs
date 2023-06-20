@@ -1,11 +1,5 @@
 ﻿using System.ComponentModel.DataAnnotations.Schema;
 using System.ComponentModel;
-using System.Text.Json.Serialization;
-using Newtonsoft.Json;
-using Project_StarWarsAPI_MVC.Models.SWAPI_Resources;
-using Newtonsoft.Json.Linq;
-using System.Text;
-using System.ComponentModel.DataAnnotations;
 
 namespace Project_StarWarsAPI_MVC.Models.Content
 {

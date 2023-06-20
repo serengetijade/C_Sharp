@@ -1,5 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Project_StarWarsAPI_MVC.Models;
+using Project_StarWarsAPI_MVC.Models.Content;
+using Project_StarWarsAPI_MVC.Models.SWAPI_Resources;
 using System.Diagnostics;
 
 namespace Project_StarWarsAPI_MVC.Controllers

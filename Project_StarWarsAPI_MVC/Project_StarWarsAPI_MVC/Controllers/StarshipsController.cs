@@ -2,10 +2,15 @@
 using System.Collections.Generic;
 using System.Drawing;
 using System.Linq;
+using System.Security.Cryptography;
 using System.Threading.Tasks;
+using MessagePack.Formatters;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
+using Microsoft.CodeAnalysis.CSharp;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.DependencyInjection;
+using NuGet.Packaging;
 using NuGet.Protocol;
 using Project_StarWarsAPI_MVC.Data;
 using Project_StarWarsAPI_MVC.Models.Content;
@@ -58,7 +63,7 @@ namespace Project_StarWarsAPI_MVC.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,name,model,manufacturer,cost_in_credits,length,max_atmosphering_speed,crew,passengers,cargo_capacity,consumables,hyperdrive_rating,MGLT,starship_class,created,edited,url,imageFile")] Starship starship)
+        public async Task<IActionResult> Create([Bind("Id,name,model,manufacturer,cost_in_credits,length,max_atmosphering_speed,crew,passengers,cargo_capacity,consumables,hyperdrive_rating,MGLT,starship_class,created,edited,url")] Starship starship)
         {
             if (ModelState.IsValid)
             {
@@ -90,7 +95,7 @@ namespace Project_StarWarsAPI_MVC.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("Id,name,model,manufacturer,cost_in_credits,length,max_atmosphering_speed,crew,passengers,cargo_capacity,consumables,hyperdrive_rating,MGLT,starship_class,created,edited,url,image")] Starship starship)
+        public async Task<IActionResult> Edit(int id, [Bind("Id,name,model,manufacturer,cost_in_credits,length,max_atmosphering_speed,crew,passengers,cargo_capacity,consumables,hyperdrive_rating,MGLT,starship_class,created,edited,url")] Starship starship)
         {
             if (id != starship.Id)
             {
@@ -161,7 +166,6 @@ namespace Project_StarWarsAPI_MVC.Controllers
         {
           return (_context.Starship?.Any(e => e.Id == id)).GetValueOrDefault();
         }
-
 
         ////convert image to byte array
         //public byte[] imgToByteArray(HttpPostedFileBase photoInput)

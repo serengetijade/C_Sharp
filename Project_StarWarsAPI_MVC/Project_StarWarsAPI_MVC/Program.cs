@@ -3,6 +3,7 @@ using Project_StarWarsAPI_MVC.Data;
 using Project_StarWarsAPI_MVC.Models;
 using Microsoft.Extensions.DependencyInjection;
 using Project_StarWarsAPI_MVC.Models.SWAPI_Resources;
+using Project_StarWarsAPI_MVC.Models.Content;
 
 var builder = WebApplication.CreateBuilder(args);
 //Connect the app to the SQL server: 
@@ -19,6 +20,7 @@ using (var scope = app.Services.CreateScope())
 {
     var services = scope.ServiceProvider;   
     SeedData.Initialize(services);
+    SeedData.GetRandomRecord(services);
 }
 
 // Configure the HTTP request pipeline.
