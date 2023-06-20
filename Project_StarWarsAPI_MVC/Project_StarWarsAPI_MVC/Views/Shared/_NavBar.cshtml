@@ -1,13 +1,9 @@
 ﻿@*
 *@
 
-<nav class="navbar navbar-expand-lg bg-body-tertiary">
-    <div class="container-fluid">
-        <a class="navbar-brand" href="#">SWAPI</a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNavDropdown">
+<nav class="navbar navbar-expand-lg bg-body-tertiary justify">
+    <div class="container-fluid justify">
+        <div class="collapse navbar-collapse justify-content-end" id="navbarNavDropdown">
             <ul class="navbar-nav">
                 <li class="nav-item">
                     <a class="nav-link" asp-controller="Home" asp-action="Index">Home</a>
@@ -19,10 +15,8 @@
                     <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                         API Resources
                     </a>
-                    <ul class="dropdown-menu">
-                        <!--Syntax: Html.ActionLine("Controller", "MethodName", "DisplayText")-->
-                        <li>@Html.ActionLink("Starships", "Index", "Starships")</li>
-                        <li>@Html.ActionLink("People", "Index", "People")</li>
+                    <ul class="dropdown-menu bg-dark">
+                        <li>@Html.ActionLink("Starship Data", "Index", "Starships")</li>
                     </ul>
                 </li>
             </ul>

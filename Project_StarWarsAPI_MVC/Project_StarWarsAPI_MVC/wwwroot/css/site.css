@@ -8,21 +8,84 @@
     --bg-dark: #120B18;
 }
 
+* {
+    margin: 0;
+    padding: 0;
+}
+
 html {
     font-size: 14px;
     min-height: 100%;
+    box-sizing: border-box;
+    scroll-behavior:smooth;
 }
 
 body {
     font-family: 'Livvic', 'Roboto';
-    background-color: var(--bg-dark);
-    color: var(--main-light)
+    color: var(--main-light);
+    Background: var(--bg-dark);
 }
 
 h1 {
     color: var(--main-yellow);
     font-family: 'Star Wars', 'Roboto', sans-serif;
 }
+h2, h3, h4, h5 {
+    color: var(--main-yellow);
+}
+
+/*---Starry Night Background---*/
+@keyframes move-twink-back {
+    from {
+        background-position: 0 0;
+    }
+
+    to {
+        background-position: -10000px 5000px;
+    }
+}
+
+@keyframes move-clouds-back {
+    from {
+        background-position: 0 0;
+    }
+
+    to {
+        background-position: 10000px 0;
+    }
+}
+
+.stars, .twinkling, .clouds {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    display: block;
+}
+
+.stars {
+    background: #000 url("../image/stars.png") repeat top center;
+    z-index: -3;
+}
+
+.twinkling {
+    background: transparent url('../image/twinkling.png') repeat top center;
+    z-index: -2;
+    animation: move-twink-back 200s linear infinite;
+}
+
+.clouds {
+    background: transparent url('../image/clouds.png') repeat top center;
+    z-index: -1;
+    opacity: .1;
+    animation: move-clouds-back 300s linear infinite;
+}
+/*---End Starry Night Background---*/
+
+
 
 @media (min-width: 768px) {
     html {

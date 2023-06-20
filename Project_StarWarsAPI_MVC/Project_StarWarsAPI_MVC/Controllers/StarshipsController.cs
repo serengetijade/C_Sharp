@@ -1,10 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
+using NuGet.Protocol;
 using Project_StarWarsAPI_MVC.Data;
 using Project_StarWarsAPI_MVC.Models.Content;
 
@@ -56,7 +58,7 @@ namespace Project_StarWarsAPI_MVC.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,name,model,manufacturer,cost_in_credits,length,max_atmosphering_speed,crew,passengers,cargo_capacity,consumables,hyperdrive_rating,MGLT,starship_class,created,edited,url")] Starship starship)
+        public async Task<IActionResult> Create([Bind("Id,name,model,manufacturer,cost_in_credits,length,max_atmosphering_speed,crew,passengers,cargo_capacity,consumables,hyperdrive_rating,MGLT,starship_class,created,edited,url,imageFile")] Starship starship)
         {
             if (ModelState.IsValid)
             {
@@ -88,7 +90,7 @@ namespace Project_StarWarsAPI_MVC.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("Id,name,model,manufacturer,cost_in_credits,length,max_atmosphering_speed,crew,passengers,cargo_capacity,consumables,hyperdrive_rating,MGLT,starship_class,created,edited,url")] Starship starship)
+        public async Task<IActionResult> Edit(int id, [Bind("Id,name,model,manufacturer,cost_in_credits,length,max_atmosphering_speed,crew,passengers,cargo_capacity,consumables,hyperdrive_rating,MGLT,starship_class,created,edited,url,image")] Starship starship)
         {
             if (id != starship.Id)
             {
@@ -159,5 +161,25 @@ namespace Project_StarWarsAPI_MVC.Controllers
         {
           return (_context.Starship?.Any(e => e.Id == id)).GetValueOrDefault();
         }
+
+
+        ////convert image to byte array
+        //public byte[] imgToByteArray(HttpPostedFileBase photoInput)
+        //{
+        //    byte[] byteArray;
+        //    using (BinaryReader reader = new BinaryReader(photoInput.InputStream))
+        //    {
+        //        byteArray = reader.ReadBytes(photoInput.ContentLength);
+        //    }
+        //    return byteArray;
+        //}
+
+        ////Convert byte array to image
+        //public ActionResult byteToImg(int Id)
+        //{
+        //    Starship image = _context.Starship.Find(Id);
+        //    byte[] byteArray = image.image;
+        //    return File(byteArray, "image/jpeg");
+        //}
     }
 }

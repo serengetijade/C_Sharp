@@ -39,14 +39,14 @@ namespace Project_StarWarsAPI_MVC.Models.Content
         public string starship_class { get; set; }
         [NotMapped]
         [DisplayName("Pilots Array")]
-        public string[]? pilots { get; set; }
+        public string[] pilots { get; set; }
         [DisplayName("Pilots")]
-        public string? _pilots { get; set; }
+        public string _pilots { get; set; }
         [NotMapped]
         [DisplayName("Film Array")]
-        public string[]? films { get; set; }
+        public string[] films { get; set; }
         [DisplayName("Films")]
-        public string? _films { get; set; }
+        public string _films { get; set; }
         [DisplayName("Created")]
         public string created { get; set; }
         [DisplayName("Edited")]

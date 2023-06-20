@@ -1,125 +1,54 @@
-﻿@model IEnumerable<Project_StarWarsAPI_MVC.Models.Content.Starship>
+﻿@using Project_StarWarsAPI_MVC.Models.SWAPI_Resources;
+@model IEnumerable<Project_StarWarsAPI_MVC.Models.Content.Starship>
 
 @{
     ViewData["Title"] = "Index";
 }
 
-<h1>Index</h1>
+<h1>Starships</h1>
 
 <p>
     <a asp-action="Create">Create New</a>
 </p>
-<table class="table">
-    <thead>
-        <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.name)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.model)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.manufacturer)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.cost_in_credits)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.length)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.max_atmosphering_speed)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.crew)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.passengers)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.cargo_capacity)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.consumables)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.hyperdrive_rating)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.MGLT)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.starship_class)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.created)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.edited)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.url)
-            </th>
-            <th></th>
-        </tr>
-    </thead>
-    <tbody>
-@foreach (var item in Model) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.name)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.model)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.manufacturer)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.cost_in_credits)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.length)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.max_atmosphering_speed)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.crew)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.passengers)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.cargo_capacity)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.consumables)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.hyperdrive_rating)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.MGLT)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.starship_class)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.created)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.edited)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.url)
-            </td>
-            <td>
-                <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
-            </td>
-        </tr>
+@foreach (var item in Model)
+{
+    <a class="btn btn-dark" data-bs-toggle="collapse" href="#collapseExample-@item.Id" role="button" aria-expanded="false" aria-controls="collapseExample">
+        <strong>@item.name</strong>
+    </a>
+    <div class="collapse" id="collapseExample-@item.Id">
+        <div class="card card-body bg-dark">
+            <h4>@item.name</h4>
+            <br /><h5>Model: </h5>@item.model
+            <br /><h5>Manufacturer: </h5>@item.manufacturer
+            <br /><h5>Cost: </h5>@item.cost_in_credits
+            <br /><h5>Length: </h5>@item.length
+            <br /><h5>Max Atmo Speed: </h5>@item.max_atmosphering_speed
+            <br /><h5>Crew Capacity: </h5>@item.crew
+            <br /><h5>Passenger Capacity: </h5>@item.passengers
+            <br /><h5>Cargo Capacity: </h5>@item.cargo_capacity
+            <br /><h5>Consumables: </h5>@item.consumables
+            <br /><h5>Hyperdrive Rating: </h5>@item.hyperdrive_rating
+            <br /><h5>MGLT: </h5>@item.MGLT
+            <br /><h5>Class: </h5>@item.starship_class
+            <br /><h5>Pilots: </h5> 
+            @foreach (var url in SeedData.StringToArray(item._pilots)){
+                <a href="@url" target="_blank"> @url </a><span>   </span>
+            }
+            <br /><h5>Films: </h5>
+            @foreach (var url in SeedData.StringToArray(item._films))
+            {
+                <a href="@url" target="_blank"> @url</a><span>   </span>
+            }
+            <br /><h5>Created: </h5>@item.created
+            <br /><h5>Edited: </h5>@item.edited
+            <br /><h5>URL: </h5><a href="@item.url">@item.url</a>
+            <span style="display:inline">
+                <a asp-action="Details" asp-route-id="@item.Id"><button class="btn btn-outline-warning">Details</button></a>
+                <a asp-action="Edit" asp-route-id="@item.Id"><button class="btn btn-outline-warning">Edit</button></a>
+                <a asp-action="Delete" asp-route-id="@item.Id"><button class="btn btn-outline-danger">Delete</button></a>
+            </span>
+            
+        </div>
+    </div>
+    <br />
 }
-    </tbody>
-</table>
