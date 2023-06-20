@@ -8,12 +8,9 @@
     --bg-dark: #120B18;
 }
 
-* {
+html {
     margin: 0;
     padding: 0;
-}
-
-html {
     font-size: 14px;
     min-height: 100%;
     box-sizing: border-box;
@@ -23,7 +20,7 @@ html {
 body {
     font-family: 'Livvic', 'Roboto';
     color: var(--main-light);
-    Background: var(--bg-dark);
+    background: #000;
 }
 
 h1 {
@@ -56,7 +53,7 @@ h2, h3, h4, h5 {
 }
 
 .stars, .twinkling, .clouds {
-    position: absolute;
+    position: fixed;
     top: 0;
     left: 0;
     right: 0;

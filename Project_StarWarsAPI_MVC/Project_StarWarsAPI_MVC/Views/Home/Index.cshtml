@@ -1,16 +1,62 @@
-﻿@model IEnumerable<Project_StarWarsAPI_MVC.Models.Content.Starship>
+﻿@using Project_StarWarsAPI_MVC.Models.Content;
+@using Project_StarWarsAPI_MVC.Models.SWAPI_Resources;
+@model IEnumerable<Project_StarWarsAPI_MVC.Models.Content.Starship>;
 
 @{
     ViewData["Title"] = "Home Page";
+    Starship item = Model.First();
 }
-
 
 <div class="text-center">
     <h1 class="display-4">Star Wars Application Programming Interface</h1>
 </div>
 
-<div>
+<div class="border border-warning text-center row">
+    <div class="">
+        <p>
+            <hr />
+            <h3>@item.name</h3>
+            <hr />
+        </p>
+        <img src="~/image/defaultship.jpg" alt="Ship Blueprints" />
+
+        <p>
+            <h5>Model: </h5>@item.model
+            <br /><h5>Manufacturer: </h5>@item.manufacturer
+            <br /><h5>Cost: </h5>@item.cost_in_credits
+            <br /><h5>Length: </h5>@item.length
+            <br /><h5>Max Atmo Speed: </h5>@item.max_atmosphering_speed
+            <br /><h5>Crew Capacity: </h5>@item.crew
+            <br /><h5>Passenger Capacity: </h5>@item.passengers
+            <br /><h5>Cargo Capacity: </h5>@item.cargo_capacity
+            <br /><h5>Consumables: </h5>@item.consumables
+            <br /><h5>Hyperdrive Rating: </h5>@item.hyperdrive_rating
+            <br /><h5>MGLT: </h5>@item.MGLT
+            <br /><h5>Class: </h5>@item.starship_class
+            <br /><h5>Pilots: </h5>
+            @foreach (var url in SeedData.StringToArray(item._pilots))
+            {
+                <a href="@url" target="_blank"> @url </a>
+
+                <span>   </span>
+            }
+            <br /><h5>Films: </h5>
+            @foreach (var url in SeedData.StringToArray(item._films))
+            {
+                <a href="@url" target="_blank"> @url</a>
+
+                <span>   </span>
+            }
+            <br /><h5>Created: </h5>@item.created
+            <br /><h5>Edited: </h5>@item.edited
+            <br /><h5>URL: </h5><a href="@item.url">@item.url</a>
+        </p>
+    </div>
 </div>
+
+
+
+
 
 
 

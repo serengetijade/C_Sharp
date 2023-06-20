@@ -1,5 +1,9 @@
 ﻿using System.ComponentModel.DataAnnotations.Schema;
 using System.ComponentModel;
+using Humanizer;
+using Microsoft.CodeAnalysis.Differencing;
+using Project_StarWarsAPI_MVC.Models.SWAPI_Resources;
+using System.Security.Policy;
 
 namespace Project_StarWarsAPI_MVC.Models.Content
 {
@@ -61,3 +65,26 @@ namespace Project_StarWarsAPI_MVC.Models.Content
         //}
     }
 }
+
+//CREATE TABLE[dbo].[Starship] (
+//    [Id]                     INT IDENTITY(1, 1) NOT NULL,
+//    [name]                   NVARCHAR (MAX) NOT NULL,
+//    [model]                  NVARCHAR (MAX) NOT NULL,
+//    [manufacturer]           NVARCHAR (MAX) NOT NULL,
+//    [cost_in_credits]        NVARCHAR (MAX) NOT NULL,
+//    [length]                 NVARCHAR (MAX) NOT NULL,
+//    [max_atmosphering_speed] NVARCHAR (MAX) NOT NULL,
+//    [crew]                   NVARCHAR (MAX) NOT NULL,
+//    [passengers]             NVARCHAR (MAX) NOT NULL,
+//    [cargo_capacity]         NVARCHAR (MAX) NOT NULL,
+//    [consumables]            NVARCHAR (MAX) NOT NULL,
+//    [hyperdrive_rating]      NVARCHAR (MAX) NOT NULL,
+//    [MGLT]                   NVARCHAR (MAX) NOT NULL,
+//    [starship_class]         NVARCHAR (MAX) NOT NULL,
+//    [created]                NVARCHAR (MAX) NOT NULL,
+//    [edited]                 NVARCHAR (MAX) NOT NULL,
+//    [url]                    NVARCHAR (MAX) NOT NULL,
+//    [_films]                 NVARCHAR (MAX) NOT NULL,
+//    [_pilots]                NVARCHAR (MAX) NOT NULL,
+//    CONSTRAINT[PK_Starship] PRIMARY KEY CLUSTERED ([Id] ASC)
+//);
