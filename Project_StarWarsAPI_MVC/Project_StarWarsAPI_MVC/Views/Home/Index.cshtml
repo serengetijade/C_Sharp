@@ -3,15 +3,22 @@
 @model IEnumerable<Project_StarWarsAPI_MVC.Models.Content.Starship>;
 
 @{
-    ViewData["Title"] = "Home Page";
+    ViewData["Title"] = "Index";
+    ViewData["Controller"] = "Home";
     Starship item = Model.First();
 }
 
 <div class="text-center">
-    <h1 class="display-4">Star Wars Application Programming Interface</h1>
+    <h1 class="display-4">Star Wars Application Programming Interface Project</h1>
 </div>
 
-<div class="border border-warning text-center row">
+<div class="text-center">
+    <br />
+    <a class="btn btn-warning" asp-controller="Starships" asp-action="Index">See a list of all Starships</a>
+    <br /><br />
+</div>
+
+<div class="border border-warning text-center">
     <div class="">
         <p>
             <hr />
@@ -19,9 +26,8 @@
             <hr />
         </p>
         <img src="~/image/defaultship.jpg" alt="Ship Blueprints" />
-
         <p>
-            <h5>Model: </h5>@item.model
+            <h5>Model: </h5> @item.model
             <br /><h5>Manufacturer: </h5>@item.manufacturer
             <br /><h5>Cost: </h5>@item.cost_in_credits
             <br /><h5>Length: </h5>@item.length
@@ -37,14 +43,12 @@
             @foreach (var url in SeedData.StringToArray(item._pilots))
             {
                 <a href="@url" target="_blank"> @url </a>
-
                 <span>   </span>
             }
             <br /><h5>Films: </h5>
             @foreach (var url in SeedData.StringToArray(item._films))
             {
                 <a href="@url" target="_blank"> @url</a>
-
                 <span>   </span>
             }
             <br /><h5>Created: </h5>@item.created

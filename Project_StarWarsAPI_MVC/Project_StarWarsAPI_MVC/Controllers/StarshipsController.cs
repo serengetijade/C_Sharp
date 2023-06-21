@@ -26,12 +26,29 @@ namespace Project_StarWarsAPI_MVC.Controllers
             _context = context;
         }
 
-        // GET: Starships
-        public async Task<IActionResult> Index()
+        //// GET: Starships
+        //public async Task<IActionResult> Index()
+        //{
+        //      return _context.Starship != null ? 
+        //                  View(await _context.Starship.ToListAsync()) :
+        //                  Problem("Entity set 'SWContext.Starship'  is null.");
+        //}
+        //Update Index method to enable searching: 
+        public async Task<IActionResult> Index(string searchString)   
         {
-              return _context.Starship != null ? 
+            var items = from m in _context.Starship
+                         select m;
+
+            if (!String.IsNullOrEmpty(searchString))
+            {
+                items = items.Where(s => s.name!.Contains(searchString));
+                return View(await items.ToListAsync());
+            }
+
+            return _context.Starship != null ?
                           View(await _context.Starship.ToListAsync()) :
                           Problem("Entity set 'SWContext.Starship'  is null.");
+
         }
 
         // GET: Starships/Details/5
