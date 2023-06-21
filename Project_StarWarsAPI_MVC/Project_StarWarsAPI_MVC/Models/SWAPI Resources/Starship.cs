@@ -15,42 +15,42 @@ namespace Project_StarWarsAPI_MVC.Models.Content
         [DisplayName("Model")]
         public string model { get; set; }
         [DisplayName("Manufacturer")]
-        public string manufacturer { get; set; }
+        public string? manufacturer { get; set; }
         [DisplayName("Cost")]
         public string cost_in_credits { get; set; }
         [DisplayName("Length")]
-        public string length { get; set; }
+        public string? length { get; set; }
         [DisplayName("Max Atmo Speed")]
-        public string max_atmosphering_speed { get; set; }
+        public string? max_atmosphering_speed { get; set; }
         [DisplayName("Crew Capacity")]
-        public string crew { get; set; }
+        public string? crew { get; set; }
         [DisplayName("Passenger Capacity")]
-        public string passengers { get; set; }
+        public string? passengers { get; set; }
         [DisplayName("Cargo Capacity")]
-        public string cargo_capacity { get; set; }
+        public string? cargo_capacity { get; set; }
         [DisplayName("Consumables")]
-        public string consumables { get; set; }
+        public string? consumables { get; set; }
         [DisplayName("Hyperdrive Rating")]
-        public string hyperdrive_rating { get; set; }
-        public string MGLT { get; set; }
+        public string? hyperdrive_rating { get; set; }
+        public string? MGLT { get; set; }
         [DisplayName("Class")]
-        public string starship_class { get; set; }
+        public string? starship_class { get; set; }
         [NotMapped]
         [DisplayName("Pilots Array")]
-        public string[] pilots { get; set; }
+        public string[]? pilots { get; set; }
         [DisplayName("Pilots")]
-        public string _pilots { get; set; }
+        public string? _pilots { get; set; }
         [NotMapped]
         [DisplayName("Film Array")]
-        public string[] films { get; set; }
+        public string[]? films { get; set; }
         [DisplayName("Films")]
-        public string _films { get; set; }
+        public string? _films { get; set; }
         [DisplayName("Created")]
-        public string created { get; set; }
+        public string? created { get; set; }
         [DisplayName("Edited")]
-        public string edited { get; set; }
+        public string? edited { get; set; }
         [DisplayName("URL")]
-        public string url { get; set; }
+        public string? url { get; set; }
 
         //DateTime example: 
         //[JsonProperty("birthday")]

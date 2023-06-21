@@ -31,7 +31,8 @@ namespace Project_StarWarsAPI_MVC.Controllers
         {
             var items = from m in _context.Starship select m;
 
-            if (!String.IsNullOrEmpty(searchString))
+            //Add basic input sanitization: 
+            if (!String.IsNullOrEmpty(searchString) && !searchString.Contains("@") && !searchString.Contains("=") && !searchString.Contains("--"))
             {
                 items = items.Where(s => s.name!.Contains(searchString));
                 return View(await items.ToListAsync());
@@ -81,6 +82,22 @@ namespace Project_StarWarsAPI_MVC.Controllers
             }
             return View(starship);
         }
+
+        // POST: Starships/Create
+        //// To protect from overposting attacks, enable the specific properties you want to bind to.
+        //// For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
+        //[HttpPost]
+        //[ValidateAntiForgeryToken]
+        //public ActionResult Create([Bind("name,model,manufacturer,cost_in_credits,length,max_atmosphering_speed,crew,passengers,cargo_capacity,consumables,hyperdrive_rating,MGLT,starship_class,_pilots,_films,created,edited,url")] Starship starship)
+        //{
+        //    if (ModelState.IsValid)
+        //    {
+        //        _context.Add(starship);
+        //        _context.SaveChangesAsync();
+        //        return RedirectToAction(nameof(Index));
+        //    }
+        //    return View(starship);
+        //}
 
         // GET: Starships/Edit/5
         public async Task<IActionResult> Edit(int? id)
