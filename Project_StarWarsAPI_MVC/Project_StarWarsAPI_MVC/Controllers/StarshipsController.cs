@@ -38,8 +38,9 @@ namespace Project_StarWarsAPI_MVC.Controllers
                 return View(await items.ToListAsync());
             }
 
+            //Display in alphabetical order: 
             return _context.Starship != null ?
-                          View(await _context.Starship.ToListAsync()) :
+                          View(await _context.Starship.OrderBy(Starship => Starship.name).ToListAsync()) :
                           Problem("Entity set 'SWContext.Starship'  is null.");
         }
 
@@ -82,22 +83,6 @@ namespace Project_StarWarsAPI_MVC.Controllers
             }
             return View(starship);
         }
-
-        // POST: Starships/Create
-        //// To protect from overposting attacks, enable the specific properties you want to bind to.
-        //// For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
-        //[HttpPost]
-        //[ValidateAntiForgeryToken]
-        //public ActionResult Create([Bind("name,model,manufacturer,cost_in_credits,length,max_atmosphering_speed,crew,passengers,cargo_capacity,consumables,hyperdrive_rating,MGLT,starship_class,_pilots,_films,created,edited,url")] Starship starship)
-        //{
-        //    if (ModelState.IsValid)
-        //    {
-        //        _context.Add(starship);
-        //        _context.SaveChangesAsync();
-        //        return RedirectToAction(nameof(Index));
-        //    }
-        //    return View(starship);
-        //}
 
         // GET: Starships/Edit/5
         public async Task<IActionResult> Edit(int? id)
