@@ -8,11 +8,6 @@
 
 <h1>Starships</h1>
 
-<form asp-controller="@ViewData["Controller"]" class="d-flex" role="search" asp-action="@ViewData["Title"]">
-    <input class="form-control me-2" type="text" placeholder="ship name" aria-label="Search" name="SearchString">
-    <input class="btn btn-outline-warning" type="submit" value="Search">
-</form>
-<br />
 <section>
     @foreach (var item in Model)
     {

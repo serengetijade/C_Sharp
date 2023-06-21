@@ -1,4 +1,16 @@
-﻿// Please see documentation at https://docs.microsoft.com/aspnet/core/client-side/bundling-and-minification
-// for details on configuring this project to bundle and minify static web assets.
+﻿//function toggleMusic() {
+//    document.getElementById("youtube-audio").click();
+//}
 
-// Write your JavaScript code.
+function toggleMusic() {
+    var button = document.getElementById("musicButton").innerHTML;
+    var player = document.getElementById("youtube-audio");
+    if (button == "🔇" || button == "🎵") {
+        document.getElementById("musicButton").innerHTML = "🔊";
+        player.click();
+    }
+    else if (button == "🔊") {
+        document.getElementById("musicButton").innerHTML = "🔇";
+        player.click();
+    }
+}

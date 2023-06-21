@@ -26,18 +26,10 @@ namespace Project_StarWarsAPI_MVC.Controllers
             _context = context;
         }
 
-        //// GET: Starships
-        //public async Task<IActionResult> Index()
-        //{
-        //      return _context.Starship != null ? 
-        //                  View(await _context.Starship.ToListAsync()) :
-        //                  Problem("Entity set 'SWContext.Starship'  is null.");
-        //}
         //Update Index method to enable searching: 
         public async Task<IActionResult> Index(string searchString)   
         {
-            var items = from m in _context.Starship
-                         select m;
+            var items = from m in _context.Starship select m;
 
             if (!String.IsNullOrEmpty(searchString))
             {
@@ -48,7 +40,6 @@ namespace Project_StarWarsAPI_MVC.Controllers
             return _context.Starship != null ?
                           View(await _context.Starship.ToListAsync()) :
                           Problem("Entity set 'SWContext.Starship'  is null.");
-
         }
 
         // GET: Starships/Details/5
