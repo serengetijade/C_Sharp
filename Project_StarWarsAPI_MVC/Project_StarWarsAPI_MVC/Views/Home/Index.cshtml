@@ -40,28 +40,20 @@
             <br /><h5>MGLT: </h5>@item.MGLT
             <br /><h5>Class: </h5>@item.starship_class
             <br /><h5>Pilots: </h5>
-            @foreach (var url in SeedData.StringToArray(item._pilots))
-            {
-                <a href="@url" target="_blank"> @url </a>
-                <span>   </span>
-            }
+                @foreach (var url in SeedData.StringToArray(item._pilots))
+                {
+                    <a href="@url" target="_blank"> @url </a>
+                    <span>   </span>
+                }
             <br /><h5>Films: </h5>
-            @foreach (var url in SeedData.StringToArray(item._films))
-            {
-                <a href="@url" target="_blank"> @url</a>
-                <span>   </span>
-            }
+                @foreach (var url in SeedData.StringToArray(item._films))
+                {
+                    <a href="@url" target="_blank"> @url</a>
+                    <span>   </span>
+                }
             <br /><h5>Created: </h5>@item.created
             <br /><h5>Edited: </h5>@item.edited
             <br /><h5>URL: </h5><a href="@item.url">@item.url</a>
         </p>
     </div>
 </div>
-
-<!--Hide the audio file that plays music.-->
-<div style="visibility:hidden">
-    <div data-video="Isic2Z2e2xs" data-autoplay="1" data-loop="1" id="youtube-audio"></div>
-    <script src="https://www.youtube.com/iframe_api"></script>
-    <script src="https://cdn.rawgit.com/labnol/files/master/yt.js"></script>
-</div>
-<div></div>
