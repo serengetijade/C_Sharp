@@ -43,6 +43,7 @@ A local database was declared. The database system used was SQL Server.
 A code first approach was used to declare objects that represent each of the API resource categories. Throughout the project, the Starship class was used to CRUD highlight functionality. 
 
 The Star Wars API returns nested JSON strings- some information is delivered as arrays. In order to parse this into the project's database, the 'nested' data needed to be converted to strings. As part of this process, additional class properties were added: one to recieve the string (which was not mapped to the db) and one to represent the stringified data. 
+
 https://github.com/serengetijade/C_Sharp/blob/6482abff735509868e4f15baababc2a54859185d/Project_StarWarsAPI_MVC/Project_StarWarsAPI_MVC/Models/SWAPI%20Resources/Starship.cs#L43C7-L53
 
 The database is configured with a Context file, named <a href="https://github.com/serengetijade/C_Sharp/blob/main/Project_StarWarsAPI_MVC/Project_StarWarsAPI_MVC/Data/SWContext.cs">SWContext</a>.  Within it, each declared DbSet represents a table within the database.  
