@@ -2,6 +2,7 @@
 This repository is for C# and .NET projects
 
 ## PROJECTS:
+- [ASP.NET 6.0 MVC Entity Framework Core Project](https://github.com/serengetijade/C_Sharp/tree/main/Project_StarWarsAPI_MVC/Project_StarWarsAPI_MVC)
 - [ASP.NET Entity Framework Project](https://github.com/serengetijade/Project_ASP.NET_EF_Website)
 - [MVC Signup Form](https://github.com/serengetijade/C_Sharp/tree/main/MVC_SignupForm/MVC_SignupForm)
 - [MVC Basic Project](https://github.com/serengetijade/C_Sharp/tree/main/MVC_Project/MVC_Project)
@@ -11,6 +12,9 @@ This repository is for C# and .NET projects
 - [Database First Web App](https://github.com/serengetijade/C_Sharp/tree/main/DatabaseFirst_Car_Insurance/Car_Insurance)
 - [Code First Web App](https://github.com/serengetijade/C_Sharp/tree/main/CodeFirst_ConsoleApp/548Challenge)
 - [WebApp Tutorial](https://github.com/serengetijade/C_Sharp/tree/main/WebAppTutorial)
+
+#### [ASP.NET 6.0 MVC Entity Framework Core Project](https://github.com/serengetijade/C_Sharp/tree/main/Project_StarWarsAPI_MVC/Project_StarWarsAPI_MVC)
+A database centered web app. It uses a code first approach to create models, configure the databse, and seed it with data pulled from an API. At startup a random record is displayed from the db. 
 
 #### [ASP.NET Entity Framework Project](https://github.com/serengetijade/Project_ASP.NET_EF_Website)
 An in depth C# project using MVC and Entity Framework to create a website for a theatre company. The focus was to create a database to handle comments on the blog seciton of the site, as well as to upload images to the blog photos section.
