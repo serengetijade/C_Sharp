@@ -77,6 +77,7 @@ In addition to the projects, there is a small code library for referencing basic
 - [Exception Handling](https://github.com/serengetijade/C_Sharp/tree/main/Basic_CSharp/ConsoleApp_ExceptionHandling/ConsoleApp_ExceptionHandling) Try catch blocks and exception codes.
 - [FileIO](https://github.com/serengetijade/C_Sharp/blob/main/Basic_CSharp/ConsoleApp_FileIO_LogToTxtFile/ConsoleApp_FileIO_LogToTxtFile/Program.cs) The FileIO library and how to log to text files. 
 - [Input Validation]() Check that user input is type int. 
+- [Interfaces](https://github.com/serengetijade/C_Sharp/blob/main/Basic_CSharp/Interfaces) Popular interfaces such as IEnumerable, IEnumerator, ICollection, IEqalityComparer, INotifyPropertyChanged, IComparer
 - [Lambda](https://github.com/serengetijade/C_Sharp/tree/main/Basic_CSharp/ConsoleApp_Lambda/ConsoleApp_Lambda) Using lambda expressions, you can write local functions that can be passed as arguments or returned as the value of function calls.
 - [Key and Console Modifiers](https://github.com/serengetijade/C_Sharp/tree/main/Basic_CSharp/ConsoleApp_Key_Console_Modifiers) Log to the console when key modifiers are pressed. 
 - [Methods](https://github.com/serengetijade/C_Sharp/tree/main/Basic_CSharp/ConsoleApp_Methods/ConsoleApp_Methods) The basics of C# methods. 
