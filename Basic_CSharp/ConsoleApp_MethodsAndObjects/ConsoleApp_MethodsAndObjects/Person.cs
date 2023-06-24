@@ -1,11 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace ConsoleApp_Inheritance
-
 {
-    //Object literal: 
     public class Person
     {
         //Define a Property- Syntax: accessModifier dataType propertyName { method; method; }
@@ -51,7 +47,4 @@ namespace ConsoleApp_Inheritance
             Console.WriteLine("This is the ChildClass method.");
         }
     }
-
-
 }
-
