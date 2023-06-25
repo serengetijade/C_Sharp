@@ -5,23 +5,38 @@ using static Interfaces.Program;
 
 namespace Interfaces
 {
-    /// <summary>
-    /// Right click on IComparable > Quick Actions and Refactoring > Implement interface
-    /// </summary>
+    // Right click on IComparable > Quick Actions and Refactoring > Implement interface
     class Program : IComparable, INotifyPropertyChanged, IComparer<string>, IEquatable<Program>, IEqualityComparer<objToCompare>
     {
         public static void Main(string[] args)
         {
 
         }
+        
         //--------------------------------------------------------
+        //INotifyProperyChanged
+        public event PropertyChangedEventHandler? PropertyChanged;
+        /// <summary>
+        /// Notifies when a property value has changed. 
+        /// </summary>
+        public string Name
+        {
+            get
+            {
+                return Name;
+            }
+            set
+            {
+                Name = value;
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(Name));
+            }
+        }
+
+        //--------------------------------------------------------
+        // IComparable Interface: Compare two objects and return an int
         Program ex1 = new Program() { exapmleLength = 2 };
         public int exapmleLength;
-        /// <summary>
-        /// IComparable Interface: Compare two objects and return an int
-        /// </summary>
-        /// <param name="obj"></param>
-        /// <returns>int</returns>
+
         public int CompareTo(object? obj)
         {
             Program ex2 = (Program)obj;     //Caste the object passed into the function to a 'Program' object named ex2. if
@@ -36,24 +51,6 @@ namespace Interfaces
             else
             {
                 return -1;
-            }
-        }
-
-        //--------------------------------------------------------
-        public event PropertyChangedEventHandler? PropertyChanged;        
-        /// <summary>
-        /// Notifies when a property value has changed. 
-        /// </summary>
-        public string Name
-        {
-            get
-            {
-                return Name;
-            }
-            set
-            {
-                Name = value;
-                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(Name));  
             }
         }
 
@@ -102,13 +99,7 @@ namespace Interfaces
         }
 
         //--------------------------------------------------------
-        /// <summary>
-        /// IEqualityComparer: compare two objects
-        /// </summary>
-        /// <param name="x"></param>
-        /// <param name="y"></param>
-        /// <returns></returns>
-        /// <exception cref="NotImplementedException"></exception>
+        // IEqualityComparer: compare two objects
         public class objToCompare
         {
             Guid id;
