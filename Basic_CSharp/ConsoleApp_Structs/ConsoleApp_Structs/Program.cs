@@ -1,4 +1,5 @@
 ﻿using System;
+using System.ComponentModel;
 
 namespace ConsoleApp_Structs
 {
@@ -11,6 +12,12 @@ namespace ConsoleApp_Structs
 
             Console.WriteLine(instance1.Amount);
 
+        }
+
+        struct ExampleStruct
+        {
+            string exString;
+            int exInt;
         }
     }
 }
