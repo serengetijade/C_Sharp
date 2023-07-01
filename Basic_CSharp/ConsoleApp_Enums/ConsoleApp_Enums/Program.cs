@@ -4,7 +4,6 @@ namespace ConsoleApp_Enums
 {
     public class Program
     {
-
         public static void Main(string[] args)
         {
             methodName();

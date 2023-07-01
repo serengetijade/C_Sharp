@@ -15,7 +15,7 @@ builder.Services.AddControllersWithViews();
 
 var app = builder.Build();
 
-//Seed the DB within a using statement when done, it is collected by garbage cleaner:
+//Seed the DB within a using statement, when done it is collected by garbage cleaner:
 using (var scope = app.Services.CreateScope())
 {
     var services = scope.ServiceProvider;   

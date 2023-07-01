@@ -172,6 +172,11 @@ namespace ConsoleApp_ArraysLists
                 Console.WriteLine(iteration);
             }
         }
+
+        public static void sortedList()
+        {
+            SortedList<string, int> sortedList = new SortedList<string, int>() { { "key1", 1 }, { "key2", 2 }, { "key3", 3} };
+        }
     }
 }
 
