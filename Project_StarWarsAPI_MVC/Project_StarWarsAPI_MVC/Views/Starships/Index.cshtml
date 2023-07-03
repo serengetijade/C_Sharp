@@ -11,12 +11,13 @@
 <section>
     @foreach (var item in Model)
     {
-        <a class="btn btn-dark" data-bs-toggle="collapse" href="#collapseExample-@item.Id" role="button" aria-expanded="false" aria-controls="collapseExample">
+        <a class="btn btn-dark" data-bs-toggle="collapse" href="#collapseExample-@item.Id" role="button" aria-expanded="false" aria-controls="collapseExample" >
             <strong>@item.name</strong>
         </a>
         <div class="collapse" id="collapseExample-@item.Id">
             <div class="card card-body bg-dark">
                 <h4>@item.name</h4>
+                <img src="@Url.Action("byteToImg", new { Id = item.Id})" alt="Ship Image: @item.name" style="width: 50%; height:auto" />
                 <br /><h5>Model: </h5>@item.model
                 <br /><h5>Manufacturer: </h5>@item.manufacturer
                 <br /><h5>Cost: </h5>@item.cost_in_credits
@@ -30,13 +31,19 @@
                 <br /><h5>MGLT: </h5>@item.MGLT
                 <br /><h5>Class: </h5>@item.starship_class
                 <br /><h5>Pilots: </h5> 
-                    @foreach (var url in SeedData.StringToArray(item._pilots)){
-                        <a href="@url" target="_blank"> @url </a><span>   </span>
+                    @if (item._pilots != null)
+                    {
+                        foreach (var url in SeedData.StringToArray(item._pilots)){
+                            <a href="@url" target="_blank"> @url </a><span>   </span>
+                        }                    
                     }
                 <br /><h5>Films: </h5>
-                    @foreach (var url in SeedData.StringToArray(item._films))
+                    @if (item._films != null)
                     {
-                        <a href="@url" target="_blank"> @url</a><span>   </span>
+                        foreach (var url in SeedData.StringToArray(item._films))
+                        {
+                            <a href="@url" target="_blank"> @url</a><span>   </span>
+                        }
                     }
                 <br /><h5>Created: </h5>@item.created
                 <br /><h5>Edited: </h5>@item.edited

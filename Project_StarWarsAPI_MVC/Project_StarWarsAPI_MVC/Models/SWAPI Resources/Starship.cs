@@ -4,12 +4,18 @@ using Humanizer;
 using Microsoft.CodeAnalysis.Differencing;
 using Project_StarWarsAPI_MVC.Models.SWAPI_Resources;
 using System.Security.Policy;
+using System.ComponentModel.DataAnnotations;
 
 namespace Project_StarWarsAPI_MVC.Models.Content
 {
     public class Starship
     {
         public int Id { get; set; }
+        [DisplayName("Image")]
+        public byte[]? image { get; set; }
+        [NotMapped]
+        [Display(Name = "Image File")]
+        public IFormFile? imageFile { get; set; }
         [DisplayName("Ship Name")]
         public string name { get; set; }
         [DisplayName("Model")]
@@ -57,11 +63,5 @@ namespace Project_StarWarsAPI_MVC.Models.Content
         //[DataType(DataType.Date)]
         //[DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}", ApplyFormatInEditMode = true)]
         //public DateTime birthday { get; set; }
-
-        //public string? _films
-        //{
-        //    get => SeedData.ArrayToStringConverter(this.films);
-        //    set => value = SeedData.ArrayToStringConverter(this.films);
-        //}
     }
 }

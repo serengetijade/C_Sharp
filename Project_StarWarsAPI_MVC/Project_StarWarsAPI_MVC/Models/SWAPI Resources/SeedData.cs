@@ -1,4 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.CodeAnalysis.FlowAnalysis;
+using Microsoft.EntityFrameworkCore;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using Project_StarWarsAPI_MVC.Data;
@@ -25,7 +26,7 @@ namespace Project_StarWarsAPI_MVC.Models.SWAPI_Resources
                 }
 
                 //Create an "empty" record that will serve to hold random data later, this data is then used on the landing page. 
-                Starship randomRecord = new Starship() { name = "initial", model = "initial", manufacturer = "initial", cost_in_credits = "initial", length = "initial", max_atmosphering_speed = "initial", crew = "initial", passengers = "initial", cargo_capacity = "initial", consumables = "initial", hyperdrive_rating = "initial", starship_class = "initial", _pilots = "initial", _films = "initial", created = "initial", edited = "initial", url = "initial", MGLT="initial"};
+                Starship randomRecord = new Starship() { image = { }, name = "initial", model = "initial", manufacturer = "initial", cost_in_credits = "initial", length = "initial", max_atmosphering_speed = "initial", crew = "initial", passengers = "initial", cargo_capacity = "initial", consumables = "initial", hyperdrive_rating = "initial", starship_class = "initial", _pilots = "initial", _films = "initial", created = "initial", edited = "initial", url = "initial", MGLT="initial"};
                 context.Starship.Add(randomRecord);
 
                 using (HttpClient httpClient = new HttpClient())
@@ -170,8 +171,16 @@ namespace Project_StarWarsAPI_MVC.Models.SWAPI_Resources
         /// <returns>Array of string objects.</returns>
         public static string[] StringToArray(string record)
         {
-            string[] urlArray = record.Split(", ");
-            return urlArray;
+            if (record != null)
+            {
+                string[] urlArray = record.Split(", ");
+                return urlArray;
+            }
+            else
+            {
+                string[] urlArray = null;
+                return urlArray;
+            }
         }
 
         /// <summary>
@@ -202,6 +211,7 @@ namespace Project_StarWarsAPI_MVC.Models.SWAPI_Resources
                 //Save the randomRecord to the database as a permanent entry:
                 Starship randomRecord = context.Starship.Find(randomId);        //Find the record with matching Id from the list
                 Starship record = context.Starship.Find(firstItem);
+                record.image = randomRecord.image;
                 record.name = randomRecord.name;
                 record.manufacturer = randomRecord.manufacturer;
                 record.model = randomRecord.model;
