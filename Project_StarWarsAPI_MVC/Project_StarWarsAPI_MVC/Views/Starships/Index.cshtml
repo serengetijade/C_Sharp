@@ -11,52 +11,55 @@
 <section>
     @foreach (var item in Model)
     {
-        <a class="btn btn-dark" data-bs-toggle="collapse" href="#collapseExample-@item.Id" role="button" aria-expanded="false" aria-controls="collapseExample" >
-            <strong>@item.name</strong>
-        </a>
-        <div class="collapse" id="collapseExample-@item.Id">
-            <div class="card card-body bg-dark">
-                <h4>@item.name</h4>
-                <img src="@Url.Action("byteToImg", new { Id = item.Id})" alt="Ship Image: @item.name" style="width: 50%; height:auto" />
-                <br /><h5>Model: </h5>@item.model
-                <br /><h5>Manufacturer: </h5>@item.manufacturer
-                <br /><h5>Cost: </h5>@item.cost_in_credits
-                <br /><h5>Length: </h5>@item.length
-                <br /><h5>Max Atmo Speed: </h5>@item.max_atmosphering_speed
-                <br /><h5>Crew Capacity: </h5>@item.crew
-                <br /><h5>Passenger Capacity: </h5>@item.passengers
-                <br /><h5>Cargo Capacity: </h5>@item.cargo_capacity
-                <br /><h5>Consumables: </h5>@item.consumables
-                <br /><h5>Hyperdrive Rating: </h5>@item.hyperdrive_rating
-                <br /><h5>MGLT: </h5>@item.MGLT
-                <br /><h5>Class: </h5>@item.starship_class
-                <br /><h5>Pilots: </h5> 
-                    @if (item._pilots != null)
-                    {
-                        foreach (var url in SeedData.StringToArray(item._pilots)){
-                            <a href="@url" target="_blank"> @url </a><span>   </span>
-                        }                    
-                    }
-                <br /><h5>Films: </h5>
-                    @if (item._films != null)
-                    {
-                        foreach (var url in SeedData.StringToArray(item._films))
+        if (item.Id == Model.First().Id){ continue; }
+
+        <div class="starshipCard">
+            <a class="btn btn-dark" data-bs-toggle="collapse" href="#collapseExample-@item.Id" role="button" aria-expanded="false" aria-controls="collapseExample" >
+                <strong>@item.name</strong>
+            </a>
+            <div class="collapse" id="collapseExample-@item.Id">
+                <div class="card card-body bg-dark">
+                    <h4>@item.name</h4>
+                    <img src="@Url.Action("byteToImg", new { Id = item.Id})" alt="Ship Image: @item.name" style="width: 50%; height:auto" />
+                    <br /><h5>Model: </h5>@item.model
+                    <br /><h5>Manufacturer: </h5>@item.manufacturer
+                    <br /><h5>Cost: </h5>@item.cost_in_credits
+                    <br /><h5>Length: </h5>@item.length
+                    <br /><h5>Max Atmo Speed: </h5>@item.max_atmosphering_speed
+                    <br /><h5>Crew Capacity: </h5>@item.crew
+                    <br /><h5>Passenger Capacity: </h5>@item.passengers
+                    <br /><h5>Cargo Capacity: </h5>@item.cargo_capacity
+                    <br /><h5>Consumables: </h5>@item.consumables
+                    <br /><h5>Hyperdrive Rating: </h5>@item.hyperdrive_rating
+                    <br /><h5>MGLT: </h5>@item.MGLT
+                    <br /><h5>Class: </h5>@item.starship_class
+                    <br /><h5>Pilots: </h5> 
+                        @if (item._pilots != null)
                         {
-                            <a href="@url" target="_blank"> @url</a><span>   </span>
+                            foreach (var url in SeedData.StringToArray(item._pilots)){
+                                <a href="@url" target="_blank"> @url </a><span>   </span>
+                            }                    
                         }
-                    }
-                <br /><h5>Created: </h5>@item.created
-                <br /><h5>Edited: </h5>@item.edited
-                <br /><h5>URL: </h5><a href="@item.url">@item.url</a>
-                <span style="display:inline">
-                    <a asp-action="Details" asp-route-id="@item.Id"><button class="btn btn-outline-warning">Details</button></a>
-                    <a asp-action="Edit" asp-route-id="@item.Id"><button class="btn btn-outline-warning">Edit</button></a>
-                    <a asp-action="Delete" asp-route-id="@item.Id"><button class="btn btn-outline-danger">Delete</button></a>
-                </span>
+                    <br /><h5>Films: </h5>
+                        @if (item._films != null)
+                        {
+                            foreach (var url in SeedData.StringToArray(item._films))
+                            {
+                                <a href="@url" target="_blank"> @url</a><span>   </span>
+                            }
+                        }
+                    <br /><h5>Created: </h5>@item.created
+                    <br /><h5>Edited: </h5>@item.edited
+                    <br /><h5>URL: </h5><a href="@item.url">@item.url</a>
+                    <span style="display:inline">
+                        <a asp-action="Details" asp-route-id="@item.Id"><button class="btn btn-outline-warning">Details</button></a>
+                        <a asp-action="Edit" asp-route-id="@item.Id"><button class="btn btn-outline-warning">Edit</button></a>
+                        <a asp-action="Delete" asp-route-id="@item.Id"><button class="btn btn-outline-danger">Delete</button></a>
+                    </span>
             
+                </div>
             </div>
         </div>
-        <br />
     }
 </section>
 

@@ -64,9 +64,9 @@ namespace Project_StarWarsAPI_MVC.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create([Bind("Id,image,imageFile,name,model,manufacturer,cost_in_credits,length,max_atmosphering_speed,crew,passengers,cargo_capacity,consumables,hyperdrive_rating,MGLT,starship_class,_pilots,_films,created,edited,url")] Starship starship)
         {
-            string? extension = Path.GetExtension(starship.imageFile.FileName);
+            string? extension = Path.GetExtension(starship.imageFile?.FileName);
 
-            if (ModelState.IsValid && (extension.ToLower().Equals(".jpg") || extension.ToLower().Equals(".jpeg") || extension.ToLower().Equals(".png") || extension.ToLower().Equals(".jfif") || extension == null))
+            if (ModelState.IsValid && (extension == null || extension.ToLower().Equals(".jpg") || extension.ToLower().Equals(".jpeg") || extension.ToLower().Equals(".png") || extension.ToLower().Equals(".jfif")))
             {
                 if (starship.imageFile != null)
                 {
@@ -112,10 +112,11 @@ namespace Project_StarWarsAPI_MVC.Controllers
                     if (starship.imageFile != null)
                     {
                         string extension = Path.GetExtension(starship.imageFile.FileName);
-
                         if (extension.ToLower().Equals(".jpg") || extension.ToLower().Equals(".jpeg") || extension.ToLower().Equals(".png") || extension.ToLower().Equals(".jfif"))
                         {
-                            starship.image = imgToByteArray(starship.imageFile);
+                            byte[] imgEdit= imgToByteArray(starship.imageFile);
+                            starship.image = imgEdit;
+                            //_context.Update(starship.image);
                         }
                     }
                     _context.Update(starship);
@@ -238,18 +239,17 @@ namespace Project_StarWarsAPI_MVC.Controllers
         public ActionResult byteToImg(int Id)
         {
             Starship record = _context.Starship.Find(Id);
-            //If no image has been set, use a default path:
-            if (record.image == null)
-            {
-                return File("~/image/defaultship.jpg", "image/jpeg");
-            }
             //If there is an image in the record, display it: 
-            else
+            if(record.image != null)
             {
                 byte[] byteArray = record.image;
                 return File(byteArray, "image/jpeg");
             }
+            //If no image has been set, use a default path:
+            else
+            {
+                return File("~/image/defaultship.jpg", "image/jpeg");
+            }
         }
     }
-
 }
