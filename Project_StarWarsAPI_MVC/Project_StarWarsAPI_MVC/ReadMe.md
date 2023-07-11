@@ -99,9 +99,59 @@ https://github.com/serengetijade/C_Sharp/blob/6482abff735509868e4f15baababc2a548
 The other Starship records and their CRUD functions, are handled by the Starship Controller. 
 
 ## CRUD functions
-When the Starship class was scaffolded, it automatically generated the basic CRUD pages. The views were customized and Bootstrap was used to display records on the index page. Stuff was done to make it pretty. Yay. 
+When the Starship class was scaffolded, it automatically generated the basic CRUD pages. The views were customized and Bootstrap was used to display records on the index page. CSS and Bootstrap stuff was done to make it pretty. Yay. 
 
+## Upload image files and store as byte array
+The API data does not include images. To add images to database records, two properties were added to the Starship class: 
+- IFormFile? imageFile: this property is not mapped to the database. It serves as a holding place for the file upload. This property allows for null values. 
+- byte[]? image: the file is converted to a byte array by calling the [imgToByteArray]() method. SQL can store C# byte arrays as SQL type VARBINARY. The size of the upload/array is limted to 2MB. This property allows for null values. 
 
+Within the html, the image is displayed by calling the [byteToImg]() method and passing in the record's Id number. 
+
+    <img src="@Url.Action("byteToImg", "Starships", new { Id = item.Id})" alt="Ship Image: @item.name" style="width: 30%; height:auto" />        
+### imgToByteArray method
+A byte array is a collection of binary data, which is machine readable. Converting an image to a byte array allows for the database record to be easily updated. 
+
+        //Convert image to byte array
+        public byte[]? imgToByteArray(IFormFile? imgInput)
+        {
+            byte[] byteArray = null;
+            using (var memoryStream = new MemoryStream())
+            {
+                //Copy the image to target memory stream:
+                imgInput.CopyToAsync(memoryStream);
+                //Input validation - limit upload size to 2 MB: 
+                if (memoryStream.Length < 2097152)
+                {
+                    byteArray = memoryStream.ToArray();
+                    return byteArray;
+                }
+                else
+                {
+                    ModelState.AddModelError("ImageSize", "The image file is too large.");
+                    return byteArray;
+                }
+            }
+        }
+
+### Display database images or a default image
+In order to display an image stored as a byte array in the database, it must be converted back to an image file type. To do so, the following method is implemented. If the image property returns null, meaning no image has been specified for that record, it will return a default image stored within the app. 
+
+        public ActionResult byteToImg(int Id)
+        {
+            Starship record = _context.Starship.Find(Id);
+            //If there is an image in the record, display it: 
+            if(record.image != null)
+            {
+                byte[] byteArray = record.image;
+                return File(byteArray, "image/jpeg");
+            }
+            //If no image has been set, use a default path:
+            else
+            {
+                return File("~/image/defaultship.jpg", "image/jpeg");
+            }
+        }
 
 ## Search function with input sanitization
 The Index() function of the Starship Controller was modified to return records that contain the given user input. The if condition was modified to exclude a few risky characters, providing some very basic input sanitization. This could be extended by a whitelist or with more specific parameters in the future.
