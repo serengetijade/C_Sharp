@@ -20,14 +20,15 @@
                     </ul>
                 </li>
             </ul>
-            @if(@ViewData["Controller"] == "Home")
+            @if (this.ViewContext.RouteData.Values["controller"].ToString() == "Home")
             {
                 <button onclick="toggleMusic()" id="musicButton" style="background:transparent; border: none">🎵</button>
             }
         </div>
+        <!--Dynamic Search Bar-->
         @if(@ViewData["Controller"] != "Home"){
             <form asp-controller="@ViewData["Controller"]" class="d-flex" role="search" asp-action="@ViewData["Title"]">
-                <input class="form-control me-2 bg-dark" type="text" placeholder="@ViewData["Title"]" aria-label="Search" name="SearchString">
+                <input class="form-control me-2 bg-dark" type="text" placeholder="@ViewData["Title"]" aria-label="Search" name="SearchString" style="color:ghostwhite">
                 <input class="btn btn-outline-warning" type="submit" value="Search">
             </form>
         }

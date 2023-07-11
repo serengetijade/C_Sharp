@@ -1,5 +1,5 @@
 # Star Wars API Project: ASP.NET 6.0 MVC with EF Core
-The Star Wars API is a publicly accessible source for data about Star Wars characters and  objects. The API delivers JSON results on films, people, planets, species, starships, and vehicles found in the Star Wars universe.  
+The Star Wars API is a publicly accessible source for data about Star Wars characters and  objects. The API delivers JSON results on films, people, planets, species, starships, and vehicles found in the Star Wars universe. This project is built using data from the API. 
 
 ## Project requirements 
 A long time ago in a galaxy far, far away...
@@ -10,7 +10,9 @@ A long time ago in a galaxy far, far away...
 - Implement CRUD to manipulate the data stored in the database.
 
 ## Skill Implemented
-- <b> C#: </b>Classes were added to represent each API resource. Custom methods were applied when necessary to convert API results to usable data types. Code to call the API and seed the database with records upon startup was implemented. 
+- <b> C#: </b>Classes were added to represent each API resource. Custom methods were applied when necessary to convert API results to usable data types. Code to call the API and seed the database with records upon startup was implemented.
+    - Upload files and validata input type (via file extension). 
+    - Convert images to byte arrays and store in database. 
 - <b>MVC design pattern & EF Core:</b>
     - Custom conroller methods
     - Dynamic Navigation Bar
