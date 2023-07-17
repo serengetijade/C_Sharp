@@ -290,7 +290,7 @@ using System.Collections.Generic; //required for Lists
         }
     }
 }*/
-/*namespace ArraysAndLists
+namespace ArraysAndLists
 {
     class ArraysAndLists
     {
@@ -313,7 +313,7 @@ using System.Collections.Generic; //required for Lists
             Console.WriteLine(numberArray2[3]);
 
             //Instantiate an array using only a set:
-            int[] numberArray3 = { 5, 2, 10, 200, 5000, 600, 2300};
+            int[] numberArray3 = { 5, 2, 10, 200, 5000, 600, 2300 };
             Console.WriteLine(numberArray3[3]);
             //Change an object
             numberArray3[5] = 650;
@@ -330,7 +330,7 @@ using System.Collections.Generic; //required for Lists
             Console.WriteLine(intList[0]);
 
             //Read an array using user input to determin the index number:
-            string[] stringArray = {"dragon", "cat", "dog", "cow", "tiger", "turtle", "pig", "wolf", "toad", "dolphin", "hedgehog" };
+            string[] stringArray = { "dragon", "cat", "dog", "cow", "tiger", "turtle", "pig", "wolf", "toad", "dolphin", "hedgehog" };
             Console.WriteLine("What is your spirit animal?\nChoose a whole number up to 10.");
             int indexNumber = Convert.ToInt32(Console.ReadLine());
             //If statement for user selection: 
@@ -366,141 +366,213 @@ using System.Collections.Generic; //required for Lists
 
             Console.ReadLine();
         }
-    }
-}*/
 
-namespace Iteration
-{
-    class Iteration
-    {
-        static void Main(string[] args)    //args lets you pass in information as an argument to this function. For ex, from the command line. 
+        //Simple Linked List
+        public class LinkedList
         {
-            //Required: using System.Collections.Generic; //required for Lists
-            //ARRAY ITERATION
-            int[] testScores = { 98, 99, 85, 70, 82, 34, 91, 90, 94 };
-            for (int i = 0; i < testScores.Length; i++)
+            //Nested class "Node":
+            public class Node
             {
-                if (testScores[i] > 85)
-                {
-                    Console.WriteLine("Passing test score: " + testScores[i]);
-                }
+                //Properties: 
+                public Node next;
+                public object data;
             }
 
-            string[] names = { "Jesse", "Erik", "Daniel", "Adam" };
-            for (int j = 0; j < names.Length; j++)
-            {
-                //Write every object to the console: 
-                Console.WriteLine(names[j]);
-                //Perform an if function: 
-                if (names[j] == "Jesse")
-                {
-                    Console.WriteLine(names[j]);
+            private Node root;
+
+            //LinkedList Properties: 
+            public Node First { get { return root;} }
+            public Node Last {
+                get { Node currentNode  = root;
+                    if (currentNode == null) {
+                        return null;
+                    }
+                    //Get the last item in the list by using a while loop:
+                    while (currentNode != null)      
+                    {
+                        currentNode = currentNode.next;
+                    }
+                    return currentNode;
                 }
-            }
+            }  
 
-            //LIST ITERATION
-            List<int> testScores1 = new List<int>();
-            testScores1.Add(98);
-            testScores1.Add(99);
-            testScores1.Add(81);
-            testScores1.Add(72);
-            testScores1.Add(70);
+            //Double linked lists:
+            //Syntax: LinkedList<Type> listName = new LinkedList<Type>();
+            static LinkedList<string> linkedList1 = new LinkedList<string>();
+                //linkedList1.AddFirst("root");
+                //linkedList1.AddAfter(linkedList1.First, "element");
+                //linkedList1.AddBefore(linkedList1.First, "new root");
+                //linkedList1.AddLast("last element"); 
 
-            foreach (int t in testScores1)
+
+            //Methods to affect the LinkedList object: 
+            public void Append(object value)
             {
-                if (t > 85)
-                {
-                    Console.WriteLine("Passing test score: " + t);
-                }
-            }
+                Node node = new Node { data = value };
 
-            //Popular naming convention is to use plural for the name of a list, then the singular for the iteration variable. 
-            List<string> names2 = new List<string>() { "Jesse", "Erik", "Adam", "Daniel" };
-            foreach (string name in names2)
-            {
-                //Print all names to the console:
-                Console.WriteLine(name);
-                //If statement: 
-                if (name == "Jesse")
-                {
-                    Console.WriteLine(name);
-                }
-            }
-
-            //Add values from one list that meet a condition to another list: 
-            List<int> testResults = new List<int>() { 98, 99, 12, 74, 23, 94 };
-            List<int> passingResults = new List<int>();
-            //Use a for loop and an if statement to find values that meet set condition:
-            foreach (int result in testResults)
-            {
-                if (result > 85)
-                {
-                    //listName.Add method:
-                    passingResults.Add(result);
-                }
-            }
-            Console.Write("Number of passing results: " + passingResults.Count);
-
-            //Check a list for identical strings:
-            List<string> colors = new List<string>() { "pink", "red", "red", "orange", "yellow", "green", "blue", "purple", "brown", "black", "white" };
-            List<string> checkForContains = new List<string>();
-            foreach (string color in colors)
-            {
-                //Use a boolean 'trigger' with the .Contains method to indicate if a value is already in the list:
-                bool duplicate = checkForContains.Contains(color);
-                //After checking the list, add this color to it:
-                checkForContains.Add(color);
-                //The if statement proceeds according to the boolean 'trigger': 
-                if (duplicate == false)
-                {
-                    Console.WriteLine(color + " is a unique value.");
+                if( root == null) { 
+                    root = node;
                 }
                 else
                 {
-                    Console.WriteLine(color + " is a duplicate and already appeared on the list");
+                    Last.next = node;
                 }
             }
-
-            //Print each letter in a string backwards:
-            string reverseMe = "abcd";
-            for (int i = reverseMe.Length -1; i>=0; i--)
+            public void Delete(Node node)
             {
-                Console.WriteLine(reverseMe[i]);
-            }
-
-            //For loop with UNSPECIFIED statements: 
-            int iterator = 0;
-            for (; ; )
-            {
-                if (iterator <= 4)
+                if(root == node)
                 {
-                    Console.WriteLine(iterator);
-                    iterator++; 
+                    root = node.next;
+                    node.next = null;   
                 }
-                break;
-            }
-
-            //Foreach loop
-            foreach(char c in ".Hello.World.")
-            {
-                Console.WriteLine(c);
-            }
-
-            //Loop with continue keyword
-            for(int i = 0; i < 4; i++)
-            {
-                if (i == 2)
+                else
                 {
-                    continue;
+                    Node current = root; 
+                    while(current.next != node) {
+                        if (current.next == node.next) {
+                            node.next = null;
+                            break;
+                        }
+                        current = current.next;
+                    }
                 }
-                Console.WriteLine(i);
             }
-            //The result is: 0, 1, 3
-
-            Console.ReadLine();
         }
     }
 }
+
+//namespace Iteration
+//{
+//    class Iteration
+//    {
+//        static void Main(string[] args)    //args lets you pass in information as an argument to this function. For ex, from the command line. 
+//        {
+//            //Required: using System.Collections.Generic; //required for Lists
+//            //ARRAY ITERATION
+//            int[] testScores = { 98, 99, 85, 70, 82, 34, 91, 90, 94 };
+//            for (int i = 0; i < testScores.Length; i++)
+//            {
+//                if (testScores[i] > 85)
+//                {
+//                    Console.WriteLine("Passing test score: " + testScores[i]);
+//                }
+//            }
+
+//            string[] names = { "Jesse", "Erik", "Daniel", "Adam" };
+//            for (int j = 0; j < names.Length; j++)
+//            {
+//                //Write every object to the console: 
+//                Console.WriteLine(names[j]);
+//                //Perform an if function: 
+//                if (names[j] == "Jesse")
+//                {
+//                    Console.WriteLine(names[j]);
+//                }
+//            }
+
+//            //LIST ITERATION
+//            List<int> testScores1 = new List<int>();
+//            testScores1.Add(98);
+//            testScores1.Add(99);
+//            testScores1.Add(81);
+//            testScores1.Add(72);
+//            testScores1.Add(70);
+
+//            foreach (int t in testScores1)
+//            {
+//                if (t > 85)
+//                {
+//                    Console.WriteLine("Passing test score: " + t);
+//                }
+//            }
+
+//            //Popular naming convention is to use plural for the name of a list, then the singular for the iteration variable. 
+//            List<string> names2 = new List<string>() { "Jesse", "Erik", "Adam", "Daniel" };
+//            foreach (string name in names2)
+//            {
+//                //Print all names to the console:
+//                Console.WriteLine(name);
+//                //If statement: 
+//                if (name == "Jesse")
+//                {
+//                    Console.WriteLine(name);
+//                }
+//            }
+
+//            //Add values from one list that meet a condition to another list: 
+//            List<int> testResults = new List<int>() { 98, 99, 12, 74, 23, 94 };
+//            List<int> passingResults = new List<int>();
+//            //Use a for loop and an if statement to find values that meet set condition:
+//            foreach (int result in testResults)
+//            {
+//                if (result > 85)
+//                {
+//                    //listName.Add method:
+//                    passingResults.Add(result);
+//                }
+//            }
+//            Console.Write("Number of passing results: " + passingResults.Count);
+
+//            //Check a list for identical strings:
+//            List<string> colors = new List<string>() { "pink", "red", "red", "orange", "yellow", "green", "blue", "purple", "brown", "black", "white" };
+//            List<string> checkForContains = new List<string>();
+//            foreach (string color in colors)
+//            {
+//                //Use a boolean 'trigger' with the .Contains method to indicate if a value is already in the list:
+//                bool duplicate = checkForContains.Contains(color);
+//                //After checking the list, add this color to it:
+//                checkForContains.Add(color);
+//                //The if statement proceeds according to the boolean 'trigger': 
+//                if (duplicate == false)
+//                {
+//                    Console.WriteLine(color + " is a unique value.");
+//                }
+//                else
+//                {
+//                    Console.WriteLine(color + " is a duplicate and already appeared on the list");
+//                }
+//            }
+
+//            //Print each letter in a string backwards:
+//            string reverseMe = "abcd";
+//            for (int i = reverseMe.Length -1; i>=0; i--)
+//            {
+//                Console.WriteLine(reverseMe[i]);
+//            }
+
+//            //For loop with UNSPECIFIED statements: 
+//            int iterator = 0;
+//            for (; ; )
+//            {
+//                if (iterator <= 4)
+//                {
+//                    Console.WriteLine(iterator);
+//                    iterator++; 
+//                }
+//                break;
+//            }
+
+//            //Foreach loop
+//            foreach(char c in ".Hello.World.")
+//            {
+//                Console.WriteLine(c);
+//            }
+
+//            //Loop with continue keyword
+//            for(int i = 0; i < 4; i++)
+//            {
+//                if (i == 2)
+//                {
+//                    continue;
+//                }
+//                Console.WriteLine(i);
+//            }
+//            //The result is: 0, 1, 3
+
+//            Console.ReadLine();
+//        }
+//    }
+//}
 
 /*
 namespace ExceptionHandling
