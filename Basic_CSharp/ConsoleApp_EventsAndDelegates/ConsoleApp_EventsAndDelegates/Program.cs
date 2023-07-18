@@ -19,6 +19,22 @@
             //because it is reference to a method, and not a method call, NO brakets are used after the methodName.
 
             videoEncoder.Encode(video);
+
+            //Delegate as a reference to a m  ethod - call:  
+            Print helloWorld = GoodbyeWorld;
+            helloWorld();       //Result: "Goodnight World"
+        }
+
+        //Delegate as a reference to a method - definition:
+        delegate void Print();
+
+        static void HelloWorld()
+        {
+            Console.WriteLine("Hello World");
+        }
+        static void GoodbyeWorld()
+        { 
+            Console.WriteLine("Goodnight World");
         }
     }
 }
