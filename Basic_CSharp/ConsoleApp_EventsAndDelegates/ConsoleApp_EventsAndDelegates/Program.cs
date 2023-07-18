@@ -20,14 +20,27 @@
 
             videoEncoder.Encode(video);
 
-            //Delegate as a reference to a m  ethod - call:  
-            Print helloWorld = GoodbyeWorld;
-            helloWorld();       //Result: "Goodnight World"
+            //Call the BasicEvent examples:
+            BasicEvent.MainMethod();
+            BasicEvent_Lambda.MainMethod();
+
+            //DELEGATE EXAMPLE 2, PART 1/2:
+            //Delegate as a reference to a method - call:  
+            Print helloWorld = GoodbyeWorld;    //Instantiate a delegate
+            helloWorld();                       //Call the delegate. Result: "Goodnight World"
+
+            //Multicast a delegate (hold multiple methods): 
+            Print multicast = null;             //Instantiate a delegate
+            multicast += HelloWorld;
+            multicast += GoodbyeWorld;
+            multicast();                        //Call the delegate. Result "Hello World" "Goodbye World" 
         }
 
+        //DELEGATE EXAMPLE 2, PART 2/2:
         //Delegate as a reference to a method - definition:
         delegate void Print();
 
+        //Handler method(s): those that will be "handled" by the delegate
         static void HelloWorld()
         {
             Console.WriteLine("Hello World");
