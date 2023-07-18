@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ConsoleApp_EventsAndDelegates
 {
-    internal class BasicEvents_Lambda
+    internal class BasicEvent_Lambda
     {
         //It is possible to combine steps 2, 3, and 5 from the BasicEvent Class by using a lambda expression: 
 
