@@ -65,7 +65,7 @@ A 15 minute mini project to demonstrate how C# scaffolding can make spinning up 
 
 ## [REFERENCE CODE LIBRARY](https://github.com/serengetijade/C_Sharp/tree/main/Basic_CSharp)
 In addition to the projects, there is a small code library for referencing basic C# elements. These examples are heavily noted and written as though for a console application. 
-- [Basics](https://github.com/serengetijade/C_Sharp/blob/main/Basic_CSharp/CSharp_Basics/CSharpBasics/Program.cs) Start here for the fundamentals.
+- [Basics](https://github.com/serengetijade/C_Sharp/blob/main/Basic_CSharp/CSharp_Basics/CSharpBasics/Program.cs) Start here for the fundamentals. Lists and linked lists, etc. 
 - [Abstract Classes](https://github.com/serengetijade/C_Sharp/blob/main/Basic_CSharp/ConsoleApp_AbstractClass/ConsoleApp_AbstractClass/Program.cs) Abstract classes and polymorphism.
 - [Abstract Class](https://github.com/serengetijade/C_Sharp/tree/main/Basic_CSharp/ConsoleApp_AbstractClass/ConsoleApp_AbstractClass) An abstract class, aka a base class, is a generic (template) class or type of object that is used as a basis for creating other objects that conform with its specifications.  
 - [Arrays and Lists](https://github.com/serengetijade/C_Sharp/blob/main/Basic_CSharp/ConsoleApp_ArraysLists/ConsoleApp_ArraysLists/Program.cs) Syntax for arrays and lists. 
@@ -89,6 +89,7 @@ In addition to the projects, there is a small code library for referencing basic
 - [Strings](https://github.com/serengetijade/C_Sharp/blob/main/Basic_CSharp/ConsoleApp_Strings/ConsoleApp_Strings/Program.cs) The basics of using this common data type.
 - [Structs](https://github.com/serengetijade/C_Sharp/tree/main/Basic_CSharp/ConsoleApp_Structs/ConsoleApp_Structs) A structure is a value Type used to make a single variable that holds related data of various data types. 
 - [Switch](https://github.com/serengetijade/C_Sharp/blob/main/Basic_CSharp/ConsoleApp_Switch/ConsoleApp_Switch/Program.cs) The basics of branching statemetns with the switch keyword. 
+- [Trees](https://github.com/serengetijade/C_Sharp/blob/main/Basic_CSharp/ConsoleApp_Switch/ConsoleApp_Trees/Program.cs)
 
 >"Good programmers are good communicators "
 –Rob Miles, The C# Programming Yellow Book
