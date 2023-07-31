@@ -10,9 +10,8 @@ namespace Interfaces
     {
         public static void Main(string[] args)
         {
+        }        
 
-        }
-        
         //--------------------------------------------------------
         //INotifyProperyChanged
         public event PropertyChangedEventHandler? PropertyChanged;
