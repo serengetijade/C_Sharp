@@ -242,36 +242,6 @@ namespace Project_StarWarsAPI_MVC.Models.SWAPI_Resources
                 return context.Starship.OrderBy(x => Guid.NewGuid()).Take(1).ToList();
             }
         }
-
-        //Unfinished: Method to get data 
-        //public static async Task<JObject[]> GetData(string resource, HttpClient httpClient)
-        //{
-        //    {
-        //        JObject[] apiResult = new JObject[] { };
-        //        Console.WriteLine("Testrun has been called");
-        //        string url = "https://swapi.dev/api/" + resource + "/";
-        //        try
-        //        {
-        //            var response = await httpClient.GetAsync(url);                          //GET request to the API
-        //            string jsonResponse = await response.Content.ReadAsStringAsync();       //Read the string from the response '.Content' //ReadASStringAsync is a method that reads asyncrhonously without holding up the main thread. 
-        //            var result = JsonConvert.DeserializeObject<ApiResult>(jsonResponse);    //Parse API 'results':
-
-        //            foreach (JObject r in result.results)
-        //            {
-        //                JObject resultss = (JObject)r.ToObject(typeof(JObject));
-        //                apiResult.Append(resultss);            
-        //            }
-        //            return apiResult;
-        //        }
-        //        catch (Exception ex)
-        //        {
-        //            Console.WriteLine(ex.Message);
-        //            Console.WriteLine($"API call to {resource} failed.");
-        //            var result = new ApiResult();
-        //            return apiResult;
-        //        }
-        //    }
-        //}
     }
 }
 
