@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore;
 using Project_StarWarsAPI_MVC.Data;
 using Project_StarWarsAPI_MVC.Models;
 using Project_StarWarsAPI_MVC.Models.Content;
-using Project_StarWarsAPI_MVC.Models.SWAPI_Resources;
+using Project_StarWarsAPI_MVC.Models.Swapi;
 using System.Diagnostics;
 
 namespace Project_StarWarsAPI_MVC.Controllers

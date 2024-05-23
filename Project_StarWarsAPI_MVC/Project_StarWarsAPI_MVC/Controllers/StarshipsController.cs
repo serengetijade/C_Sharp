@@ -1,8 +1,7 @@
-﻿using System;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Project_StarWarsAPI_MVC.Data;
-using Project_StarWarsAPI_MVC.Models.Content;
+using Project_StarWarsAPI_MVC.Models.Swapi;
 
 namespace Project_StarWarsAPI_MVC.Controllers
 {
@@ -23,13 +22,13 @@ namespace Project_StarWarsAPI_MVC.Controllers
             //Add basic input sanitization: 
             if (!String.IsNullOrEmpty(searchString) && !searchString.Contains("@") && !searchString.Contains("=") && !searchString.Contains("--"))
             {
-                items = items.Where(s => s.name!.Contains(searchString));
+                items = items.Where(s => s.Name!.Contains(searchString));
                 return View(await items.ToListAsync());
             }
 
             //Display in alphabetical order: 
             return _context.Starship != null ?
-                          View(await _context.Starship.OrderBy(Starship => Starship.name).ToListAsync()) :
+                          View(await _context.Starship.OrderBy(Starship => Starship.Name).ToListAsync()) :
                           Problem("Entity set 'SWContext.Starship'  is null.");
         }
 
@@ -68,7 +67,7 @@ namespace Project_StarWarsAPI_MVC.Controllers
             {
                 if (starship.imageFile != null)
                 {
-                    starship.image = imgToByteArray(starship.imageFile);
+                    starship.Image = ImageToByteArray(starship.imageFile);
                 }
                 _context.Add(starship);
                 await _context.SaveChangesAsync();
@@ -112,8 +111,8 @@ namespace Project_StarWarsAPI_MVC.Controllers
                         string extension = Path.GetExtension(starship.imageFile.FileName);
                         if (extension.ToLower().Equals(".jpg") || extension.ToLower().Equals(".jpeg") || extension.ToLower().Equals(".png") || extension.ToLower().Equals(".jfif"))
                         {
-                            byte[] imgEdit= imgToByteArray(starship.imageFile);
-                            starship.image = imgEdit;
+                            byte[] imgEdit= ImageToByteArray(starship.imageFile);
+                            starship.Image = imgEdit;
                             //_context.Update(starship.image);
                         }
                     }
@@ -179,7 +178,7 @@ namespace Project_StarWarsAPI_MVC.Controllers
         }
 
         //Convert image to byte array
-        public byte[]? imgToByteArray(IFormFile? imgInput)
+        public byte[]? ImageToByteArray(IFormFile? imgInput)
         {
             byte[] byteArray = null;
             using (var memoryStream = new MemoryStream())
@@ -205,9 +204,9 @@ namespace Project_StarWarsAPI_MVC.Controllers
         {
             Starship record = _context.Starship.Find(Id);
             //If there is an image in the record, display it: 
-            if(record.image != null)
+            if(record.Image != null)
             {
-                byte[] byteArray = record.image;
+                byte[] byteArray = record.Image;
                 return File(byteArray, "image/jpeg");
             }
             //If no image has been set, use a default path:

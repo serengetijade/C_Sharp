@@ -1,5 +1,4 @@
-﻿using Microsoft.CodeAnalysis.FlowAnalysis;
-using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.EntityFrameworkCore;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using Project_StarWarsAPI_MVC.Data;
@@ -7,8 +6,8 @@ using Project_StarWarsAPI_MVC.Models.Content;
 using System.Security.Cryptography;
 using System.Text;
 
-namespace Project_StarWarsAPI_MVC.Models.SWAPI_Resources
-{   
+namespace Project_StarWarsAPI_MVC.Models.Swapi
+{
     /// <summary>
     /// Seed the db with data from the Star Wars API
     /// </summary>
@@ -26,7 +25,7 @@ namespace Project_StarWarsAPI_MVC.Models.SWAPI_Resources
                 }
 
                 //Create an "empty" record that will serve to hold random data later, this data is then used on the landing page. 
-                Starship randomRecord = new Starship() { image = { }, name = "initial", model = "initial", manufacturer = "initial", cost_in_credits = "initial", length = "initial", max_atmosphering_speed = "initial", crew = "initial", passengers = "initial", cargo_capacity = "initial", consumables = "initial", hyperdrive_rating = "initial", starship_class = "initial", _pilots = "initial", _films = "initial", created = "initial", edited = "initial", url = "initial", MGLT="initial"};
+                Starship randomRecord = new Starship() { Image = { }, Name = "initial", Model = "initial", Manufacturer = "initial", Cost_In_Credits = "initial", Length = "initial", Max_Atmosphering_Speed = "initial", Crew = "initial", Passengers = "initial", Cargo_Capacity = "initial", Consumables = "initial", Hyperdrive_Rating = "initial", Starship_Class = "initial", _Pilots = "initial", _films = "initial", created = "initial", edited = "initial", url = "initial", MGLT="initial"};
                 context.Starship.Add(randomRecord);
 
                 using (HttpClient httpClient = new HttpClient())
@@ -51,10 +50,10 @@ namespace Project_StarWarsAPI_MVC.Models.SWAPI_Resources
                                     foreach (JObject r in result.results)
                                     {
                                         Starship record = (Starship)r.ToObject(typeof(Starship));   //Result: each object is converted to Starship
-                                        record._films = SeedData.ArrayToStringConverter(record.films);
-                                        record._pilots = SeedData.ArrayToStringConverter(record.pilots);
+                                        record._Films = SeedData.ArrayToStringConverter(record.Films);
+                                        record._Pilots = SeedData.ArrayToStringConverter(record.Pilots);
                                         context.Starship.Add(record);
-                                        Console.WriteLine(record.name + " was added to database."); //Result: Starship's name
+                                        Console.WriteLine(record.Name + " was added to database."); //Result: Starship's name
                                         //Console.WriteLine(r.ToString());                          //Result: All the starship details
                                         //Console.WriteLine(record.GetType().Name);                 //Result: Starship 
                                     }
@@ -64,13 +63,13 @@ namespace Project_StarWarsAPI_MVC.Models.SWAPI_Resources
                                     foreach (JObject r in result.results)
                                     {
                                         Film record = (Film)r.ToObject(typeof(Film));
-                                        record._species = SeedData.ArrayToStringConverter(record.species);
-                                        record._starships = SeedData.ArrayToStringConverter(record.starships);
-                                        record._vehicles = SeedData.ArrayToStringConverter(record.vehicles);
-                                        record._characters = SeedData.ArrayToStringConverter(record.characters);
-                                        record._planets = SeedData.ArrayToStringConverter(record.planets);
+                                        record._Species = SeedData.ArrayToStringConverter(record.Species);
+                                        record._Starships = SeedData.ArrayToStringConverter(record.Starships);
+                                        record._Vehicles = SeedData.ArrayToStringConverter(record.Vehicles);
+                                        record._Characters = SeedData.ArrayToStringConverter(record.Characters);
+                                        record._Planets = SeedData.ArrayToStringConverter(record.Planets);
                                         context.Films.Add(record);
-                                        Console.WriteLine(record.title + " was added to database.");
+                                        Console.WriteLine(record.Title + " was added to database.");
                                     }
                                     break;
                                 case "people":
@@ -78,12 +77,12 @@ namespace Project_StarWarsAPI_MVC.Models.SWAPI_Resources
                                     foreach (JObject r in result.results)
                                     {
                                         People record = (People)r.ToObject(typeof(People));
-                                        record._films = SeedData.ArrayToStringConverter(record.films);
-                                        record._species = SeedData.ArrayToStringConverter(record.species);
-                                        record._vehicles = SeedData.ArrayToStringConverter(record.vehicles);
-                                        record._starships = SeedData.ArrayToStringConverter(record.starships);
+                                        record._Films = SeedData.ArrayToStringConverter(record.Films);
+                                        record._Species = SeedData.ArrayToStringConverter(record.Species);
+                                        record._Vehicles = SeedData.ArrayToStringConverter(record.Vehicles);
+                                        record._Starships = SeedData.ArrayToStringConverter(record.Starships);
                                         context.People.Add(record);
-                                        Console.WriteLine(record.name + " was added to database.");
+                                        Console.WriteLine(record.Name + " was added to database.");
                                     }
                                     break;
                                 case "planets":
@@ -91,10 +90,10 @@ namespace Project_StarWarsAPI_MVC.Models.SWAPI_Resources
                                     foreach (JObject r in result.results)
                                     {
                                         Planet record = (Planet)r.ToObject(typeof(Planet));
-                                        record._residents = SeedData.ArrayToStringConverter(record.residents);
-                                        record._films = SeedData.ArrayToStringConverter(record.films);
+                                        record._Residents = SeedData.ArrayToStringConverter(record.Residents);
+                                        record._Films = SeedData.ArrayToStringConverter(record.Films);
                                         context.Planets.Add(record);
-                                        Console.WriteLine(record.name + " was added to database.");
+                                        Console.WriteLine(record.Name + " was added to database.");
                                     }
                                     break;
                                 case "species":
@@ -102,10 +101,10 @@ namespace Project_StarWarsAPI_MVC.Models.SWAPI_Resources
                                     foreach (JObject r in result.results)
                                     {
                                         Species record = (Species)r.ToObject(typeof(Species));
-                                        record._films = SeedData.ArrayToStringConverter(record.films);
-                                        record._people = SeedData.ArrayToStringConverter(record.people);
+                                        record._Films = SeedData.ArrayToStringConverter(record.Films);
+                                        record._People = SeedData.ArrayToStringConverter(record.People);
                                         context.Species.Add(record);
-                                        Console.WriteLine(record.name + " was added to database.");
+                                        Console.WriteLine(record.Name + " was added to database.");
                                     }
                                     break;
                                 case "vehicles":
@@ -113,10 +112,10 @@ namespace Project_StarWarsAPI_MVC.Models.SWAPI_Resources
                                     foreach (JObject r in result.results)
                                     {
                                         Vehicle record = (Vehicle)r.ToObject(typeof(Vehicle));
-                                        record._films = SeedData.ArrayToStringConverter(record.films);
-                                        record._pilots = SeedData.ArrayToStringConverter(record.pilots);
+                                        record._Films = SeedData.ArrayToStringConverter(record.Films);
+                                        record._Pilots = SeedData.ArrayToStringConverter(record.Pilots);
                                         context.Vehicle.Add(record);
-                                        Console.WriteLine(record.name + " was added to database.");
+                                        Console.WriteLine(record.Name + " was added to database.");
                                     }
                                     break;
                             }
@@ -211,25 +210,25 @@ namespace Project_StarWarsAPI_MVC.Models.SWAPI_Resources
                 //Save the randomRecord to the database as a permanent entry:
                 Starship randomRecord = context.Starship.Find(randomId);        //Find the record with matching Id from the list
                 Starship record = context.Starship.Find(firstItem);
-                record.image = randomRecord.image;
-                record.name = randomRecord.name;
-                record.manufacturer = randomRecord.manufacturer;
-                record.model = randomRecord.model;
-                record.cost_in_credits = randomRecord.cost_in_credits;
-                record.length = randomRecord.length;
+                record.Image = randomRecord.Image;
+                record.Name = randomRecord.Name;
+                record.Manufacturer = randomRecord.Manufacturer;
+                record.Model = randomRecord.Model;
+                record.Cost_In_Credits = randomRecord.Cost_In_Credits;
+                record.Length = randomRecord.Length;
                 record.MGLT = randomRecord.MGLT;
-                record._pilots = randomRecord._pilots;
-                record.max_atmosphering_speed = randomRecord.max_atmosphering_speed;
-                record.crew = randomRecord.crew;
-                record.passengers = randomRecord.passengers;
-                record.cargo_capacity = randomRecord.cargo_capacity;
-                record.consumables = randomRecord.consumables;
-                record._films = randomRecord._films;
-                record.created = randomRecord.created;
-                record.edited = randomRecord.edited;
-                record.url = randomRecord.url;
-                record.starship_class = randomRecord.starship_class;
-                record.hyperdrive_rating = randomRecord.hyperdrive_rating;
+                record._Pilots = randomRecord._Pilots;
+                record.Max_Atmosphering_Speed = randomRecord.Max_Atmosphering_Speed;
+                record.Crew = randomRecord.Crew;
+                record.Passengers = randomRecord.Passengers;
+                record.Cargo_Capacity = randomRecord.Cargo_Capacity;
+                record.Consumables = randomRecord.Consumables;
+                record._Films = randomRecord._Films;
+                record.Created = randomRecord.Created;
+                record.Edited = randomRecord.Edited;
+                record.Url = randomRecord.Url;
+                record.Starship_Class = randomRecord.Starship_Class;
+                record.Hyperdrive_Rating = randomRecord.Hyperdrive_Rating;
                 context.Update(record);
                 context.SaveChanges();
             }
@@ -244,4 +243,3 @@ namespace Project_StarWarsAPI_MVC.Models.SWAPI_Resources
         }
     }
 }
-

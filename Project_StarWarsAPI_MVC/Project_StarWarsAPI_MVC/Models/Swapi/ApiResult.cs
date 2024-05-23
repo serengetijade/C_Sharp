@@ -1,7 +1,6 @@
-﻿using Project_StarWarsAPI_MVC.Models.Content;
-using System.ComponentModel.DataAnnotations.Schema;
+﻿using System.ComponentModel.DataAnnotations.Schema;
 
-namespace Project_StarWarsAPI_MVC.Models.SWAPI_Resources
+namespace Project_StarWarsAPI_MVC.Models.Swapi
 {
     [NotMapped]
     public class ApiResult
