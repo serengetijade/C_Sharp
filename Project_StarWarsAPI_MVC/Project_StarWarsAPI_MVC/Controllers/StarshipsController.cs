@@ -59,15 +59,15 @@ namespace Project_StarWarsAPI_MVC.Controllers
         // POST: Starships/Create
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,image,imageFile,name,model,manufacturer,cost_in_credits,length,max_atmosphering_speed,crew,passengers,cargo_capacity,consumables,hyperdrive_rating,MGLT,starship_class,_pilots,_films,created,edited,url")] Starship starship)
+        public async Task<IActionResult> Create([Bind("Id,image,imageFile,name,model,manufacturer,cost_in_credits,length,max_atmosphering_speed,crew,passengers,cargo_capacity,consumables,hyperdrive_rating,MGLT,starship_class,_pilots,_films,created,edited,url")] StarshipResponse starship)
         {
-            string? extension = Path.GetExtension(starship.imageFile?.FileName);
+            string? extension = Path.GetExtension(starship.ImageFile?.FileName);
 
             if (ModelState.IsValid && (extension == null || extension.ToLower().Equals(".jpg") || extension.ToLower().Equals(".jpeg") || extension.ToLower().Equals(".png") || extension.ToLower().Equals(".jfif")))
             {
-                if (starship.imageFile != null)
+                if (starship.ImageFile != null)
                 {
-                    starship.Image = ImageToByteArray(starship.imageFile);
+                    starship.Image = ImageToByteArray(starship.ImageFile);
                 }
                 _context.Add(starship);
                 await _context.SaveChangesAsync();
@@ -95,7 +95,7 @@ namespace Project_StarWarsAPI_MVC.Controllers
         // POST: Starships/Edit/5
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("Id,image,imageFile,name,model,manufacturer,cost_in_credits,length,max_atmosphering_speed,crew,passengers,cargo_capacity,consumables,hyperdrive_rating,MGLT,starship_class,_pilots,_films,created,edited,url")] Starship starship)
+        public async Task<IActionResult> Edit(int id, [Bind("Id,image,imageFile,name,model,manufacturer,cost_in_credits,length,max_atmosphering_speed,crew,passengers,cargo_capacity,consumables,hyperdrive_rating,MGLT,starship_class,_pilots,_films,created,edited,url")] StarshipResponse starship)
         {
             if (id != starship.Id)
             {
@@ -106,12 +106,12 @@ namespace Project_StarWarsAPI_MVC.Controllers
             {
                 try
                 {
-                    if (starship.imageFile != null)
+                    if (starship.ImageFile != null)
                     {
-                        string extension = Path.GetExtension(starship.imageFile.FileName);
+                        string extension = Path.GetExtension(starship.ImageFile.FileName);
                         if (extension.ToLower().Equals(".jpg") || extension.ToLower().Equals(".jpeg") || extension.ToLower().Equals(".png") || extension.ToLower().Equals(".jfif"))
                         {
-                            byte[] imgEdit= ImageToByteArray(starship.imageFile);
+                            byte[] imgEdit= ImageToByteArray(starship.ImageFile);
                             starship.Image = imgEdit;
                             //_context.Update(starship.image);
                         }

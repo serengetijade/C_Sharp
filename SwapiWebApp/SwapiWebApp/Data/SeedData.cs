@@ -3,10 +3,12 @@ using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using Project_StarWarsAPI_MVC.Data;
 using Project_StarWarsAPI_MVC.Models.Content;
+using Project_StarWarsAPI_MVC.Models.Swapi;
+using Project_StarWarsAPI_MVC.Repositories;
 using System.Security.Cryptography;
 using System.Text;
 
-namespace Project_StarWarsAPI_MVC.Models.Swapi
+namespace SwapiWebApp.Data
 {
     /// <summary>
     /// Seed the db with data from the Star Wars API
@@ -20,12 +22,12 @@ namespace Project_StarWarsAPI_MVC.Models.Swapi
                 //If the Db has records, do nothing: 
                 if (context.Starship.Any())
                 {
-                    SeedData.GetRandomRecord(serviceProvider);
+                    GetRandomRecord(serviceProvider);
                     return;
                 }
 
                 //Create an "empty" record that will serve to hold random data later, this data is then used on the landing page. 
-                Starship randomRecord = new Starship() { Image = { }, Name = "initial", Model = "initial", Manufacturer = "initial", Cost_In_Credits = "initial", Length = "initial", Max_Atmosphering_Speed = "initial", Crew = "initial", Passengers = "initial", Cargo_Capacity = "initial", Consumables = "initial", Hyperdrive_Rating = "initial", Starship_Class = "initial", _Pilots = "initial", _films = "initial", created = "initial", edited = "initial", url = "initial", MGLT="initial"};
+                Starship randomRecord = new Starship() { Image = { }, Name = "initial", Model = "initial", Manufacturer = "initial", Cost_In_Credits = "initial", Length = "initial", Max_Atmosphering_Speed = "initial", Crew = "initial", Passengers = "initial", Cargo_Capacity = "initial", Consumables = "initial", Hyperdrive_Rating = "initial", Starship_Class = "initial", _Pilots = "initial", _films = "initial", created = "initial", edited = "initial", url = "initial", MGLT = "initial" };
                 context.Starship.Add(randomRecord);
 
                 using (HttpClient httpClient = new HttpClient())
@@ -50,8 +52,8 @@ namespace Project_StarWarsAPI_MVC.Models.Swapi
                                     foreach (JObject r in result.results)
                                     {
                                         Starship record = (Starship)r.ToObject(typeof(Starship));   //Result: each object is converted to Starship
-                                        record._Films = SeedData.ArrayToStringConverter(record.Films);
-                                        record._Pilots = SeedData.ArrayToStringConverter(record.Pilots);
+                                        record._Films = ArrayToStringConverter(record.Films);
+                                        record._Pilots = ArrayToStringConverter(record.Pilots);
                                         context.Starship.Add(record);
                                         Console.WriteLine(record.Name + " was added to database."); //Result: Starship's name
                                         //Console.WriteLine(r.ToString());                          //Result: All the starship details
@@ -63,11 +65,11 @@ namespace Project_StarWarsAPI_MVC.Models.Swapi
                                     foreach (JObject r in result.results)
                                     {
                                         Film record = (Film)r.ToObject(typeof(Film));
-                                        record._Species = SeedData.ArrayToStringConverter(record.Species);
-                                        record._Starships = SeedData.ArrayToStringConverter(record.Starships);
-                                        record._Vehicles = SeedData.ArrayToStringConverter(record.Vehicles);
-                                        record._Characters = SeedData.ArrayToStringConverter(record.Characters);
-                                        record._Planets = SeedData.ArrayToStringConverter(record.Planets);
+                                        record._Species = ArrayToStringConverter(record.Species);
+                                        record._Starships = ArrayToStringConverter(record.Starships);
+                                        record._Vehicles = ArrayToStringConverter(record.Vehicles);
+                                        record._Characters = ArrayToStringConverter(record.Characters);
+                                        record._Planets = ArrayToStringConverter(record.Planets);
                                         context.Films.Add(record);
                                         Console.WriteLine(record.Title + " was added to database.");
                                     }
@@ -77,10 +79,10 @@ namespace Project_StarWarsAPI_MVC.Models.Swapi
                                     foreach (JObject r in result.results)
                                     {
                                         People record = (People)r.ToObject(typeof(People));
-                                        record._Films = SeedData.ArrayToStringConverter(record.Films);
-                                        record._Species = SeedData.ArrayToStringConverter(record.Species);
-                                        record._Vehicles = SeedData.ArrayToStringConverter(record.Vehicles);
-                                        record._Starships = SeedData.ArrayToStringConverter(record.Starships);
+                                        record._Films = ArrayToStringConverter(record.Films);
+                                        record._Species = ArrayToStringConverter(record.Species);
+                                        record._Vehicles = ArrayToStringConverter(record.Vehicles);
+                                        record._Starships = ArrayToStringConverter(record.Starships);
                                         context.People.Add(record);
                                         Console.WriteLine(record.Name + " was added to database.");
                                     }
@@ -90,8 +92,8 @@ namespace Project_StarWarsAPI_MVC.Models.Swapi
                                     foreach (JObject r in result.results)
                                     {
                                         Planet record = (Planet)r.ToObject(typeof(Planet));
-                                        record._Residents = SeedData.ArrayToStringConverter(record.Residents);
-                                        record._Films = SeedData.ArrayToStringConverter(record.Films);
+                                        record._Residents = ArrayToStringConverter(record.Residents);
+                                        record._Films = ArrayToStringConverter(record.Films);
                                         context.Planets.Add(record);
                                         Console.WriteLine(record.Name + " was added to database.");
                                     }
@@ -101,8 +103,8 @@ namespace Project_StarWarsAPI_MVC.Models.Swapi
                                     foreach (JObject r in result.results)
                                     {
                                         Species record = (Species)r.ToObject(typeof(Species));
-                                        record._Films = SeedData.ArrayToStringConverter(record.Films);
-                                        record._People = SeedData.ArrayToStringConverter(record.People);
+                                        record._Films = ArrayToStringConverter(record.Films);
+                                        record._People = ArrayToStringConverter(record.People);
                                         context.Species.Add(record);
                                         Console.WriteLine(record.Name + " was added to database.");
                                     }
@@ -112,8 +114,8 @@ namespace Project_StarWarsAPI_MVC.Models.Swapi
                                     foreach (JObject r in result.results)
                                     {
                                         Vehicle record = (Vehicle)r.ToObject(typeof(Vehicle));
-                                        record._Films = SeedData.ArrayToStringConverter(record.Films);
-                                        record._Pilots = SeedData.ArrayToStringConverter(record.Pilots);
+                                        record._Films = ArrayToStringConverter(record.Films);
+                                        record._Pilots = ArrayToStringConverter(record.Pilots);
                                         context.Vehicle.Add(record);
                                         Console.WriteLine(record.Name + " was added to database.");
                                     }
@@ -129,10 +131,10 @@ namespace Project_StarWarsAPI_MVC.Models.Swapi
                         {
                         }
                     }
-                    httpClient.Dispose();           
+                    httpClient.Dispose();
                 }
                 context.SaveChanges();
-                SeedData.GetRandomRecord(serviceProvider);
+                GetRandomRecord(serviceProvider);
                 context.Dispose();
             }
         }
@@ -200,13 +202,13 @@ namespace Project_StarWarsAPI_MVC.Models.Swapi
                 {                                                               //...But...
                     if (item.Id != firstItem)                                   //Exclude the "initial" record (created above in Seed method).
                     {
-                        idNumbers.Add(item.Id);                                 
+                        idNumbers.Add(item.Id);
                     }
                 }
                 int itemCount = idNumbers.Count();                              //Count number of list entries.
                 int randomIndex = RandomNumberGenerator.GetInt32(itemCount);    //Get a random index number from the list of Id numbers (returns a number between -1 and given upper limit (itemCount), but not including it)
                 int randomId = idNumbers[randomIndex];                          //Set the value from the idNumbers list using the randomIndex number
-                
+
                 //Save the randomRecord to the database as a permanent entry:
                 Starship randomRecord = context.Starship.Find(randomId);        //Find the record with matching Id from the list
                 Starship record = context.Starship.Find(firstItem);
