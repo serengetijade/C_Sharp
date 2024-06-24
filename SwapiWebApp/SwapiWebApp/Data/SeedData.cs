@@ -39,7 +39,7 @@ namespace SwapiWebApp.Data
                     foreach (string resource in resources)
                     {
                         try
-                        {
+                        { 
                             //Get data from the API:
                             var response = await httpClient.GetAsync(resource);                     //GET request to the API: add the provided string to the base url address
                             string jsonResponse = await response.Content.ReadAsStringAsync();       //Read the string from the response '.Content' //ReadASStringAsync is a method that reads asyncrhonously without holding up the main thread. 
@@ -56,8 +56,6 @@ namespace SwapiWebApp.Data
                                         record._Pilots = ArrayToStringConverter(record.Pilots);
                                         context.Starship.Add(record);
                                         Console.WriteLine(record.Name + " was added to database."); //Result: Starship's name
-                                        //Console.WriteLine(r.ToString());                          //Result: All the starship details
-                                        //Console.WriteLine(record.GetType().Name);                 //Result: Starship 
                                     }
                                     break;
                                 case "films":

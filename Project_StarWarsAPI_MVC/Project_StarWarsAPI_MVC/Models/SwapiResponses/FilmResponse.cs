@@ -8,7 +8,6 @@
         public string Episode_Id { get; set; }
         public string Opening_Crawl { get; set; }
         public string[]? Planets { get; set; }
-        public string? _Planets { get; set; }
         public string Producer { get; set; }
         public string Release_Date { get; set; }
         public string[]? Species { get; set; }
