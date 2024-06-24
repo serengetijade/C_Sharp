@@ -2,7 +2,7 @@
 
 namespace Project_StarWarsAPI_MVC.Models.Swapi
 {
-    public class Species : BaseEntity
+    public class SpeciesViewModel : BaseEntity
     {
         [DisplayName("Avg Height")]
         public string Average_Height { get; set; }
@@ -16,7 +16,7 @@ namespace Project_StarWarsAPI_MVC.Models.Swapi
         public string Hair_Colors { get; set; }
         public string? Homeworld { get; set; }
         public string Language { get; set; }
-        public string[]? People { get; set; }  
+        public List<string>? People { get; set; }  
         [DisplayName("Skin Colors")]
         public string Skin_Colors { get; set; }
     }

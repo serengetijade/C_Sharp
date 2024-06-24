@@ -4,7 +4,7 @@ using System.ComponentModel.DataAnnotations;
 
 namespace Project_StarWarsAPI_MVC.Models.Swapi
 {
-    public class Starship : BaseEntity
+    public class StarshipViewModel : BaseEntity
     {
         [DisplayName("Cargo Capacity")]
         public string? Cargo_Capacity { get; set; }
@@ -27,7 +27,7 @@ namespace Project_StarWarsAPI_MVC.Models.Swapi
         public string Model { get; set; }
         [DisplayName("Passenger Capacity")]
         public string? Passengers { get; set; }
-        public string[]? Pilots { get; set; }
+        public List<string>? Pilots { get; set; }
         [DisplayName("Class")]
         public string? Starship_Class { get; set; }
     }

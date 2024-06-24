@@ -2,7 +2,7 @@
 
 namespace Project_StarWarsAPI_MVC.Models.Swapi
 {
-    public class BaseEntity
+    public class BaseEntityViewModel
     {
         [Key]
         public int Id { get; set; }

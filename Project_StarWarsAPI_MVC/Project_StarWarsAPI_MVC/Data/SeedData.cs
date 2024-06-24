@@ -25,7 +25,7 @@ namespace Project_StarWarsAPI_MVC.Data
                 }
 
                 //Create an "empty" record that will serve to hold random data later, this data is then used on the landing page. 
-                Starship randomRecord = new Starship() { Image = { }, Name = "initial", Model = "initial", Manufacturer = "initial", Cost_In_Credits = "initial", Length = "initial", Max_Atmosphering_Speed = "initial", Crew = "initial", Passengers = "initial", Cargo_Capacity = "initial", Consumables = "initial", Hyperdrive_Rating = "initial", Starship_Class = "initial", Pilots = new string[] { "initial1", "initial2" } , Films = new string[] { "initial1", "initial2" }, Created = "initial", Edited = "initial", Url = "initial", MGLT = "initial" };
+                Starship randomRecord = new Starship() { Image = { }, Name = "initial", Model = "initial", Manufacturer = "initial", Cost_In_Credits = "initial", Length = "initial", Max_Atmosphering_Speed = "initial", Crew = "initial", Passengers = "initial", Cargo_Capacity = "initial", Consumables = "initial", Hyperdrive_Rating = "initial", Starship_Class = "initial", Pilots = "initial", Films = "initial", Created = "initial", Edited = "initial", Url = "initial", MGLT = "initial" };
                 context.Starship.Add(randomRecord);
 
                 using (HttpClient httpClient = new HttpClient())
@@ -127,9 +127,7 @@ namespace Project_StarWarsAPI_MVC.Data
         }
 
         /// <summary>
-        /// Convert API results (recieved as json string arrays) into strings. 
-        /// The results are string arrays, and not key-value-pairs, so StringBuilder is used to convert into strings. 
-        /// JsonConver.Deserialize\<string\>(results) did not work.  
+        /// Convert API results (recieved as string arrays) into strings. 
         /// </summary>
         /// <param name="results"></param>
         /// <returns></returns>
