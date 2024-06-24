@@ -10,6 +10,11 @@ namespace Project_StarWarsAPI_MVC.Helpers
                 .ForMember(
                 dest => dest.Films,
                 opt => opt.MapFrom(src => string.Join(",", src.Films)))
+                .ReverseMap(); 
+            CreateMap<BaseEntity, BaseEntityViewModel>()
+                .ForMember(
+                dest => dest.Films,
+                opt => opt.MapFrom(src => src.Films.ToList()))
                 .ReverseMap();
 
             CreateMap<FilmResponse, Film>()
@@ -28,6 +33,23 @@ namespace Project_StarWarsAPI_MVC.Helpers
                 .ForMember(
                 dest => dest.Vehicles,
                 opt => opt.MapFrom(src => string.Join(",", src.Vehicles)))
+                .ReverseMap(); 
+            CreateMap<Film, FilmViewModel>()
+                .ForMember(
+                dest => dest.Characters,
+                opt => opt.MapFrom(src => src.Characters.ToList()))
+                .ForMember(
+                dest => dest.Planets,
+                opt => opt.MapFrom(src => src.Planets.ToList()))
+                .ForMember(
+                dest => dest.Species,
+                opt => opt.MapFrom(src => src.Species.ToList()))
+                .ForMember(
+                dest => dest.Starships,
+                opt => opt.MapFrom(src => src.Starships.ToList()))
+                .ForMember(
+                dest => dest.Vehicles,
+                opt => opt.MapFrom(src => src.Vehicles.ToList()))
                 .ReverseMap();
 
             CreateMap<PeopleResponse, People>()
@@ -39,20 +61,41 @@ namespace Project_StarWarsAPI_MVC.Helpers
                 opt => opt.MapFrom(src => string.Join(",", src.Starships)))
                 .ForMember(
                 dest => dest.Vehicles,
-                opt => opt.MapFrom(src => string.Join(",", src.Vehicles.ToString)))
+                opt => opt.MapFrom(src => string.Join(",", src.Vehicles)))
+                .ReverseMap(); 
+            CreateMap<People, PeopleViewModel>()
+                .ForMember(
+                dest => dest.Species,
+                opt => opt.MapFrom(src => src.Species.ToList()))
+                .ForMember(
+                dest => dest.Starships,
+                opt => opt.MapFrom(src => src.Starships.ToList()))
+                .ForMember(
+                dest => dest.Vehicles,
+                opt => opt.MapFrom(src => src.Vehicles.ToList()))
                 .ReverseMap();  
 
             CreateMap<PlanetResponse, Planet>()
                 .ForMember(
                 dest => dest.Residents,
                 opt => opt.MapFrom(src => string.Join(",", src.Residents)))
+                .ReverseMap(); 
+            CreateMap<Planet, PlanetViewModel>()
+                .ForMember(
+                dest => dest.Residents,
+                opt => opt.MapFrom(src => src.Residents.ToList()))
                 .ReverseMap();  
 
             CreateMap<SpeciesResponse, Species>()
                 .ForMember(
                 dest => dest.People,
                 opt => opt.MapFrom(src => string.Join(",", src.People)))
-                .ReverseMap();  
+                .ReverseMap();
+            CreateMap<Species, SpeciesViewModel>()
+                .ForMember(
+                dest => dest.People,
+                opt => opt.MapFrom(src => src.People.ToList()))
+                .ReverseMap();   
 
             CreateMap<StarshipResponse, Starship>()
                 .ForMember(
@@ -61,9 +104,25 @@ namespace Project_StarWarsAPI_MVC.Helpers
                 .ForMember(
                 dest => dest.Pilots,
                 opt => opt.MapFrom(src => string.Join(",", src.Pilots)))
-                .ReverseMap();  
+                .ReverseMap();
+            CreateMap<Starship, StarshipViewModel>()
+                .ForMember(
+                dest => dest.Image,
+                opt => opt.MapFrom(src => src.Image.ToList()))
+                .ForMember(
+                dest => dest.Pilots,
+                opt => opt.MapFrom(src => src.Pilots.ToList()))
+                .ReverseMap();
 
-            CreateMap<VehicleResponse, Vehicle>()            
+            CreateMap<VehicleResponse, Vehicle>()
+                .ForMember(
+                dest => dest.Pilots,
+                opt => opt.MapFrom(src => string.Join(",", src.Pilots)))
+                .ReverseMap();   
+            CreateMap<Vehicle, VehicleViewModel>()
+                .ForMember(
+                dest => dest.Pilots,
+                opt => opt.MapFrom(src => src.Pilots.ToList()))
                 .ReverseMap();
         }
     }
