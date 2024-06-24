@@ -1,6 +1,6 @@
-﻿namespace Project_StarWarsAPI_MVC.Models.Swapi
+﻿namespace Project_StarWarsAPI_MVC.Models.SwapiResponses
 {
-    public class StarshipResponse : BaseEntity
+    public class StarshipResponse : BaseEntityResponse
     {
         public string? Cargo_Capacity { get; set; }
         public string? Consumables { get; set; }

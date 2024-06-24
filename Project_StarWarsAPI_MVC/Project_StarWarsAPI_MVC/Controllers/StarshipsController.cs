@@ -1,7 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Project_StarWarsAPI_MVC.Data;
-using Project_StarWarsAPI_MVC.Models.Swapi;
+using Project_StarWarsAPI_MVC.Models.SwapiEntities;
 
 namespace Project_StarWarsAPI_MVC.Controllers
 {
@@ -59,7 +59,7 @@ namespace Project_StarWarsAPI_MVC.Controllers
         // POST: Starships/Create
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,image,imageFile,name,model,manufacturer,cost_in_credits,length,max_atmosphering_speed,crew,passengers,cargo_capacity,consumables,hyperdrive_rating,MGLT,starship_class,_pilots,_films,created,edited,url")] StarshipResponse starship)
+        public async Task<IActionResult> Create([Bind("Id,image,imageFile,name,model,manufacturer,cost_in_credits,length,max_atmosphering_speed,crew,passengers,cargo_capacity,consumables,hyperdrive_rating,MGLT,starship_class,_pilots,_films,created,edited,url")] Starship starship)
         {
             string? extension = Path.GetExtension(starship.ImageFile?.FileName);
 
@@ -95,7 +95,7 @@ namespace Project_StarWarsAPI_MVC.Controllers
         // POST: Starships/Edit/5
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("Id,image,imageFile,name,model,manufacturer,cost_in_credits,length,max_atmosphering_speed,crew,passengers,cargo_capacity,consumables,hyperdrive_rating,MGLT,starship_class,_pilots,_films,created,edited,url")] StarshipResponse starship)
+        public async Task<IActionResult> Edit(int id, [Bind("Id,image,imageFile,name,model,manufacturer,cost_in_credits,length,max_atmosphering_speed,crew,passengers,cargo_capacity,consumables,hyperdrive_rating,MGLT,starship_class,_pilots,_films,created,edited,url")] Starship starship)
         {
             if (id != starship.Id)
             {

@@ -1,5 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using Project_StarWarsAPI_MVC.Models.Swapi;
+using Project_StarWarsAPI_MVC.Models.SwapiEntities;
 
 namespace Project_StarWarsAPI_MVC.Data
 {

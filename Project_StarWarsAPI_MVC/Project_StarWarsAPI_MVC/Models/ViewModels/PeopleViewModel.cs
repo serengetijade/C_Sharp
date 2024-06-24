@@ -1,8 +1,8 @@
 ﻿using System.ComponentModel;
 
-namespace Project_StarWarsAPI_MVC.Models.Swapi
+namespace Project_StarWarsAPI_MVC.Models.ViewModels
 {
-    public class PeopleViewModel : BaseEntity
+    public class PeopleViewModel : BaseEntityViewModel
     {
         [DisplayName("Birth Year")]
         public string Birth_Year { get; set; }

@@ -1,8 +1,8 @@
 ﻿using System.ComponentModel;
 
-namespace Project_StarWarsAPI_MVC.Models.Swapi
+namespace Project_StarWarsAPI_MVC.Models.ViewModels
 {
-    public class PlanetViewModel : BaseEntity
+    public class PlanetViewModel : BaseEntityViewModel
     {
         public string Diameter { get; set; }
         public string Climate { get; set; }

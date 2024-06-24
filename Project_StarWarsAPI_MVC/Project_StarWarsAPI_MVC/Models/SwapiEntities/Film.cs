@@ -1,6 +1,4 @@
-﻿using System.ComponentModel;
-
-namespace Project_StarWarsAPI_MVC.Models.Swapi
+﻿namespace Project_StarWarsAPI_MVC.Models.SwapiEntities
 {
     public class Film : BaseEntity
     {

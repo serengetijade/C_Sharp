@@ -1,4 +1,4 @@
-﻿namespace Project_StarWarsAPI_MVC.Models.Swapi
+﻿namespace Project_StarWarsAPI_MVC.Models.SwapiResponses
 {
     public class BaseEntityResponse
     {

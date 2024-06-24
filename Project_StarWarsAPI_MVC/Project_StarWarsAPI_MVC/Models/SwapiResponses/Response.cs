@@ -1,6 +1,6 @@
 ﻿using Newtonsoft.Json.Linq;
 
-namespace Project_StarWarsAPI_MVC.Models.SwapiResponse
+namespace Project_StarWarsAPI_MVC.Models.SwapiResponses
 {
     public class Response
     {

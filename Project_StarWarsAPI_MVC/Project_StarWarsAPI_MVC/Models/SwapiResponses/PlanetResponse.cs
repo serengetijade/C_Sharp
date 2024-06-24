@@ -1,6 +1,6 @@
-﻿namespace Project_StarWarsAPI_MVC.Models.Swapi
+﻿namespace Project_StarWarsAPI_MVC.Models.SwapiResponses
 {
-    public class PlanetResponse : BaseEntity
+    public class PlanetResponse : BaseEntityResponse
     {
         public string Diameter { get; set; }
         public string Climate { get; set; }

@@ -1,7 +1,7 @@
 ﻿using System.ComponentModel;
 using System.ComponentModel.DataAnnotations.Schema;
 
-namespace Project_StarWarsAPI_MVC.Models.Swapi
+namespace Project_StarWarsAPI_MVC.Models.SwapiEntities
 {
     public class People : BaseEntity
     {

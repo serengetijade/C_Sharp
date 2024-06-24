@@ -1,8 +1,8 @@
 ﻿using System.ComponentModel;
 
-namespace Project_StarWarsAPI_MVC.Models.Swapi
+namespace Project_StarWarsAPI_MVC.Models.ViewModels
 {
-    public class FilmViewModel : BaseEntity
+    public class FilmViewModel : BaseEntityViewModel
     {
         public List<string>? Characters { get; set; }
         public string Director { get; set; }

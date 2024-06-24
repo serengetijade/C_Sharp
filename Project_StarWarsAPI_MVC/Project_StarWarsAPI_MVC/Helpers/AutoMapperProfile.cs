@@ -1,5 +1,7 @@
 ﻿using AutoMapper;
-using Project_StarWarsAPI_MVC.Models.Swapi;
+using Project_StarWarsAPI_MVC.Models.SwapiEntities;
+using Project_StarWarsAPI_MVC.Models.SwapiResponses;
+using Project_StarWarsAPI_MVC.Models.ViewModels;
 
 namespace Project_StarWarsAPI_MVC.Helpers
 {

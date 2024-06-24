@@ -1,10 +1,10 @@
-﻿using System.ComponentModel.DataAnnotations.Schema;
-using System.ComponentModel;
+﻿using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
-namespace Project_StarWarsAPI_MVC.Models.Swapi
+namespace Project_StarWarsAPI_MVC.Models.ViewModels
 {
-    public class StarshipViewModel : BaseEntity
+    public class StarshipViewModel : BaseEntityViewModel
     {
         [DisplayName("Cargo Capacity")]
         public string? Cargo_Capacity { get; set; }

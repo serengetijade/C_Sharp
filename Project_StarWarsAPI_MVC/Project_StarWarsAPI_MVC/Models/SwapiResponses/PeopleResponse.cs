@@ -1,6 +1,6 @@
-﻿namespace Project_StarWarsAPI_MVC.Models.Swapi
+﻿namespace Project_StarWarsAPI_MVC.Models.SwapiResponses
 {
-    public class PeopleResponse : BaseEntity
+    public class PeopleResponse : BaseEntityResponse
     {
         public string Birth_Year { get; set; }
         public string Eye_Color { get; set; }

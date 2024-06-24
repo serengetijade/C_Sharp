@@ -1,5 +1,5 @@
 ﻿using Project_StarWarsAPI_MVC.Models;
-using Project_StarWarsAPI_MVC.Models.SwapiResponse;
+using Project_StarWarsAPI_MVC.Models.SwapiResponses;
 
 namespace Project_StarWarsAPI_MVC.Interfaces
 {

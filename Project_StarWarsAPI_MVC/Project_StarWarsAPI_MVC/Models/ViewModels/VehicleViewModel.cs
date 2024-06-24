@@ -1,8 +1,8 @@
 ﻿using System.ComponentModel;
 
-namespace Project_StarWarsAPI_MVC.Models.Swapi
+namespace Project_StarWarsAPI_MVC.Models.ViewModels
 {
-    public class VehicleViewModel : BaseEntity
+    public class VehicleViewModel : BaseEntityViewModel
     {
         [DisplayName("Cargo Capacity")]
         public string Cargo_Capacity { get; set; }

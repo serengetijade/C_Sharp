@@ -1,6 +1,6 @@
-﻿namespace Project_StarWarsAPI_MVC.Models.Swapi
+﻿namespace Project_StarWarsAPI_MVC.Models.SwapiResponses
 {
-    public class FilmResponse : BaseEntity
+    public class FilmResponse : BaseEntityResponse
     {
         public string[]? Characters { get; set; }
         public string? _Characters { get; set; }

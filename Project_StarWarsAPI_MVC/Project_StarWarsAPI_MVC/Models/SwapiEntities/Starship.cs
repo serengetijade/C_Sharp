@@ -1,8 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations.Schema;
-using System.ComponentModel;
-using System.ComponentModel.DataAnnotations;
 
-namespace Project_StarWarsAPI_MVC.Models.Swapi
+namespace Project_StarWarsAPI_MVC.Models.SwapiEntities
 {
     public class Starship : BaseEntity
     {

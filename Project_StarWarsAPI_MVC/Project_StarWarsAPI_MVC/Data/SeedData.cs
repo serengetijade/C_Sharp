@@ -1,8 +1,8 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
-using Project_StarWarsAPI_MVC.Models.Swapi;
-using Project_StarWarsAPI_MVC.Models.SwapiResponse;
+using Project_StarWarsAPI_MVC.Models.SwapiEntities;
+using Project_StarWarsAPI_MVC.Models.SwapiResponses;
 using System.Security.Cryptography;
 using System.Text;
 

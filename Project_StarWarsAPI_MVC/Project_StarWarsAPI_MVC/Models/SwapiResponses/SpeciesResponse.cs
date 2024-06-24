@@ -1,6 +1,6 @@
-﻿namespace Project_StarWarsAPI_MVC.Models.Swapi
+﻿namespace Project_StarWarsAPI_MVC.Models.SwapiResponses
 {
-    public class SpeciesResponse : BaseEntity
+    public class SpeciesResponse : BaseEntityResponse
     {
         public string Average_Height { get; set; }
         public string Average_Lifespan { get; set; }

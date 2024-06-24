@@ -1,8 +1,8 @@
 ﻿using System.ComponentModel;
 
-namespace Project_StarWarsAPI_MVC.Models.Swapi
+namespace Project_StarWarsAPI_MVC.Models.ViewModels
 {
-    public class SpeciesViewModel : BaseEntity
+    public class SpeciesViewModel : BaseEntityViewModel
     {
         [DisplayName("Avg Height")]
         public string Average_Height { get; set; }
