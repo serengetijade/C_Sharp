@@ -1,82 +1,81 @@
-﻿@*the model statment specifies the type of object that the view expects and therefore the class methods that are called*@
-@model Project_StarWarsAPI_MVC.Models.Content.Starship
+﻿@model Project_StarWarsAPI_MVC.Models.Swapi.Starship
 
 @{
     ViewData["Title"] = "Details";
 }
 
-<h1>@Html.DisplayFor(model => model.name) Details</h1>
+<h1>@Html.DisplayFor(model => model.Name) Details</h1>
 
 <div>
     <h4>Starship</h4>
     <hr />
-    <img src="@Url.Action("byteToImg", new { Id = Model.Id})" alt="Ship Image: @Model.name" style="width: 25vw; height:auto" /> 
+    <img src="@Url.Action("byteToImg", new { Id = Model.Id})" alt="Ship Image: @Model.Name" style="width: 25vw; height:auto" /> 
     <dl class="row">
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.name)
+            @Html.DisplayNameFor(model => model.Name)
         </dt>
         <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.name)
+            @Html.DisplayFor(model => model.Name)
         </dd>
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.model)
+            @Html.DisplayNameFor(model => model.Model)
         </dt>
         <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.model)
+            @Html.DisplayFor(model => model.Model)
         </dd>
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.manufacturer)
+            @Html.DisplayNameFor(model => model.Manufacturer)
         </dt>
         <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.manufacturer)
+            @Html.DisplayFor(model => model.Manufacturer)
         </dd>
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.cost_in_credits)
+            @Html.DisplayNameFor(model => model.Cost_In_Credits)
         </dt>
         <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.cost_in_credits)
+            @Html.DisplayFor(model => model.Cost_In_Credits)
         </dd>
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.length)
+            @Html.DisplayNameFor(model => model.Length)
         </dt>
         <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.length)
+            @Html.DisplayFor(model => model.Length)
         </dd>
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.max_atmosphering_speed)
+            @Html.DisplayNameFor(model => model.Max_Atmosphering_Speed)
         </dt>
         <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.max_atmosphering_speed)
+            @Html.DisplayFor(model => model.Max_Atmosphering_Speed)
         </dd>
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.crew)
+            @Html.DisplayNameFor(model => model.Crew)
         </dt>
         <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.crew)
+            @Html.DisplayFor(model => model.Crew)
         </dd>
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.passengers)
+            @Html.DisplayNameFor(model => model.Passengers)
         </dt>
         <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.passengers)
+            @Html.DisplayFor(model => model.Passengers)
         </dd>
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.cargo_capacity)
+            @Html.DisplayNameFor(model => model.Cargo_Capacity)
         </dt>
         <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.cargo_capacity)
+            @Html.DisplayFor(model => model.Cargo_Capacity)
         </dd>
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.consumables)
+            @Html.DisplayNameFor(model => model.Consumables)
         </dt>
         <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.consumables)
+            @Html.DisplayFor(model => model.Consumables)
         </dd>
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.hyperdrive_rating)
+            @Html.DisplayNameFor(model => model.Hyperdrive_Rating)
         </dt>
         <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.hyperdrive_rating)
+            @Html.DisplayFor(model => model.Hyperdrive_Rating)
         </dd>
         <dt class = "col-sm-2">
             @Html.DisplayNameFor(model => model.MGLT)
@@ -85,40 +84,40 @@
             @Html.DisplayFor(model => model.MGLT)
         </dd>
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.starship_class)
+            @Html.DisplayNameFor(model => model.Starship_Class)
         </dt>
         <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.starship_class)
+            @Html.DisplayFor(model => model.Starship_Class)
         </dd>
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model._pilots)
+            @Html.DisplayNameFor(model => model.Pilots)
         </dt>
         <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model._pilots)
+            @Html.DisplayFor(model => model.Pilots)
         </dd>
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model._films)
+            @Html.DisplayNameFor(model => model.Films)
         </dt>
         <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model._films)
+            @Html.DisplayFor(model => model.Films)
         </dd>
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.created)
+            @Html.DisplayNameFor(model => model.Created)
         </dt>
         <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.created)
+            @Html.DisplayFor(model => model.Created)
         </dd>
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.edited)
+            @Html.DisplayNameFor(model => model.Edited)
         </dt>
         <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.edited)
+            @Html.DisplayFor(model => model.Edited)
         </dd>
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.url)
+            @Html.DisplayNameFor(model => model.Url)
         </dt>
         <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.url)
+            @Html.DisplayFor(model => model.Url)
         </dd>
     </dl>
 </div>

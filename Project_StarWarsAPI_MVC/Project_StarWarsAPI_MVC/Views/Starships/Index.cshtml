@@ -16,42 +16,42 @@
 
         <div class="starshipCard">
             <a class="btn btn-dark" data-bs-toggle="collapse" href="#collapseExample-@item.Id" role="button" aria-expanded="false" aria-controls="collapseExample" >
-                <strong>@item.name</strong>
+                <strong>@item.Name</strong>
             </a>
             <div class="collapse" id="collapseExample-@item.Id">
                 <div class="card card-body bg-dark">
-                    <h4>@item.name</h4>
-                    <img src="@Url.Action("byteToImg", new { Id = item.Id})" alt="Ship Image: @item.name" style="width: 50%; height:auto" />
-                    <br /><h5>Model: </h5>@item.model
-                    <br /><h5>Manufacturer: </h5>@item.manufacturer
-                    <br /><h5>Cost: </h5>@item.cost_in_credits
-                    <br /><h5>Length: </h5>@item.length
-                    <br /><h5>Max Atmo Speed: </h5>@item.max_atmosphering_speed
-                    <br /><h5>Crew Capacity: </h5>@item.crew
-                    <br /><h5>Passenger Capacity: </h5>@item.passengers
-                    <br /><h5>Cargo Capacity: </h5>@item.cargo_capacity
-                    <br /><h5>Consumables: </h5>@item.consumables
-                    <br /><h5>Hyperdrive Rating: </h5>@item.hyperdrive_rating
+                    <h4>@item.Name</h4>
+                    <img src="@Url.Action("byteToImg", new { Id = item.Id})" alt="Ship Image: @item.Name" style="width: 50%; height:auto" />
+                    <br /><h5>Model: </h5>@item.Model
+                    <br /><h5>Manufacturer: </h5>@item.Manufacturer
+                    <br /><h5>Cost: </h5>@item.Cost_In_Credits
+                    <br /><h5>Length: </h5>@item.Length
+                    <br /><h5>Max Atmo Speed: </h5>@item.Max_Atmosphering_Speed
+                    <br /><h5>Crew Capacity: </h5>@item.Crew
+                    <br /><h5>Passenger Capacity: </h5>@item.Passengers
+                    <br /><h5>Cargo Capacity: </h5>@item.Cargo_Capacity
+                    <br /><h5>Consumables: </h5>@item.Consumables
+                    <br /><h5>Hyperdrive Rating: </h5>@item.Hyperdrive_Rating
                     <br /><h5>MGLT: </h5>@item.MGLT
-                    <br /><h5>Class: </h5>@item.starship_class
+                    <br /><h5>Class: </h5>@item.Starship_Class
                     <br /><h5>Pilots: </h5> 
-                        @if (item._pilots != null)
+                        @if (item.Pilots != null)
                         {
-                            foreach (var url in SeedData.StringToArray(item._pilots)){
+                            foreach (var url in item.Pilots){
                                 <a href="@url" target="_blank"> @url </a><span>   </span>
                             }                    
                         }
                     <br /><h5>Films: </h5>
-                        @if (item._films != null)
+                        @if (item.Films != null)
                         {
-                            foreach (var url in SeedData.StringToArray(item._films))
+                            foreach (var url in item.Films)
                             {
                                 <a href="@url" target="_blank"> @url</a><span>   </span>
                             }
                         }
-                    <br /><h5>Created: </h5>@item.created
-                    <br /><h5>Edited: </h5>@item.edited
-                    <br /><h5>URL: </h5><a href="@item.url">@item.url</a>
+                    <br /><h5>Created: </h5>@item.Created
+                    <br /><h5>Edited: </h5>@item.Edited
+                    <br /><h5>URL: </h5><a href="@item.Url">@item.Url</a>
                     <span style="display:inline">
                         <a asp-action="Details" asp-route-id="@item.Id"><button class="btn btn-outline-warning">Details</button></a>
                         <a asp-action="Edit" asp-route-id="@item.Id"><button class="btn btn-outline-warning">Edit</button></a>

@@ -1,4 +1,4 @@
-﻿@model Project_StarWarsAPI_MVC.Models.Content.Starship
+﻿@model Project_StarWarsAPI_MVC.Models.Swapi.Starship
 
 @{
     ViewData["Title"] = "Create";
@@ -13,64 +13,65 @@
         <form asp-action="Create" enctype="multipart/form-data">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <div class="form-group">
-                <label asp-for="imageFile" class="control-label"></label>
-                <br /><input asp-for="imageFile" type="file" />
-                <span asp-validation-for="imageFile" class="text-danger"></span>
+                @{string imageFile = nameof(Model.ImageFile);}
+                <label asp-for=@imageFile class="control-label"></label>
+                <br /><input asp-for=@imageFile type="file" />
+                <span asp-validation-for=@imageFile class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="name" class="control-label"></label>
-                <input asp-for="name" class="form-control" />
-                <span asp-validation-for="name" class="text-danger"></span>
+                <label asp-for="Name" class="control-label"></label>
+                <input asp-for="Name" class="form-control" />
+                <span asp-validation-for="Name" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="model" class="control-label"></label>
-                <input asp-for="model" class="form-control" />
-                <span asp-validation-for="model" class="text-danger"></span>
+                <label asp-for="Model" class="control-label"></label>
+                <input asp-for="Model" class="form-control" />
+                <span asp-validation-for="Model" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="manufacturer" class="control-label"></label>
-                <input asp-for="manufacturer" class="form-control" />
-                <span asp-validation-for="manufacturer" class="text-danger"></span>
+                <label asp-for="Manufacturer" class="control-label"></label>
+                <input asp-for="Manufacturer" class="form-control" />
+                <span asp-validation-for="Manufacturer" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="cost_in_credits" class="control-label"></label>
-                <input asp-for="cost_in_credits" class="form-control" />
-                <span asp-validation-for="cost_in_credits" class="text-danger"></span>
+                <label asp-for="Cost_In_Credits" class="control-label"></label>
+                <input asp-for="Cost_In_Credits" class="form-control" />
+                <span asp-validation-for="Cost_In_Credits" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="length" class="control-label"></label>
-                <input asp-for="length" class="form-control" />
-                <span asp-validation-for="length" class="text-danger"></span>
+                <label asp-for="Length" class="control-label"></label>
+                <input asp-for="Length" class="form-control" />
+                <span asp-validation-for="Length" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="max_atmosphering_speed" class="control-label"></label>
-                <input asp-for="max_atmosphering_speed" class="form-control" />
-                <span asp-validation-for="max_atmosphering_speed" class="text-danger"></span>
+                <label asp-for="Max_Atmosphering_Speed" class="control-label"></label>
+                <input asp-for="Max_Atmosphering_Speed" class="form-control" />
+                <span asp-validation-for="Max_Atmosphering_Speed" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="crew" class="control-label"></label>
-                <input asp-for="crew" class="form-control" />
-                <span asp-validation-for="crew" class="text-danger"></span>
+                <label asp-for="Crew" class="control-label"></label>
+                <input asp-for="Crew" class="form-control" />
+                <span asp-validation-for="Crew" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="passengers" class="control-label"></label>
-                <input asp-for="passengers" class="form-control" />
-                <span asp-validation-for="passengers" class="text-danger"></span>
+                <label asp-for="Passengers" class="control-label"></label>
+                <input asp-for="Passengers" class="form-control" />
+                <span asp-validation-for="Passengers" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="cargo_capacity" class="control-label"></label>
-                <input asp-for="cargo_capacity" class="form-control" />
-                <span asp-validation-for="cargo_capacity" class="text-danger"></span>
+                <label asp-for="Cargo_Capacity" class="control-label"></label>
+                <input asp-for="Cargo_Capacity" class="form-control" />
+                <span asp-validation-for="Cargo_Capacity" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="consumables" class="control-label"></label>
-                <input asp-for="consumables" class="form-control" />
-                <span asp-validation-for="consumables" class="text-danger"></span>
+                <label asp-for="Consumables" class="control-label"></label>
+                <input asp-for="Consumables" class="form-control" />
+                <span asp-validation-for="Consumables" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="hyperdrive_rating" class="control-label"></label>
-                <input asp-for="hyperdrive_rating" class="form-control" />
-                <span asp-validation-for="hyperdrive_rating" class="text-danger"></span>
+                <label asp-for="Hyperdrive_Rating" class="control-label"></label>
+                <input asp-for="Hyperdrive_Rating" class="form-control" />
+                <span asp-validation-for="Hyperdrive_Rating" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="MGLT" class="control-label"></label>
@@ -78,34 +79,37 @@
                 <span asp-validation-for="MGLT" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="starship_class" class="control-label"></label>
-                <input asp-for="starship_class" class="form-control" />
-                <span asp-validation-for="starship_class" class="text-danger"></span>
+                <label asp-for="Starship_Class" class="control-label"></label>
+                <input asp-for="Starship_Class" class="form-control" />
+                <span asp-validation-for="Starship_Class" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="_pilots" class="control-label"></label>
-                <input asp-for="_pilots" class="form-control" />
-                <span asp-validation-for="_pilots" class="text-danger"></span>
+                <label asp-for="Pilots" class="control-label"></label>
+                <input asp-for="Pilots" class="form-control" />
+                <span asp-validation-for="Pilots" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="_films" class="control-label"></label>
-                <input asp-for="_films" class="form-control" />
-                <span asp-validation-for="_films" class="text-danger"></span>
+                <label asp-for="Films" class="control-label"></label>
+                <input asp-for="Films" class="form-control" />
+                <span asp-validation-for="Films" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="created" class="control-label"></label>
-                <input asp-for="created" class="form-control" />
-                <span asp-validation-for="created" class="text-danger"></span>
+                @{string created = nameof(Model.Created);}
+                <label asp-for=@created class="control-label"></label>
+                <input asp-for=@created class="form-control" />
+                <span asp-validation-for=@created class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="edited" class="control-label"></label>
-                <input asp-for="edited" class="form-control" />
-                <span asp-validation-for="edited" class="text-danger"></span>
+                @{string edited = nameof(Model.Edited);}
+                <label asp-for=@edited class="control-label"></label>
+                <input asp-for=@edited class="form-control" />
+                <span asp-validation-for=@edited class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="url" class="control-label"></label>
-                <input asp-for="url" class="form-control" />
-                <span asp-validation-for="url" class="text-danger"></span>
+                @{string url = nameof(Model.Url);}}
+                <label asp-for=@url class="control-label"></label>
+                <input asp-for=@url class="form-control" />
+                <span asp-validation-for=@url class="text-danger"></span>
             </div>
             <div class ="form-group">    
                 <input type="submit" value="Create" class="btn btn-outline-warning" />

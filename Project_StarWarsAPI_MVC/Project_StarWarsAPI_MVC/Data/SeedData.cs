@@ -2,6 +2,7 @@
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using Project_StarWarsAPI_MVC.Models.Swapi;
+using Project_StarWarsAPI_MVC.Models.SwapiResponse;
 using System.Security.Cryptography;
 using System.Text;
 
@@ -24,7 +25,7 @@ namespace Project_StarWarsAPI_MVC.Data
                 }
 
                 //Create an "empty" record that will serve to hold random data later, this data is then used on the landing page. 
-                StarshipResponse randomRecord = new StarshipResponse() { Image = { }, Name = "initial", Model = "initial", Manufacturer = "initial", Cost_In_Credits = "initial", Length = "initial", Max_Atmosphering_Speed = "initial", Crew = "initial", Passengers = "initial", Cargo_Capacity = "initial", Consumables = "initial", Hyperdrive_Rating = "initial", Starship_Class = "initial", _Pilots = "initial", _films = "initial", created = "initial", edited = "initial", url = "initial", MGLT = "initial" };
+                Starship randomRecord = new Starship() { Image = { }, Name = "initial", Model = "initial", Manufacturer = "initial", Cost_In_Credits = "initial", Length = "initial", Max_Atmosphering_Speed = "initial", Crew = "initial", Passengers = "initial", Cargo_Capacity = "initial", Consumables = "initial", Hyperdrive_Rating = "initial", Starship_Class = "initial", Pilots = new string[] { "initial1", "initial2" } , Films = new string[] { "initial1", "initial2" }, Created = "initial", Edited = "initial", Url = "initial", MGLT = "initial" };
                 context.Starship.Add(randomRecord);
 
                 using (HttpClient httpClient = new HttpClient())
@@ -40,17 +41,16 @@ namespace Project_StarWarsAPI_MVC.Data
                             //Get data from the API:
                             var response = await httpClient.GetAsync(resource);                     //GET request to the API: add the provided string to the base url address
                             string jsonResponse = await response.Content.ReadAsStringAsync();       //Read the string from the response '.Content' //ReadASStringAsync is a method that reads asyncrhonously without holding up the main thread. 
-                            var result = JsonConvert.DeserializeObject<SwapiResult>(jsonResponse);    //Parse API 'results':
+                            var result = JsonConvert.DeserializeObject<Response>(jsonResponse);    //Parse API 'results':
 
                             switch (resource)
                             {
                                 case "starships":
                                     Console.WriteLine("Starships:");
-                                    foreach (JObject r in result.results)
+                                    foreach (JObject r in result.Results)
                                     {
-                                        StarshipResponse record = (StarshipResponse)r.ToObject(typeof(StarshipResponse));   //Result: each object is converted to Starship
-                                        record._Films = ArrayToStringConverter(record.Films);
-                                        record._Pilots = ArrayToStringConverter(record.Pilots);
+                                        Starship record = (Starship)r.ToObject(typeof(Starship));   //Result: each object is converted to Starship
+                                       
                                         context.Starship.Add(record);
                                         Console.WriteLine(record.Name + " was added to database."); //Result: Starship's name
                                         //Console.WriteLine(r.ToString());                          //Result: All the starship details
@@ -59,60 +59,50 @@ namespace Project_StarWarsAPI_MVC.Data
                                     break;
                                 case "films":
                                     Console.WriteLine("\nFilms:");
-                                    foreach (JObject r in result.results)
+                                    foreach (JObject r in result.Results)
                                     {
-                                        FilmResponse record = (FilmResponse)r.ToObject(typeof(FilmResponse));
-                                        record._Species = ArrayToStringConverter(record.Species);
-                                        record._Starships = ArrayToStringConverter(record.Starships);
-                                        record._Vehicles = ArrayToStringConverter(record.Vehicles);
-                                        record._Characters = ArrayToStringConverter(record.Characters);
-                                        record._Planets = ArrayToStringConverter(record.Planets);
+                                        Film record = (Film)r.ToObject(typeof(Film));
+
                                         context.Films.Add(record);
                                         Console.WriteLine(record.Title + " was added to database.");
                                     }
                                     break;
                                 case "people":
                                     Console.WriteLine("\nPeople:");
-                                    foreach (JObject r in result.results)
+                                    foreach (JObject r in result.Results)
                                     {
-                                        PeopleResponse record = (PeopleResponse)r.ToObject(typeof(PeopleResponse));
-                                        record._Films = ArrayToStringConverter(record.Films);
-                                        record._Species = ArrayToStringConverter(record.Species);
-                                        record._Vehicles = ArrayToStringConverter(record.Vehicles);
-                                        record._Starships = ArrayToStringConverter(record.Starships);
+                                        People record = (People)r.ToObject(typeof(People));
+
                                         context.People.Add(record);
                                         Console.WriteLine(record.Name + " was added to database.");
                                     }
                                     break;
                                 case "planets":
                                     Console.WriteLine("\nPlanets:");
-                                    foreach (JObject r in result.results)
+                                    foreach (JObject r in result.Results)
                                     {
-                                        PlanetResponse record = (PlanetResponse)r.ToObject(typeof(PlanetResponse));
-                                        record._Residents = ArrayToStringConverter(record.Residents);
-                                        record._Films = ArrayToStringConverter(record.Films);
+                                        Planet record = (Planet)r.ToObject(typeof(Planet));
+
                                         context.Planets.Add(record);
                                         Console.WriteLine(record.Name + " was added to database.");
                                     }
                                     break;
                                 case "species":
                                     Console.WriteLine("\nSpecies:");
-                                    foreach (JObject r in result.results)
+                                    foreach (JObject r in result.Results)
                                     {
-                                        SpeciesResponse record = (SpeciesResponse)r.ToObject(typeof(SpeciesResponse));
-                                        record._Films = ArrayToStringConverter(record.Films);
-                                        record._People = ArrayToStringConverter(record.People);
+                                        Species record = (Species)r.ToObject(typeof(Species));
+
                                         context.Species.Add(record);
                                         Console.WriteLine(record.Name + " was added to database.");
                                     }
                                     break;
                                 case "vehicles":
                                     Console.WriteLine("\nVehicles:");
-                                    foreach (JObject r in result.results)
+                                    foreach (JObject r in result.Results)
                                     {
-                                        VehicleResponse record = (VehicleResponse)r.ToObject(typeof(VehicleResponse));
-                                        record._Films = ArrayToStringConverter(record.Films);
-                                        record._Pilots = ArrayToStringConverter(record.Pilots);
+                                        Vehicle record = (Vehicle)r.ToObject(typeof(Vehicle));
+
                                         context.Vehicle.Add(record);
                                         Console.WriteLine(record.Name + " was added to database.");
                                     }
@@ -195,7 +185,7 @@ namespace Project_StarWarsAPI_MVC.Data
                 //Get a random record from the db:
                 List<int> idNumbers = new List<int>();                          //Create an empty list to hold Id numbers.
                 int firstItem = context.Starship.First().Id;                    //Find the lowest Id number in the db.
-                foreach (StarshipResponse item in context.Starship)                     //Get all Id numbers into idNumbers list.
+                foreach (Starship item in context.Starship)                     //Get all Id numbers into idNumbers list.
                 {                                                               //...But...
                     if (item.Id != firstItem)                                   //Exclude the "initial" record (created above in Seed method).
                     {
@@ -207,8 +197,8 @@ namespace Project_StarWarsAPI_MVC.Data
                 int randomId = idNumbers[randomIndex];                          //Set the value from the idNumbers list using the randomIndex number
 
                 //Save the randomRecord to the database as a permanent entry:
-                StarshipResponse randomRecord = context.Starship.Find(randomId);        //Find the record with matching Id from the list
-                StarshipResponse record = context.Starship.Find(firstItem);
+                Starship randomRecord = context.Starship.Find(randomId);        //Find the record with matching Id from the list
+                Starship record = context.Starship.Find(firstItem);
                 record.Image = randomRecord.Image;
                 record.Name = randomRecord.Name;
                 record.Manufacturer = randomRecord.Manufacturer;
@@ -216,13 +206,13 @@ namespace Project_StarWarsAPI_MVC.Data
                 record.Cost_In_Credits = randomRecord.Cost_In_Credits;
                 record.Length = randomRecord.Length;
                 record.MGLT = randomRecord.MGLT;
-                record._Pilots = randomRecord._Pilots;
+                record.Pilots = randomRecord.Pilots;
                 record.Max_Atmosphering_Speed = randomRecord.Max_Atmosphering_Speed;
                 record.Crew = randomRecord.Crew;
                 record.Passengers = randomRecord.Passengers;
                 record.Cargo_Capacity = randomRecord.Cargo_Capacity;
                 record.Consumables = randomRecord.Consumables;
-                record._Films = randomRecord._Films;
+                record.Films = randomRecord.Films;
                 record.Created = randomRecord.Created;
                 record.Edited = randomRecord.Edited;
                 record.Url = randomRecord.Url;
@@ -233,7 +223,7 @@ namespace Project_StarWarsAPI_MVC.Data
             }
         }
 
-        public List<StarshipResponse> GetRandomStarshipAlternateMethod(IServiceProvider serviceProvider)
+        public List<Starship> GetRandomStarshipAlternateMethod(IServiceProvider serviceProvider)
         {
             using (var context = new SWContext(serviceProvider.GetRequiredService<DbContextOptions<SWContext>>()))
             {
