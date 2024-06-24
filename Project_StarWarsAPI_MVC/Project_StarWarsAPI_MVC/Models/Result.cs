@@ -33,20 +33,20 @@
             return new Result(true, string.Empty);
         }
 
-        public static Result<T> Ok<T>(T value)
+        public static Result<T> Ok<T>(T content)
         {
-            return new Result<T>(value, true, string.Empty);
+            return new Result<T>(content, true, string.Empty);
         }
     }
 
     public class Result<T> : Result
     {
-        protected internal Result(T value, bool success, string error)
+        protected internal Result(T content, bool success, string error)
             : base(success, error)
         {
-            Value = value;
+            Content = content;
         }
 
-        public T Value { get; set; }
+        public T Content { get; set; }
     }
 }

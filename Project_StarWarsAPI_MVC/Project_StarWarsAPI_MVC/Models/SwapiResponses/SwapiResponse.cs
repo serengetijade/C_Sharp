@@ -2,7 +2,7 @@
 
 namespace Project_StarWarsAPI_MVC.Models.SwapiResponses
 {
-    public class Response
+    public class SwapiResponse
     {
         public int Count{ get; set; }
         public string? Next { get; set; }

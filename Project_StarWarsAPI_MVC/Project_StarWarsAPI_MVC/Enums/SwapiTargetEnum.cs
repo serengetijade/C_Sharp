@@ -2,11 +2,11 @@
 {
     public enum SwapiTargetEnum
     {
-        Film,
+        Films,
         People,
-        Planet,
+        Planets,
         Species,
-        Starship,
-        Vehicle
+        Starships,
+        Vehicles
     }
 }

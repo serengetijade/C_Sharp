@@ -19,6 +19,9 @@ namespace SwapiWebApp.Data
         {
             using (var context = new SWContext(serviceProvider.GetRequiredService<DbContextOptions<SWContext>>()))
             {
+                ISwapiService _swapiService = serviceProvider.GetRequiredService<ISwapiService>();
+                Result<Response> test = _swapiService.Get(SwapiTargetEnum.Starship);
+
                 //If the Db has records, do nothing: 
                 if (context.Starship.Any())
                 {

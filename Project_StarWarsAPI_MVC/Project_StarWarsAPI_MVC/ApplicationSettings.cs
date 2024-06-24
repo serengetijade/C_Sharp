@@ -2,10 +2,10 @@
 {
     public class ApplicationSettings
     {
-        public Swapi Swapi { get; set; }
+        public SwapiSettings SwapiSettings { get; set; }
     }
 
-    public class Swapi
+    public class SwapiSettings
     {
         public string ApiBaseUri { get; set; }
     }

@@ -4,6 +4,7 @@ using Project_StarWarsAPI_MVC.Data;
 using Project_StarWarsAPI_MVC.Helpers;
 using Project_StarWarsAPI_MVC.Interfaces;
 using Project_StarWarsAPI_MVC.Repositories;
+using Project_StarWarsAPI_MVC.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -21,11 +22,10 @@ builder.Services.AddDbContext<SWContext>(options =>
 builder.Services.AddControllersWithViews();
 
 builder.Services.AddHttpContextAccessor();
-builder.Services.AddHttpClient(nameof(SwapiRepository), cfg =>{
-    cfg.BaseAddress = new Uri(settings.Swapi.ApiBaseUri);
-    });
+builder.Services.AddHttpClient(nameof(SwapiRepository), cfg =>{});
 
 builder.Services.AddScoped<ISWAPIRepository, SwapiRepository>();
+builder.Services.AddScoped<ISwapiService, SwapiService>();
 
 var app = builder.Build();
 

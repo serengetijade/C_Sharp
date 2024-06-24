@@ -1,33 +1,42 @@
-﻿using Project_StarWarsAPI_MVC.Enums;
+﻿using AutoMapper;
+using Project_StarWarsAPI_MVC.Enums;
 using Project_StarWarsAPI_MVC.Interfaces;
 using Project_StarWarsAPI_MVC.Models;
-using Project_StarWarsAPI_MVC.Repositories;
+using Project_StarWarsAPI_MVC.Models.SwapiResponses;
 
 namespace Project_StarWarsAPI_MVC.Services
 {
     public class SwapiService : ISwapiService
     {
-        private readonly SwapiRepository _swapiRepository;
+        private readonly IMapper _mapper;
+        private readonly ISWAPIRepository _swapiRepository;
 
-        public SwapiService (SwapiRepository swapiRepository)
+        public SwapiService (IMapper mapper, ISWAPIRepository swapiRepository)
         {
-            _swapiRepository = swapiRepository;
+            this._mapper = mapper;
+            this._swapiRepository = swapiRepository;
         }
 
-        public async Task<Result<T>> Get<T>(SwapiTargetEnum target)
+        public async Task<Result<T>> Get<T>(SwapiTargetEnum target) where T : class 
         {
-            var result = await _swapiRepository.Get(target.ToString());
+            Result<SwapiResponse> response = await _swapiRepository.Get(target.ToString());
 
-            //Map from response to result
+            if (!response.Success) return Result.Fail<T>(response.Message);
 
-            return null;
+            T result = _mapper.Map<T>(response.Content);
+
+            return Result.Ok(result);
         }
 
         public async Task<Result<T>> GetById<T>(SwapiTargetEnum target, string id)
         {    
-            var result = await _swapiRepository.GetById(target.ToString(), id);
+            var response = await _swapiRepository.GetById(target.ToString(), id);
 
-            return null;
+            if (!response.Success) return Result.Fail<T>(response.Message);
+
+            T result = _mapper.Map<T>(response.Content);
+
+            return Result.Ok(result);
         }
     }
 }

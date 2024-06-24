@@ -5,7 +5,7 @@ namespace Project_StarWarsAPI_MVC.Interfaces
 {
     public interface ISWAPIRepository
     {
-        Task<Result<Response>> Get(string target);
-        Task<Result<Response>> GetById(string target, string id);
+        Task<Result<SwapiResponse>> Get(string target);
+        Task<Result<SwapiResponse>> GetById(string target, string id);
     }
 }

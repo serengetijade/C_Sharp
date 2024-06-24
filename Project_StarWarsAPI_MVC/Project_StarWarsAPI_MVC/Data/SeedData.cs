@@ -1,6 +1,9 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
+using Project_StarWarsAPI_MVC.Enums;
+using Project_StarWarsAPI_MVC.Interfaces;
+using Project_StarWarsAPI_MVC.Models;
 using Project_StarWarsAPI_MVC.Models.SwapiEntities;
 using Project_StarWarsAPI_MVC.Models.SwapiResponses;
 using System.Security.Cryptography;
@@ -8,15 +11,17 @@ using System.Text;
 
 namespace Project_StarWarsAPI_MVC.Data
 {
-    /// <summary>
-    /// Seed the db with data from the Star Wars API
-    /// </summary>
     public class SeedData
     {
         public static async void Initialize(IServiceProvider serviceProvider)
         {
             using (var context = new SWContext(serviceProvider.GetRequiredService<DbContextOptions<SWContext>>()))
             {
+                ISwapiService swapiService = serviceProvider.GetRequiredService<ISwapiService>();
+                Result<List<Starship>> swapiResponses = await swapiService.Get<List<Starship>>(SwapiTargetEnum.Starships);
+
+                List<SwapiTargetEnum> enumList = new List<SwapiTargetEnum>(Enum.GetValues(typeof(SwapiTargetEnum)).Cast<SwapiTargetEnum>());
+
                 //If the Db has records, do nothing: 
                 if (context.Starship.Any())
                 {
@@ -41,7 +46,7 @@ namespace Project_StarWarsAPI_MVC.Data
                             //Get data from the API:
                             var response = await httpClient.GetAsync(resource);                     //GET request to the API: add the provided string to the base url address
                             string jsonResponse = await response.Content.ReadAsStringAsync();       //Read the string from the response '.Content' //ReadASStringAsync is a method that reads asyncrhonously without holding up the main thread. 
-                            var result = JsonConvert.DeserializeObject<Response>(jsonResponse);    //Parse API 'results':
+                            var result = JsonConvert.DeserializeObject<SwapiResponse>(jsonResponse);    //Parse API 'results':
 
                             switch (resource)
                             {
@@ -175,7 +180,6 @@ namespace Project_StarWarsAPI_MVC.Data
         ///Starship randomRecord = new Starship() { name = "initial", model = "initial", manufacturer = "initial", cost_in_credits = "initial", length = "initial", max_atmosphering_speed = "initial", crew = "initial", passengers = "initial", cargo_capacity = "initial", consumables = "initial", hyperdrive_rating = "initial", starship_class = "initial", _pilots = "initial", _films = "initial", created = "initial", edited = "initial", url = "initial", MGLT="initial"};
         ///context.Starship.Add(randomRecord);
         /// </summary>
-        //public static async Task<Starship> GetRandomRecord(IServiceProvider serviceProvider)  //This method sytnax returns a random starship via the statment: return randomRecord;
         public static void GetRandomRecord(IServiceProvider serviceProvider)
         {
             using (var context = new SWContext(serviceProvider.GetRequiredService<DbContextOptions<SWContext>>()))
