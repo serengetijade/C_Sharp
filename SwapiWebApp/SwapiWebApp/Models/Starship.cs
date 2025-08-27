@@ -30,10 +30,9 @@ namespace Project_StarWarsAPI_MVC.Models.Swapi
         [DisplayName("Class")]
         public string? Starship_Class { get; set; }
         [NotMapped]
-        [DisplayName("Pilots Array")]
         public string[]? Pilots { get; set; }
         [DisplayName("Pilots")]
-        public string? _Pilots { get; set; }
+        public List<People> PilotsList { get; set; }
 
         //DateTime example: 
         //[JsonProperty("birthday")]

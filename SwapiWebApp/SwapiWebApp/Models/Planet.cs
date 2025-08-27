@@ -17,9 +17,8 @@ namespace Project_StarWarsAPI_MVC.Models.Swapi
         [DisplayName("Surface Water")]
         public string Surface_Water { get; set; }
         [NotMapped]
-        [DisplayName("Residents Array")]
         public string[]? Residents { get; set; }  //comma separated array
         [DisplayName("Residents")]
-        public string? _Residents { get; set; }
+        public List<People> ResidentsList { get; set; }
     }
 }

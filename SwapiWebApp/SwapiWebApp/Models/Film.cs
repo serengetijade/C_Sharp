@@ -16,28 +16,24 @@ namespace Project_StarWarsAPI_MVC.Models.Swapi
         [DisplayName("Release Date")]
         public string Release_Date { get; set; }
         [NotMapped]
-        [DisplayName("Species Array")]
         public string[]? Species { get; set; }
-        public string? _Species { get; set; }
+        [DisplayName("Species")]
+        public List<Species> SpeciesList { get; set; }
         [NotMapped]
-        [DisplayName("Starships Array")]
-        public string[]? Starships { get; set; }
+        public string[]? Starships {get; set; }
         [DisplayName("Starships")]
-        public string? _Starships {get; set; }
+        public List<Starship> StarshipsList { get; set; }
         [NotMapped]
-        [DisplayName("Vechicles Array")]
         public string[]? Vehicles { get; set; }
         [DisplayName("Vehicles")]
-        public string? _Vehicles { get; set; }
+        public List<Vehicle> VehiclesList { get; set; }
         [NotMapped]
-        [DisplayName("Characters Array")]
-        public string[]? Characters { get; set; }
+        public string[] Characters { get; set; }
         [DisplayName("Characters")]
-        public string? _Characters { get; set; }
+        public List<People> CharactersList { get; set; }
         [NotMapped]
-        [DisplayName("Planets Array")]
         public string[]? Planets { get; set; }
         [DisplayName("Planets")]
-        public string? _Planets { get; set; }
+        public List<Planet> PlanetsList { get; set; }
     }
 }

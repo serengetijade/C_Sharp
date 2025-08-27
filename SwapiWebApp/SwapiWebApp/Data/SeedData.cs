@@ -1,26 +1,21 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Linq;
-using Project_StarWarsAPI_MVC.Data;
-using Project_StarWarsAPI_MVC.Models.Content;
 using Project_StarWarsAPI_MVC.Models.Swapi;
-using Project_StarWarsAPI_MVC.Repositories;
+using SwapiWebApp.Interfaces;
+using SwapiWebApp.Models.Enums;
+using SwapiWebApp.Repositories.Models;
 using System.Security.Cryptography;
 using System.Text;
 
 namespace SwapiWebApp.Data
 {
-    /// <summary>
-    /// Seed the db with data from the Star Wars API
-    /// </summary>
     public class SeedData
     {
         public static async void Initialize(IServiceProvider serviceProvider)
         {
-            using (var context = new SWContext(serviceProvider.GetRequiredService<DbContextOptions<SWContext>>()))
+            using (var context = new SwapiContext(serviceProvider.GetRequiredService<DbContextOptions<SwapiContext>>()))
             {
-                ISwapiService _swapiService = serviceProvider.GetRequiredService<ISwapiService>();
-                Result<Response> test = _swapiService.Get(SwapiTargetEnum.Starship);
+                var _swapiService = serviceProvider.GetRequiredService<ISwapiService>();
+                var test = _swapiService.Get(SwapiTargetEnum.Starships);
 
                 //If the Db has records, do nothing: 
                 if (context.Starship.Any())

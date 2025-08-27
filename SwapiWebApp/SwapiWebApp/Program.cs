@@ -1,18 +1,54 @@
+using SwapiWebApp;
+using SwapiWebApp.Data;
 using SwapiWebApp.Interfaces;
+using SwapiWebApp.Repositories;
 
 var builder = WebApplication.CreateBuilder(args);
 
-//Add services to the container
+builder.Services.Configure<SwapiSettings>(builder.Configuration.GetSection("SwapiSettings"));
+var swapiSettings = builder.Configuration.GetSection(nameof(SwapiSettings)).Get<SwapiSettings>();
+
 builder.Services.AddControllersWithViews();
 
+builder.Services.AddHttpContextAccessor();
+builder.Services.AddHttpClient("SwapiClient", client =>
+{
+    if (string.IsNullOrEmpty(swapiSettings?.BaseUrl))
+    {
+        throw new InvalidOperationException("SwapiSettings.BaseUrl is not configured properly.");
+    }
+    client.BaseAddress = new Uri(swapiSettings.BaseUrl);
+    client.DefaultRequestHeaders.Add("Accept", "application/json");
+});
+
+builder.Services.AddScoped<ISwapiRepository, ISwapiRepository>();
 builder.Services.AddScoped<ISwapiService, ISwapiService>();
 
 var app = builder.Build();
 
 if (!app.Environment.IsDevelopment())
 {
-    app.UseExceptionHandler("/Home/Error");
+    app.UseDeveloperExceptionPage();
     app.UseHsts();
+}
+else
+{
+	//Add a custom error page
+	app.UseExceptionHandler("/Home/Error");
+	app.UseHsts();
+}
+
+using (var scope = app.Services.CreateScope())
+{
+	var services = scope.ServiceProvider;
+	try
+	{
+		SeedData.Initialize(services);
+	}
+	catch (Exception ex)
+	{
+		throw new Exception(ex.Message, ex.InnerException);
+	}
 }
 
 app.UseHttpsRedirection();

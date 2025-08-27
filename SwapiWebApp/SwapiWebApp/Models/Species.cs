@@ -22,9 +22,8 @@ namespace Project_StarWarsAPI_MVC.Models.Swapi
         [DisplayName("Homeworld")]
         public string? Homeworld { get; set; }
         [NotMapped]
-        [DisplayName("People Array")]
         public string[]? People { get; set; }   //comma separated array
         [DisplayName("People")]
-        public string? _People { get; set; }
+        public List<People> PeopleList { get; set; }
     }
 }

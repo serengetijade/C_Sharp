@@ -18,19 +18,16 @@ namespace Project_StarWarsAPI_MVC.Models.Swapi
         public string Gender { get; set; }
         public string Homeworld { get; set; }
         [NotMapped]
-        [DisplayName("Species Array")]
         public string[]? Species { get; set; }         //comma separated array
         [DisplayName("Species")]
-        public string? _Species { get; set; }
+        public List<Species> SpeciesList { get; set; }
         [NotMapped]
-        [DisplayName("Vehicles Array")]
         public string[]? Vehicles { get; set; }    //comma separated array
         [DisplayName("Vehicles")]
-        public string? _Vehicles { get; set; }
+        public List<Vehicle> VehiclesList { get; set; }
         [NotMapped]
-        [DisplayName("Starships Array")]
         public string[]? Starships { get; set; }   //comma separated array
         [DisplayName("Starships")]
-        public string? _Starships { get; set; }
+        public List<Starship> StarshipsList { get; set; }
     }
 }

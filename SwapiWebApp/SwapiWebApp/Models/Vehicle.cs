@@ -20,11 +20,9 @@ namespace Project_StarWarsAPI_MVC.Models.Swapi
         [DisplayName("Passenger Capacity")]
         public string Passengers { get; set; }
         [NotMapped]
-        [DisplayName("Pilots Array")]
-        public string[]? Pilots { get; set; }   //comma separated array
-        [DisplayName("Pilots")]
-        public string? _Pilots { get; set; }
-        [DisplayName("Vehicle Class")]
+        public string[] Pilots { get; set; }
+        public List<People> PilotsList { get; set; }
+		[DisplayName("Vehicle Class")]
         public string Vehicle_Class { get; set; }
     }
 }
