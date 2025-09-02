@@ -26,10 +26,9 @@ builder.Services.AddScoped<ISwapiService, ISwapiService>();
 
 var app = builder.Build();
 
-if (!app.Environment.IsDevelopment())
+if (app.Environment.IsDevelopment())
 {
     app.UseDeveloperExceptionPage();
-    app.UseHsts();
 }
 else
 {
