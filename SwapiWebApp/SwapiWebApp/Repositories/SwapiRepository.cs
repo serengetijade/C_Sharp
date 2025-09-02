@@ -7,7 +7,7 @@ namespace SwapiWebApp.Repositories
 {
     public interface ISwapiRepository
     {
-        
+        Task<ServiceResult<List<T>>> SendRequest<T>(string endpoint, bool getAllPages = false);
 	}
 
 	public class SwapiRepository : ISwapiRepository
