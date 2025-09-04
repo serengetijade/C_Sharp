@@ -87,6 +87,7 @@ namespace SwapiWebApp.Repositories
 			}
 			catch (HttpRequestException ex)
 			{
+				_httpClient.Dispose();
 				var message = $"Failed to fetch page from {url}: {ex.Message}";
 				_logger.LogError(ex, message);
 				return new ServiceResult<ApiResult>(false, message, new ApiResult());
